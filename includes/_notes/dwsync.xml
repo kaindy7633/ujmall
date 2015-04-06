@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="cls_captcha.php" server="qyu1273800001.my3w.com//htdocs/" local="129785472000000000" remote="129785472000000000" />
+<file name="cls_ecshop.php" server="qyu1273800001.my3w.com//htdocs/" local="129785472000000000" remote="129785472000000000" />
+<file name="cls_ecshop.php.bak" server="qyu1273800001.my3w.com//htdocs/" local="129785472000000000" remote="129785472000000000" />
+<file name="cls_error.php" server="qyu1273800001.my3w.com//htdocs/" local="129785472000000000" remote="129785472000000000" />
+<file name="cls_iconv.php" server="qyu1273800001.my3w.com//htdocs/" local="129785472000000000" remote="129785472000000000" />
+<file name="cls_image.php" server="qyu1273800001.my3w.com//htdocs/" local="130701881400000000" remote="130701881400000000" />
+<file name="cls_json.php" server="qyu1273800001.my3w.com//htdocs/" local="129785472000000000" remote="129785472000000000" />
+<file name="cls_mysql.php" server="qyu1273800001.my3w.com//htdocs/" local="129858912000000000" remote="129858912000000000" />
+<file name="cls_rss.php" server="qyu1273800001.my3w.com//htdocs/" local="129785472000000000" remote="129785472000000000" />
+<file name="cls_session.php" server="qyu1273800001.my3w.com//htdocs/" local="130715693400000000" remote="130715693400000000" />
+<file name="cls_sms.php" server="qyu1273800001.my3w.com//htdocs/" local="129785472000000000" remote="129785472000000000" />
+<file name="cls_smtp.php" server="qyu1273800001.my3w.com//htdocs/" local="129785472000000000" remote="129785472000000000" />
+<file name="cls_sql_executor.php" server="qyu1273800001.my3w.com//htdocs/" local="129785472000000000" remote="129785472000000000" />
+<file name="cls_template.php" server="qyu1273800001.my3w.com//htdocs/" local="130726144535804815" remote="130726150800000000" />
+<file name="cls_transport.php" server="qyu1273800001.my3w.com//htdocs/" local="129785472000000000" remote="129785472000000000" />
+<file name="lib_goods.php" server="qyu1273800001.my3w.com//htdocs/" local="130595523600000000" remote="130595523600000000" />
+<file name="init.php" server="qyu1273800001.my3w.com//htdocs/" local="130715689800000000" remote="130715689800000000" />
+<file name="inc_constant.php" server="qyu1273800001.my3w.com//htdocs/" local="130701881400000000" remote="130701881400000000" />
+<file name="init.php.bak" server="qyu1273800001.my3w.com//htdocs/" local="130586287800000000" remote="130586287800000000" />
+<file name="lib.debug.php" server="qyu1273800001.my3w.com//htdocs/" local="129785472000000000" remote="129785472000000000" />
+<file name="lib_article.php" server="qyu1273800001.my3w.com//htdocs/" local="129785472000000000" remote="129785472000000000" />
+<file name="lib_base.php" server="qyu1273800001.my3w.com//htdocs/" local="130038624000000000" remote="130038624000000000" />
+<file name="lib_clips.php" server="qyu1273800001.my3w.com//htdocs/" local="129785472000000000" remote="129785472000000000" />
+<file name="lib_code.php" server="qyu1273800001.my3w.com//htdocs/" local="130722576600000000" remote="130722576600000000" />
+<file name="lib_common.php" server="qyu1273800001.my3w.com//htdocs/" local="130701881400000000" remote="130701881400000000" />
+<file name="lib_compositor.php" server="qyu1273800001.my3w.com//htdocs/" local="129785472000000000" remote="129785472000000000" />
+<file name="lib_insert - 副本.php" server="qyu1273800001.my3w.com//htdocs/" local="130591338600000000" remote="130591338600000000" />
+<file name="lib_insert.php" server="qyu1273800001.my3w.com//htdocs/" local="130683868800000000" remote="130683868800000000" />
+<file name="lib_license.php" server="qyu1273800001.my3w.com//htdocs/" local="129785472000000000" remote="129785472000000000" />
+<file name="lib_main.php" server="qyu1273800001.my3w.com//htdocs/" local="130726249665758663" remote="130726255800000000" />
+<file name="lib_order.php" server="qyu1273800001.my3w.com//htdocs/" local="130723309359673801" remote="130723318200000000" />
+<file name="lib_passport.php" server="qyu1273800001.my3w.com//htdocs/" local="130701881400000000" remote="130701881400000000" />
+<file name="lib_payment.php" server="qyu1273800001.my3w.com//htdocs/" local="129785472000000000" remote="129785472000000000" />
+<file name="lib_time.php" server="qyu1273800001.my3w.com//htdocs/" local="129785472000000000" remote="129785472000000000" />
+<file name="lib_transaction.php" server="qyu1273800001.my3w.com//htdocs/" local="129785472000000000" remote="129785472000000000" />
+<file name="lib_uc.php" server="qyu1273800001.my3w.com//htdocs/" local="129785472000000000" remote="129785472000000000" />
+<file name="phpqrcode.php" server="qyu1273800001.my3w.com//htdocs/" local="129309408000000000" remote="129309408000000000" />
+<file name="shopex_json.php" server="qyu1273800001.my3w.com//htdocs/" local="129785472000000000" remote="129785472000000000" />
+<file name="复件 lib_common.php" server="qyu1273800001.my3w.com//htdocs/" local="129790656000000000" remote="129790656000000000" />
+<file name="lib_order0327.php" server="qyu1273800001.my3w.com//htdocs/" local="129915072000000000" remote="129915072000000000" />
+</dwsync>

@@ -1,0 +1,2 @@
+<div id="simplefooter" style="margin-bottom:20px;">
+    <a href="" target="_blank">&nbsp;</a>&nbsp;<a>&nbsp;</a>&nbsp;<a href="">&nbsp;</a><p>CopyRight &copy; U+易购 粮贸超市网上商城 2014-2015，All Rights Reserved</p></div>

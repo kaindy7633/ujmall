@@ -1,0 +1,11 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $related_goods} -->
+<div class="mod_box mod_product_box"><div class="box_hd"><strong>看过本商品的用户还看过</strong></div><div class="box_list">
+<ul>
+     <!--{foreach from=$related_goods item=releated_goods_data}-->
+<li><a class="pro_img" href="{$releated_goods_data.url}"><img alt="" src="{$releated_goods_data.goods_thumb}" height="115" width="115"></a><p class="pro_tit"><a href="{$releated_goods_data.url}" target="_blank">{$releated_goods_data.short_name}</a></p><p class="pro_price"><span class="color_red"> <!-- {if $releated_goods_data.promote_price neq 0} -->{$releated_goods_data.formated_promote_price} 
+          <!-- {else} --> 
+          {$releated_goods_data.shop_price} 
+          <!-- {/if} --></span><del> {$releated_goods_data.market_price} </del><a class="commandbtn"  href="javascript:addToCart({$goods.goods_id})">加入购物车</a></p></li>      <!--{/foreach}--></ul></div></div>
+
+<!-- {/if} -->

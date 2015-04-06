@@ -1,0 +1,6 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<a href="{$goods.url}"  title="{$goods.name|escape:html}" target="_blank">
+<img alt="{$goods.name|escape:html}" src="{$goods.thumb}">
+<p class="p1">{$goods.short_name|escape:html}</p>
+<p class="p2"><!-- {if $goods.promote_price neq ""} -->{$goods.promote_price}<!-- {else}-->{$goods.shop_price}<!--{/if}--></p>
+</a>

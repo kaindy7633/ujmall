@@ -1,0 +1,9 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <?php
+ $this->assign('thiscid1', get_parent_id_tree(2));//调用父级分类的下级分类
+ ?>
+ <ul class="clearfix">
+   <!--{foreach from=$thiscid1 item=list name=name}-->
+<li class="L_tab_trigger higher"  {if $smarty.foreach.name.iteration==1 } class="L_tab_trigger higher cur"{/if}> <a href="{$list.url}">{$list.name}</a><i></i></li>
+  <!--{/foreach}-->
+</ul>

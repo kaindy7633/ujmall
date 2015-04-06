@@ -1,0 +1,38 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.banner-bg1{ background-color:#6fd4ff;}
+.banner-bg2{ background-color:#991721;}
+.banner-bg3{ background-color:#990000;}
+.banner-bg4{ background-color:#ff9933;}
+.banner-bg5{ background-color:#c1d3e9;}
+.banner-bg6{ background-color:#c20627;}
+.banner-bg7{ background-color:#ffad41;}
+.banner-bg8{ background-color:#006DB5;}
+</style>
+<div class="mod_promo_show ck-slide">
+<ul class="promo_wrapper ck-slide-wrapper">
+	 <!--{foreach from=$flash name=myflash item=flash}-->
+<li class="banner-bg{$smarty.foreach.myflash.iteration}"  <!-- {if $smarty.foreach.myflash.iteration>1} -->style="display:none"<!--{/if}-->>
+<a  class="big_pic global_loading" >
+<img id="lunbo_{$smarty.foreach.myflash.iteration}" src="{$flash.src}">
+</a>
+</li>
+  <!--{/foreach}-->
+</ul>
+<div class="mod_promonum_show ck-slidebox">
+<div class="slideWrap">
+<ul class="clearfix dot-wrap">
+  <!--{foreach from=$flash name=myflash item=flash}-->
+    <li flag="{$smarty.foreach.myflash.iteration}" <!-- {if $smarty.foreach.myflash.iteration==1} -->class="cur"<!--{/if}-->></li><!--{/foreach}-->
+</ul>
+</div>
+</div>
+<a href="javascript:;" class="ctrl-slide ck-next show_next"><s></s></a>
+<a href="javascript:;" class="ctrl-slide ck-prev show_pre"><s></s></a>
+</div>
+		<script src="themes/68ecshop_xiaomi/js/slide.js"></script>
+		<script>
+			$('.ck-slide').ckSlide({
+				autoPlay: true
+			});
+		</script>

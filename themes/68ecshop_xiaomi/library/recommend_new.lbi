@@ -1,0 +1,16 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $new_goods} -->
+<div id="newProductRecommend" class="tab_content none" style="display: none;">
+<ul class="clearfix" id="newProductRecommend_prod">
+<!--{foreach from=$new_goods item=goods name=new_goods}-->
+<li>
+<div class="li_box">
+<a class="pro_img" href="{$goods.url}"><img src="{$goods.thumb}"></a>
+<a class="pro_name" href="{$goods.url}">{$goods.short_style_name}</a>
+<p class="tl"><strong>{$goods.shop_price}</strong><del>{$goods.market_price}</del></p>
+</div>
+</li>
+<!--{/foreach}--> 
+</ul>
+</div>
+<!-- {/if} --> 

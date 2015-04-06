@@ -1,0 +1,45 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="proPackage">
+  <ul class="proPackage_tit cfl clearfix" id="package_tit">
+    {foreach from=$package_goods_list_120 name="pa_list" item=pa_item}
+    <li {if $smarty.foreach.pa_list.iteration eq 1}class="selected"{else}style="border:0;"{/if}>优惠套餐{$smarty.foreach.pa_list.iteration}</li>
+    {/foreach}
+  </ul>
+  {foreach from=$package_goods_list_120 name="pa_list" item=pa_item}
+  <div class="proPackage_con cfl clearfix" id="package_box_{$smarty.foreach.pa_list.index}" {if $smarty.foreach.pa_list.index == 0 }style="display:block; background:#fff"{else} style="display:none; background:#FFF;"{/if} >
+     <ul class="proPackage_con_l cfl">
+    {foreach from=$pa_item.goods_list name="pa_list_goods" item=pa_goods}
+   
+      <li class="cfl"> 
+     {if $smarty.foreach.pa_list_goods.iteration < 6} 
+      {if !$smarty.foreach.pa_list_goods.first}
+      <span class="proPackage_con_l_and"><em>AND</em></span>
+      {/if}
+      
+        <p class="proPackage_con_l_goods"> <a href="goods.php?id={$pa_goods.goods_id}" class="item1"><img alt="" src="{$pa_goods.goods_thumb}" /></a></a> <a href="goods.php?id={$pa_goods.goods_id}" class="item2">{$pa_goods.goods_name}</a> <span class="proPackage_advPrice cfl" hassed="0" saveprice="0" iniprice="89" gid="1431"><em class="item1">
+          <input type="checkbox" name="{$pa_goods.rank_price}" id="{$pa_goods.rank_price_zk}" value="{$pa_goods.goods_id}-{$pa_goods.product_id}" checked=checked onClick="check_package({$smarty.foreach.pa_list.index},this);" {if $smarty.foreach.pa_list_goods.index eq 0}style="display:none;"{/if}  autocomplete="off">
+          </em><em class="item2">{$pa_goods.rank_price_zk_format}</em></span> </p>
+      {/if}
+      
+      </li>
+   
+    {/foreach}  
+    
+    </ul>
+     <p class="proPackage_con_r" >原　价：<font style="text-decoration:line-through;" id="price_yuan_{$smarty.foreach.pa_list.index}">{$pa_item.subtotal}</font> <br/>
+     
+     
+      套餐价：<strong  id="price_pack_{$smarty.foreach.pa_list.index}">{$pa_item.package_price}</strong> <br/>
+      节　省：<strong class="f_pack" id="price_save_{$smarty.foreach.pa_list.index}">{$pa_item.saving}</strong> <br/>
+      <em></em>
+
+      <a  class="proCon_form_box_btnNogoods" onClick="javascript:addPackageToCart({$pa_item.act_id}, {$smarty.foreach.pa_list.index})" > 加入购物车</a></p>
+  </div>
+  {/foreach} 
+  
+  </div>
+  
+    <div style="height:8px; line-height:8px; clear:both;"></div>
+<script type="text/javascript">
+reg_package();
+</script>

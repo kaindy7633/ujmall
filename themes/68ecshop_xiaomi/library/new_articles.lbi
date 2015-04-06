@@ -1,0 +1,13 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<DL class=notice>
+  <DT></DT>
+        <!--{foreach from=$new_articles item=article name=article}-->
+		<!--{if $smarty.foreach.article.iteration <=4 }-->
+        <DD <!--{if $smarty.foreach.article.iteration eq 1}--> style="BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none"<!--{/if}-->>
+      <a href="{$article.url}" title="{$article.title|escape:html}">{$article.short_title|truncate:20:"...":true}</a>
+        </DD>
+		<!--{/if}-->
+        <!--{/foreach}-->
+  </DL>
+

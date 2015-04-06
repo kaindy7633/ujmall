@@ -1,0 +1,101 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style>
+.suit_check{display: block;
+padding: 6px 5px;
+width: 49px;
+border: 1px solid #DEDEDE;
+height: 14px;
+color: #666;
+line-height: 14px;
+border-radius: 2px;
+background-color: #F6F6F6;
+background-image: -moz-linear-gradient(center top , #FEFEFE, #F5F5F5);
+cursor: pointer;
+margin-top:20px;}
+ins{position: absolute;top: 120px;left:145px;width: 13px;height: 13px;background:url(../images/jialogo.jpg);font-size: 0px;line-height: 0;}
+</style>
+<script type="text/javascript">
+function check(){
+var result='{$id},';
+var fid = document.getElementById('boxOne');
+var box = fid.getElementsByTagName('input');
+
+for(var i = 0; i < box.length; i++){
+           if(box[i].type == 'checkbox' && box[i].checked){
+                result = result + box[i].value + ',';
+           }
+        }
+        //在Common.js文件中添加了addToCartNums方法
+        addToCartNums(result);
+}
+function totalPrice(){
+var re = /[￥元]/g;
+<!--{if $goods.is_promote and $goods.gmt_end_time } 促销价格-->
+  var result='{$goods.promote_price}';
+  result=result.replace(re,'');
+<!--{else}-->
+  var result={$goods.shop_price};
+<!--{/if}-->
+//alert(result);
+var fid = document.getElementById('boxOne');
+var box = fid.getElementsByTagName('input');
+var j=1;
+for(var i = 0; i < box.length; i++){
+    if(box[i].type == 'checkbox' && box[i].checked){
+  var a = box[i].name;
+     result =  Number(result) +  Number(a.replace(re, ''));
+     j+=1;
+    }
+}
+result_format='￥%s元';
+re_re=/\%s/g;
+result_format=result_format.replace(re_re, result);
+document.getElementById("totalPrice").innerHTML=result_format;
+document.getElementById("totalNum").innerHTML=j;
+}
+</script>
+<div class="peitao clearfix mt10"  id="boxOne" style="width:980px; height:180px;">
+<div class="main_goods Left" style="width:125px; height:200px;">
+		<div class="img"><img src="{$goods.goods_thumb}" width="115" height="115" alt="{$goods.goods_name}" />
+        	<div class="info">
+        <strong style="font-weight:500">{$goods.goods_name}</strong><br>
+        <span>本店价:</span>
+        <!--{if $goods.is_promote and $goods.gmt_end_time } 促销价格-->
+      <span class="red yen">{$goods.promote_price}</span>
+        <!-- {else} -->
+        <span class="red yen" style="font-weight:bold;">{$goods.shop_price}</span>
+        <!-- {/if} --><br>
+        <br/></div></div>
+        <ins>+</ins>
+   </div>
+	<div class="extra_goods Right" style="width:780px;">
+    <div class="overflow" style="width:780px;">
+         <div class="stage"  style="width:780px; height:170px; overflow-x:scroll;">
+        <table>
+            <tr>
+				<!--{foreach from=$related_goods item=releated_goods_data name=name}-->	
+                  <td>
+				   <div class="list">
+					<div class="img_box"><a href="{$releated_goods_data.url}" title="{$releated_goods_data.goods_name}" target="_blank"><img src="{$releated_goods_data.goods_thumb}" alt="{$releated_goods_data.goods_name}" width="100" height="100" /></a></div><div class="info" style="margin-left: 5px;width: 122px; float:right">{$releated_goods_data.goods_name|truncate:10}<br/>
+         <span class="red yen"><strong style="float: left;color: #E60012;line-height: 24px;"><!-- {if $releated_goods_data.promote_price neq 0} -->
+		{$releated_goods_data.formated_promote_price}
+		<!-- {else} -->
+		{$releated_goods_data.shop_price}
+		<!-- {/if} --></strong></span><br /><br />
+        <span class="suit_check" style="margin-top:5px;"><input type="checkbox" style="background:#fff" name="{if $releated_goods_data.promote_price neq 0}{$releated_goods_data.promote_price}{else}{$releated_goods_data.shop_price}{/if}" value="{$releated_goods_data.goods_id}"  onClick="totalPrice()" checked=checked />&nbsp;&nbsp;搭配</span>
+		
+						</div>
+					</div>
+				</td>
+                <!--{/foreach}-->
+		</tr></table>
+		</div>
+        <div class="pt_result " style="display:block; margin-top:20px;">
+ <span id="JS_pt_activity_goods">搭配购买更便捷</span>
+		&nbsp;<span class="bold">总价：<span class="red yen f16" id="totalPrice"></span></span>
+&nbsp;<a href="javascript:;" class="g2_btn1" onclick="check()" style="COLOR: #fff; ">&nbsp;加入购物车&nbsp;&nbsp;&nbsp;&nbsp;</a>
+</div>
+     </div>
+	</div>
+</div>
+<script>totalPrice();</script>

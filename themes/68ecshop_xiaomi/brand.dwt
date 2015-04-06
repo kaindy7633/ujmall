@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$page_title}</title>
+<!-- TemplateEndEditable --><!-- TemplateBeginEditable name="head" --><!-- TemplateEndEditable -->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+
+<script type="text/javascript" src="themes/68ecshop_xiaomi/js/libs/jquery18.js" ></script>
+{insert_scripts files='jquery.json.js,transport.js'}
+   
+<script type="text/javascript">
+/*<![CDATA[*/
+var mileftnav = "mileftnav";
+var default_word = "2S后盖";
+/*]]>*/
+</script>
+{insert_scripts files='common.js'}
+<link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="themes/68ecshop_xiaomi/css/goods-category.min.css" />
+
+</head>
+<body>
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+<div class="container">
+<div class="row mileftnav">
+    <div class="span3">
+        <!-- 你可能还喜欢 -->
+         <!-- #BeginLibraryItem "/library/top10.lbi" --><!-- #EndLibraryItem -->
+          <!-- 你可能还喜欢 End -->
+       
+        <!-- 你刚刚看过 -->
+        <!-- #BeginLibraryItem "/library/history.lbi" --><!-- #EndLibraryItem -->
+        <!-- 你刚刚看过 End -->
+    </div>
+    <div class="span12">
+         <div class="proDescrip_con">
+     <div class="box_1">
+      <h3><span>{$brand.brand_name}</span></h3>
+      <div class="boxCenterList">
+        <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+        <tr>
+          <td bgcolor="#ffffff" width="200" align="center" valign="middle">
+          <div style="width:200px; overflow:hidden;">
+          <!-- {if $brand.brand_logo} -->
+            <img src="data/brandlogo/{$brand.brand_logo}" />
+            <!-- {/if} -->
+          </div>
+          </td>
+          <td bgcolor="#ffffff">
+          {$brand.brand_desc|nl2br}<br />
+            <!-- {if $brand.site_url} -->
+            {$lang.official_site} <a href="{$brand.site_url}" target="_blank" class="f6">{$brand.site_url}</a><br />
+            <!-- {/if} -->
+            {$lang.brand_category}<br />
+            <div class="brandCategoryA">
+              <!-- {foreach from=$brand_cat_list item=cat} -->
+            <a href="{$cat.url}" class="f6">{$cat.cat_name|escape:html} {if $cat.goods_count}({$cat.goods_count}){/if}</a>
+              <!-- {/foreach} -->
+            </div>  
+         </td>
+        </tr>
+      </table>
+      </div>
+     </div>
+    </div>
+    <div class="blank5"></div>
+  
+        <div class="xm-box category-list-box">
+             <!-- #BeginLibraryItem "/library/goods_list.lbi" --><!-- #EndLibraryItem -->
+                   <div class="bd">
+                    <!-- #BeginLibraryItem "/library/pages.lbi" --><!-- #EndLibraryItem -->
+                     </div>
+         </div>
+                    
+        <!-- 商品列表 End -->
+    </div>
+</div>
+
+
+
+</div>
+
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+  		<script type="text/javascript" src="themes/68ecshop_xiaomi/js/global_site_top.js" charset="utf-8"></script>
+<script type="text/javascript" src="themes/68ecshop_xiaomi/js/global_site_bottom.js" charset="utf-8"></script>
+        <script type="text/javascript">
+    
+        XIAOMI.GLOBAL_CONFIG = {
+        }
+XIAOMI.app.header.init();   
+   
+     
+     
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!-- $Id: goods_info.htm 17126 2010-04-23 10:30:26Z liuhui $ -->
+{include file="pageheader.htm"}
+{insert_scripts files="../js/utils.js,selectzone.js,colorselector.js"}
+<script type="text/javascript" src="../js/calendar.php?lang={$cfg_lang}"></script>
+<link href="../js/calendar/calendar.css" rel="stylesheet" type="text/css" />
+
+      <form enctype="multipart/form-data" action="miaoshu.php" method="post" name="theForm">
+
+        <!-- 详细描述 -->
+        <table width="90%" id="detail-table">
+          <tr>
+            <td>商品ID：<input type="text" name="goods_id" />
+            (中间用逗号隔开)<font style=" color:#F00">说明：添哪个ID改哪个，不添就全部产品修改；</font></td>
+          </tr>
+          <tr>
+            <td>{$FCKeditor}</td>
+          </tr>
+          <tr>
+            <th>
+            	 <input type="submit" value="提交" class="button" />
+          		 <input type="hidden" name="act" value="update" />   
+            </th>
+          </tr>
+        </table>
+      </form>
+{insert_scripts files="validator.js,tab.js"}
+
+{include file="pagefooter.htm"}

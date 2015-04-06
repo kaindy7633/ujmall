@@ -1,0 +1,113 @@
+BODY {
+	BACKGROUND: #f7eeef 0px 0px; HEIGHT: 100%
+}
+.tg_pos {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 3px; PADDING-BOTTOM: 12px; PADDING-TOP: 4px
+}
+.tg_pos .pos_icon {
+	DISPLAY: inline-block; VERTICAL-ALIGN: top; WIDTH: 15px; HEIGHT: 15px
+}
+.tg_pos .pos_in {
+	DISPLAY: inline-block
+}
+.tuan_ad {
+	MARGIN-BOTTOM: 14px; WIDTH: 980px
+}
+.tuan_ad IMG {
+	WIDTH: 980px
+}
+.root_body .tuan_ad {
+	WIDTH: 1190px
+}
+.root_body .tuan_ad IMG {
+	WIDTH: 1190px
+}
+.tuan_list_container {
+	WIDTH: 1220px;
+	margin-left:-2px;
+}
+.root_body .tuan_list_container {
+	WIDTH: 1210px
+}
+.root_body .tuan_list_container .tg_list {
+	MARGIN: 0px 16px 15px 0px
+}
+.tuan_list_container .tg_list {
+	FLOAT: left; MARGIN: 0px 18px 15px 0px; POSITION: relative
+}
+.tuan_list_container .tg_list DIV.tg_goods {
+	BORDER-RIGHT: #d6d6d6 1px solid; PADDING-RIGHT:9px; BORDER-TOP: #d6d6d6 1px solid; PADDING-LEFT:9px; BACKGROUND: #fff 0px 0px; PADDING-BOTTOM: 0px; BORDER-LEFT: #d6d6d6 1px solid; WIDTH: 266px; PADDING-TOP: 0px; BORDER-BOTTOM: #d6d6d6 1px solid; HEIGHT: 303px; TEXT-ALIGN: center; box-shadow: 0 1px 3px #c7c7c7
+}
+.root_body .tuan_list_container .tg_list DIV.tg_goods {
+	PADDING-RIGHT: 9px; PADDING-LEFT: 9px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+.tuan_list_container .tg_list DIV.active {
+	BORDER-RIGHT: #FF3C3C 1px solid; BORDER-TOP:#FF3C3C 1px solid; BORDER-LEFT:#FF3C3C 1px solid; BORDER-BOTTOM: #FF3C3C 1px solid
+}
+.tuan_list_container .tg_list DIV.tg_goods_on {
+	BORDER-RIGHT: #c10000 1px solid; BORDER-TOP: #c10000 1px solid; BORDER-LEFT: #c10000 1px solid; BORDER-BOTTOM: #c10000 1px solid
+}
+.tuan_list_container .tg_list DIV.tg_goods P.name {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 15px; LINE-HEIGHT: 18px; PADDING-TOP: 15px; HEIGHT: 18px
+}
+.tuan_list_container .tg_list DIV.tg_goods P.name A {
+	FONT-WEIGHT: bolder; FONT-SIZE: 14px; FONT-FAMILY: "微软雅黑"
+}
+.tuan_list_container .tg_list DIV.tg_goods P.name A:hover {
+	TEXT-DECORATION: none
+}
+.tuan_list_container .tg_list DIV.tg_goods P.tg_pic {
+	OVERFLOW: hidden; WIDTH: 266px; POSITION: relative; HEIGHT: 176px
+}
+.tuan_list_container .tg_list DIV.tg_goods P.tg_pic SPAN.tg_info {
+	DISPLAY: block; BACKGROUND: #333; FILTER: alpha(opacity=50); LEFT: 0px; WIDTH: 100%; COLOR: #fff; BOTTOM: 0px; LINE-HEIGHT: 22px; POSITION: absolute; HEIGHT: 22px; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha( opacity=50 )"; opacity: .5
+}
+.tuan_list_container .tg_list DIV.tg_goods P.tg_pic SPAN.tg_info SPAN {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+.tuan_list_container .tg_list DIV.tg_goods P.tg_pic SPAN.tg_info SPAN B {
+	COLOR: #f60
+}
+.tuan_list_container .tg_list DIV.tg_goods A.gogo {
+	MARGIN-TOP: 14px; DISPLAY: inline-block; PADDING-LEFT: 10px; BACKGROUND: url(../images/images/paipai/tuangou_list_bg2.gif) no-repeat 0px -255px; WIDTH: 256px; COLOR:#E51F20; LINE-HEIGHT: 46px; HEIGHT: 46px; TEXT-ALIGN: left
+}
+.tuan_list_container .tg_list DIV.tg_goods A.gogo .yen {
+	FONT-SIZE: 28px; FLOAT: left; CURSOR: pointer
+}
+.tuan_list_container .tg_list DIV.tg_goods A.nostart {
+	BACKGROUND-POSITION: 0px -301px
+}
+.tuan_list_container .tg_list DIV.tg_goods A.over {
+	BACKGROUND-POSITION: 0px -406px
+}
+.tuan_list_container .tg_list DIV.tg_goods A.soldout {
+	BACKGROUND-POSITION: 0px -347px
+}
+.tuan_list_container .tg_list DIV.tg_goods A.delstl:hover {
+	COLOR: #fff! important; TEXT-DECORATION: none
+}
+.tuan_list_container .tg_list DIV.tg_goods A.gogo SPAN {
+	PADDING-RIGHT: 8px; PADDING-LEFT: 8px; FLOAT: left; PADDING-BOTTOM: 8px; CURSOR: pointer; LINE-HEIGHT: 15px; PADDING-TOP: 8px; HEIGHT: 30px
+}
+.tuan_list_container .tg_list DIV.tg_goods A.gogo SPAN I {
+	FONT-STYLE: normal; TEXT-DECORATION: line-through
+}
+.tuan_list_container .tg_list DIV.tg_goods A.gogo SPAN B {
+	COLOR: #fff
+}
+.tuan_list_container .tg_list DIV.tg_goods A.gogo .yen SMALL {
+	FONT-WEIGHT: normal; FONT-SIZE: 20px
+}
+.tuan_list_container .tg_list DIV.tg_goods A.delstl:hover {
+	COLOR: #FF3C3C! important; TEXT-DECORATION: none
+}
+.tuan_list_container .tg_list P.icon {
+	RIGHT: 0px; WIDTH: 53px; POSITION: absolute; TOP: 0px; HEIGHT: 58px
+}
+.tuan_list_container .tg_list P.bwl {
+	BACKGROUND: url(../images/images/paipai/tuangou_bwl.png) no-repeat right top; _background: 0; _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../images/images/paipai/tuangou_bwl.png")
+}
+
+.tuan_list_container .tg_list P.foot {
+	BACKGROUND: url(../images/images/paipai/tuangou_list_bg2.gif) no-repeat 0px -393px; MARGIN-LEFT: 4px; WIDTH: 282px; HEIGHT: 5px
+}

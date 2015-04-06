@@ -1,0 +1,213 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript">
+var process_request = "{$lang.process_request}";
+</script>
+<script language="javascript"> 
+<!--
+/*屏蔽所有的js错误*/
+function killerrors() { 
+return true; 
+} 
+window.onerror = killerrors; 
+//-->
+</script>
+<?php
+function get_subcate_byurl($url)
+{
+	$rs = strpos($url,"category");
+	if($rs!==false)
+	{
+		preg_match("/\d+/i",$url,$matches);
+		$cid = $matches[0];
+		$cat_arr = array();
+		$sql = "select * from ".$GLOBALS['ecs']->table('category')." where parent_id=".$cid." and is_show=1 ORDER BY sort_order ASC, cat_id ASC";
+		$res = $GLOBALS['db']->getAll($sql);
+		
+		foreach($res as $idx => $row)
+		{
+			$cat_arr[$idx]['id']   = $row['cat_id'];
+            $cat_arr[$idx]['name'] = $row['cat_name'];
+            $cat_arr[$idx]['url']  = build_uri('category', array('cid' => $row['cat_id']), $row['cat_name']);
+			$cat_arr[$idx]['children'] = get_clild_list($row['cat_id']);
+		}
+
+		return $cat_arr;
+	}
+	else 
+	{
+		return false;
+	}
+}
+
+function get_clild_list($pid)
+{
+    $sql_sub = "select * from ".$GLOBALS['ecs']->table('category')." where parent_id=".$pid." and is_show=1 ORDER BY sort_order ASC, cat_id ASC";
+	$subres = $GLOBALS['db']->getAll($sql_sub);
+	if($subres)
+	{
+		foreach ($subres as $sidx => $subrow)
+		{
+			$children[$sidx]['id']=$subrow['cat_id'];
+			$children[$sidx]['name']=$subrow['cat_name'];
+			$children[$sidx]['url']=build_uri('category', array('cid' => $subrow['cat_id']), $subrow['cat_name']);
+		}
+	}
+	else 
+	{
+		$children = null;
+	}
+			
+	return $children;
+}
+?>
+<style type="text/css">
+.sub_nav{border:1px solid red;position: absolute;z-index: -1;top: 0px;right: 0px;width:79px;padding-top: 21px;border: 1px solid #CCC; background:#fff; padding-left:9px; display:none;
+}
+</style>
+        <link href="themes/68ecshop_xiaomi/css/global_site_index_new.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+var isWidescreen=screen.width>=1280;
+if(isWidescreen){document.getElementsByTagName("body")[0].className="w1200";}
+</script>
+<div class="hd_global_top_bar" id="global_top_bar">
+<div class="wrap clearfix">
+<div class="hd_topbar_left clearfix">
+<div class="hd_unlogin_wrap" data-addclass="hd_unlogin_hover" id="global_unlogin" data-tpa="YHD_GLOBAl_TOP_UNLOGIN">
+<div class="hd_login clearfix" id="ECS_MEMBERZONE">
+  {* ECSHOP 提醒您：根据用户id来调用member_info.lbi显示不同的界面  *}{insert name='member_info'}
+</div>
+<em class="hd_login_arrow"></em>
+</div>
+</div>
+<div class="hd_top_manu clearfix" data-tpa="YHD_GLOBAl_TOP_MENU">
+<ul class="clearfix">
+			<li class="hd_menu_tit hd_my_order" onmouseover="showSubNav('subNav_1');" onmouseout="hideSubNav('subNav_1');">
+<a class="hd_menu" href="javascript:;"><s></s>我的U+</a>
+					<ul  id="subNav_1" class="sub_nav">
+	 		<li><a href="" data-ref="YHD_TOP_order" target="_blank" rel="nofollow">我的订单</a></li>
+			<li><a href="" data-ref="YHD_TOP_points" target="_blank" rel="nofollow">我的积分</a></li>
+			<li><a href="" data-ref="YHD_TOP_coupon" target="_blank" rel="nofollow">我的抵用券</a></li>
+			<li><a href="" data-ref="YHD_TOP_mycollection" target="_blank" rel="nofollow">我的收藏夹</a></li>
+			<li><a href="" data-ref="YHD_TOP_comment" target="_blank" rel="nofollow">评价商品</a></li>
+			<li><a href="" data-ref="YHD_TOP_vip" target="_blank" rel="nofollow">会员专享</a></li>
+                	</ul>
+
+			</li>
+			
+            <li class="hd_menu_tit" onmouseover="showSubNav('subNav_2');" onmouseout="hideSubNav('subNav_2');">
+                <a href="javascript:void(0);" class="hd_menu">
+                <span style="vertical-align:middle;">&nbsp;&nbsp;&nbsp;&nbsp;收藏夹</span></a>
+                	<ul id="subNav_2" class="sub_nav">
+	<li><a href="user.php?act=collection_list" rel="nofollow">商品收藏</a></li>
+                    </ul>
+        	</li>
+            <li class="hd_menu_tit" onmouseover="showSubNav('subNav_3');" onmouseout="hideSubNav('subNav_3');">
+            	<a href="#" class="hd_menu"><i class="hd_mobile_icon"></i>手机U+</a>
+            	<div class="hd_mobile_show" id="subNav_3" >
+                   <p class="hd_mobile_tips">扫描二维码下载客户端</p>
+                    <div class="hd_mobile_list clearfix">
+                    	<i></i>
+	                    <div class="hd_mobile_tab">
+			            	<a href="" target="_blank" data-ref="MALL_TOP_wx_iphone" rel="nofollow" class="hd_iphone">iPhone</a>
+							<a href="" target="_blank" data-ref="MALL_TOP_wx_ipad" rel="nofollow" class="hd_ipad">iPad</a>
+							<a href="" target="_blank" data-ref="MALL_TOP_wx_android" rel="nofollow" class="hd_android">Android</a>
+	                    </div>
+	                    <div class="hd_mobile_content">
+	                       <img src="../images/wenxin.jpg">
+	                    </div>
+                    </div>
+	            </div>
+            </li>
+            
+	        <li class="hd_menu_tit" onmouseover="showSubNav('subNav_4');" onmouseout="hideSubNav('subNav_4');">
+            	<a target="_blank" href="" data-ref="YHD_TOP_help" class="hd_menu"><s class="khfw"></s>客户服务</a>
+                	<ul id="subNav_4" class="sub_nav">
+	   <li><a href="" target="_blank">包裹跟踪</a></li>
+		<li><a href="" target="_blank">常见问题</a></li>
+		<li><a href="help.php?id=21"  target="_blank">在线退换货</a></li>
+		<li><a href="" target="_blank">在线投诉</a></li>
+		<li><a href="" target="_blank">配送范围</a></li>
+                    </ul>
+            </li>
+            
+            <li class="hd_menu_tit" onmouseover="showSubNav('subNav_5');" onmouseout="hideSubNav('subNav_5');">
+            	<a href="#" class="hd_menu">网站导航</a>
+                <div class="hd_site_nav" id="subNav_5" >
+                	<em></em>
+	                	<ul class="clearfix">
+<li><a href="user.php?act=profile" target="_blank">用户信息</a></li>
+<li><a href="user.php?act=order_list" target="_blank">我的订单 </a></li>
+<li><a href="user.php?act=address_list" target="_blank">收货地址</a></li>
+<li><a href="user.php?act=collection_list" target="_blank">我的收藏</a></li>
+<li><a href="user.php?act=message_list" target="_blank">我的留言</a></li>
+<li><a href="user.php?act=bonus" target="_blank">我的红包</a></li>
+<li><a href="user.php?act=comment_list" target="_blank">我的评论</a></li>
+<li><a href="user.php?act=account_log" target="_blank">资金管理</a></li>
+</ul>
+<ul class="clearfix">
+<li><a  href="article_cat.php?id=5" title="1起创">新手上路</a></li>
+<li><a  href="article_cat.php?id=6" title="1起创">手机常识</a></li>
+<li><a  href="article_cat.php?id=8" title="1起创">服务保证</a></li>
+<li><a  href="article_cat.php?id=9" title="1起创">联系我们</a></li>
+</ul>
+                </div>
+            </li>
+            
+			</ul>
+<span class="hd_follow_us" >关注我们：</span>
+    <a class="hd_weixin hd_menu_tit" onmouseover="showSubNav('subNav_6');" onmouseout="hideSubNav('subNav_6');" style="margin-left:5px">
+        <div class="hd_weixin_show" id="subNav_6" class="sub_nav">
+            <i></i>
+            <p>扫码关注<br>粮贸超市官方微信</p>
+            <img src="../images/lm_weixin.jpg">
+        </div>
+    </a>
+    
+    <a class="hd_weibo hd_menu_tit" onmouseover="showSubNav('subNav_7');" onmouseout="hideSubNav('subNav_7');" style="margin-left:10px">
+        <div class="hd_weixin_show" id="subNav_7" class="sub_nav">
+            <i></i>
+            <p>扫码关注<br>粮贸超市官方微博</p>
+            <img src="../images/lm_weibo.jpg">
+        </div>
+    </a>
+		</div>
+	</div>
+</div>
+        <!-- E 头部 -->
+  <script>
+var x=window.x||{};
+x.personalInfo=function(info){
+    var oinfo=document.getElementById(info);
+  
+     oinfo.t=null;
+     oinfo.v=null;
+   oinfo.onmouseover=function(){
+       clearTimeout(oinfo.v);  //清除掉鼠标移开时候的延时。
+       oinfo.t=setTimeout(function(){//设置延时触发，也就是300毫秒后，如果鼠标还在层上面，则触发事件。
+            if(oinfo.offsetTop>150)    {
+			
+              oinfo.className="hd_mini_cart";}
+        else{
+    
+            oinfo.className="hd_mini_cart";
+            }
+        },300);
+        };
+    oinfo.onmouseout=function(){
+        clearTimeout(oinfo.t);//清除mouseover延时，也就是说，只要鼠标一离开这个层，立马清空这个延时。
+        oinfo.v=setTimeout(function(){
+        oinfo.style.zIndex=2;
+     
+          oinfo.className="hd_mini_cart";},300);
+        }
+    }
+	x.personalInfo('ECS_CARTINFO');
+</script>
+<script language="javascript" type="text/javascript">
+function showSubNav(id){
+document.getElementById(id).style.display='block';
+}
+function hideSubNav(id){
+document.getElementById(id).style.display='none';
+}
+</script>

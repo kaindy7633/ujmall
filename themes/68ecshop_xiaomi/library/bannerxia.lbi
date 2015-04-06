@@ -1,0 +1,86 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <div class="wrap floor_ad_wrap mod_index_ad_floor global_loading" id="index_chuchuang">
+        <div class="big_pic">
+
+ <?php
+		 $GLOBALS['smarty']->assign('jinribituan',get_advlist('今日必团广告',1));
+	  ?>
+      {foreach from=$jinribituan item=ad name=index_image}
+	   <a href="{$ad.url}" target="_blank"><img src="{$ad.image}"/></a>
+      {/foreach} 
+        </div>
+        <div class="small_pic border_right">
+        <a class="up">
+        <strong>进口 • 海购</strong>
+		<em>樱桃爷爷500g仅85元</em>
+         <?php
+		 $GLOBALS['smarty']->assign('bannerxia01',get_advlist('banner下01',1));
+	  ?>
+         {foreach from=$bannerxia01 item=ad name=bannerxia01}
+			<img src="{$ad.image}"/>
+      {/foreach} 
+        </a>
+        <a class="down">
+        <strong>特产中国</strong>
+		<em>新疆枣1斤 9.9包邮</em>
+               <?php
+		 $GLOBALS['smarty']->assign('bannerxia02',get_advlist('banner下02',1));
+	  ?>
+    {foreach from=$bannerxia02 item=ad name=bannerxia02}
+			<img src="{$ad.image}"/>
+      {/foreach} 
+        </a>
+        </div>
+        <div class="small_pic">
+        <a class="up">
+        <strong>新人首单0元购</strong>
+		<em>新用户注册有礼</em>
+               <?php
+		 $GLOBALS['smarty']->assign('bannerxia03',get_advlist('banner下03',1));
+	  ?>
+    {foreach from=$bannerxia03 item=ad name=bannerxia03}
+			<img src="{$ad.image}"/>
+      {/foreach} 
+        </a>
+        <a class="down">
+        <strong>新品首发 0元试用</strong>
+		<em>智盒属于你的试听体验</em>
+               <?php
+		 $GLOBALS['smarty']->assign('bannerxia04',get_advlist('banner下04',1));
+	  ?>
+    {foreach from=$bannerxia04 item=ad name=bannerxia04}
+			<img src="{$ad.image}"/>
+      {/foreach} 
+        </a>
+        </div>
+        <div class="big_pic">
+               <?php
+		 $GLOBALS['smarty']->assign('bannerxia05',get_advlist('banner下05',1));
+	  ?>
+    {foreach from=$bannerxia05 item=ad name=bannerxia05}
+			<img src="{$ad.image}"/>
+      {/foreach} 
+        </div>
+        <div class="small_pic">
+        <a class="up">
+        <strong>就比京东低</strong>
+		<em>iPhone6 Plus 低200</em>
+               <?php
+		 $GLOBALS['smarty']->assign('bannerxia06',get_advlist('banner下06',1));
+	  ?>
+    {foreach from=$bannerxia06 item=ad name=bannerxia06}
+			<img src="{$ad.image}"/>
+      {/foreach} 
+        </a>
+        <a class="down">
+        <strong>萌宝</strong>
+		<em>绿盒子 ￥43起</em>
+       <?php
+		 $GLOBALS['smarty']->assign('bannerxia07',get_advlist('banner下07',1));
+	  ?>
+    {foreach from=$bannerxia07 item=ad name=bannerxia07}
+			<img src="{$ad.image}"/>
+      {/foreach} 
+        </a>
+        </div>
+        </div>

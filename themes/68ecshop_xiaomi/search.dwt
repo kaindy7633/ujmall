@@ -1,0 +1,147 @@
+<?php
+/* 代码增加_start Byjdy */
+$is_category_index=$GLOBALS['db']->getOne("select category_index from ". $GLOBALS['ecs']->table('category') ." where cat_id=". $GLOBALS['smarty']->_var['category']);
+if ( $is_category_index == '1' and !$_REQUEST['price_min'] and !$_REQUEST['price_max'] and !$_REQUEST['brand'] and !$_REQUEST['filter_attr'])
+{
+	require_once ("themes/". $GLOBALS['_CFG']['template'] ."/lib_category_index.php" );	
+}
+/* 代码增加_end Byjdy */
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$page_title}</title>
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+<link href="themes/68ecshop_xiaomi/css/global_site_simplify.css" rel="stylesheet" type="text/css">
+<link href="themes/68ecshop_xiaomi/css/search_table2.css" rel="stylesheet" type="text/css">
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+<link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="themes/68ecshop_xiaomi/js/libs/jquery18.js" ></script>
+{insert_scripts files='common.js,utils.js'}
+{insert_scripts files='jquery.json.js,transport.js'}
+</head>
+<body id="comParamId" data-param="{&quot;globalPageCode&quot;:&quot;YHD_SEARCH&quot;,&quot;currPageId&quot;:&quot;52&quot;}" class="w1200">
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+<div class="searchwrap wrap">
+<input id="csstype" name="csstype" value="simplify" type="hidden">
+<input id="searchword" value="" reqmode="0" type="hidden"><input id="searchCategory" value="20947" type="hidden">
+<input id="curCategoryIdToGlobal" value="20947" type="hidden">
+<input id="pflag" value="0" type="hidden">
+<input id="categoryIdForPms" value="20947" type="hidden">
+<input id="categoryIdForAdv" value="20947" type="hidden">
+<input id="matchCategoryIdForAdv" value="0" type="hidden">
+<input id="mandyRunable" value="0" type="hidden">
+<input id="ad_nextblockStartIndex" value="22" type="hidden">
+<input id="ad_currentPageno" value="0" type="hidden">
+<!--s 面包屑导航-->
+<!--<div style="height:44px;"></div>-->
+<div class="mod_search_crumb" data-tpa="SEARCH_MAIN_CRUMB">
+<div class="crumbSlide" style="margin:0px; margin-top:10px;">
+<div class="crumbClip">
+<!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem -->
+</div>
+
+<!--s 搜索结果数-->
+<small class="result_count">共{$pager.record_count}条</small>
+<!--e 搜索结果数-->
+</div>
+<!--s 面包屑导航-->
+  
+<div style="margin-bottom: 35px;" class="mod_search_guide clearfix" >
+<!-- 类目搜索-->
+<!--品牌-->
+   <!--{if $brands.1}-->
+<div class="classWrap">
+<div class="guide_box " id="pinpai" >
+<div class="guide_title"> <span>品牌</span> </div>
+<div class="guide_main"> <span class="arrow"></span>
+<ul class="guide_con clearfix" >
+     <!--{foreach from=$brands item=brand}-->
+           <li> <a href="{$brand.url}"> <span>{$brand.brand_name}</span> </a></li>        
+    <!--{/foreach}-->
+    </ul>
+</div>
+<div class="multiple_choice">
+<a href="#" class="more more_open" hidefocus="true" onclick="pclick1()" id="zhankaidiv">更多<i></i></a>
+<a href="#" class="more more_close"  style="display:none"  onclick="pclick2()" id="shousuodiv">收起<i></i></a>
+
+</div>
+</div>
+ <script>    
+	  var pp=document.getElementById('pinpai');     
+	   pp.style.height='34px' ;
+	        pp.style.overflow='hidden' ;      //点击显示全部
+	  
+	    function pclick1(){     var pp=document.getElementById('pinpai');     pp.style.height='60px';
+		document.getElementById('zhankaidiv').style.display="none";
+
+		document.getElementById('shousuodiv').style.display="block"
+		}
+		function pclick2(){     var pp=document.getElementById('pinpai');     pp.style.height='34px';
+		
+		document.getElementById('zhankaidiv').style.display="block";
+
+		document.getElementById('shousuodiv').style.display="none"
+		}
+		 </script>
+{/if}
+<!--{if $price_grade.1}-->
+<div class="guide_box ">
+<div class="guide_title"> <span>价格</span> </div>
+<div class="guide_main"> <span class="arrow"></span>
+<ul class="guide_con clearfix" id="jiage">
+ <!--{foreach from=$price_grade item=grade}-->
+     <li> <a href="{$grade.url}"> <span>{$grade.price_range}</span> </a> </li>
+         <!--{/foreach}-->
+</ul>
+</div>
+</div>
+{/if}
+<!--{foreach from=$filter_attr_list item=filter_attr}-->
+<div class="guide_box ">
+<div class="guide_title"> <span>{$filter_attr.filter_attr_name|escape:html}：</span> </div>
+<div class="guide_main"> <span class="arrow"></span>
+<ul class="guide_con clearfix" id="xiangguan">
+<!--{foreach from=$filter_attr.attr_list item=attr name=name}-->
+<li> <a href="{$attr.url}"> <span>{$attr.attr_value}</span> </a> </li>
+ <!--{/foreach}-->
+</ul>
+</div>
+</div>
+ <!--{/foreach}-->
+</div>
+</div>
+<div class="clearfix">
+<div class="layout_search_sidebar" style="margin-top:9px;">
+ <!-- #BeginLibraryItem "/library/hotchanpin.lbi" --><!-- #EndLibraryItem --> 
+ <!-- #BeginLibraryItem "/library/top10.lbi" --><!-- #EndLibraryItem --> 
+</div>
+<div class="layout_search_main">
+ <!-- #BeginLibraryItem "/library/seachgoods_list.lbi" --><!-- #EndLibraryItem --> 
+<!--s 分页-->
+ <!-- #BeginLibraryItem "/library/pages.lbi" --><!-- #EndLibraryItem --> 
+</div>
+</div>
+<!-- #BeginLibraryItem "/library/best_nei.lbi" --> <!-- #EndLibraryItem -->
+</div> </div>
+</div>
+<div id="scence_guide" style="clear:both;"></div>
+
+<!--底部浏览记录开始-->
+
+<!--底部浏览记录结束-->
+<!--footer开始-->
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --> <!-- #EndLibraryItem -->
+</div>
+
+
+ 
+</body></html>

@@ -1,0 +1,11 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <ul class="tag clearfix" data-tpc="3">
+            <?php
+ $this->assign('thiscid1', get_parent_id_tree(7));//调用父级分类的下级分类
+ ?>
+  <!--{foreach from=$thiscid1 item=list name=name}-->
+   {if $smarty.foreach.name.iteration <7} 
+ <A href="{$list.url}" target=_blank >{$list.name}</A>
+ {/if}
+  <!--{/foreach}-->
+        </ul>

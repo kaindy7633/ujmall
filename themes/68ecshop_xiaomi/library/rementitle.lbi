@@ -1,0 +1,16 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<dl class="cfl">
+				<dt>
+					热门分类：        
+				</dt>
+				<dd>
+                
+                 <!--{if $navigator_list.top}-->
+
+    <!-- {foreach name=nav_top_list from=$navigator_list.top item=nav} -->
+            <a href="{$nav.url}" <!-- {if $nav.opennew eq 1} --> target="_blank" <!-- {/if} -->>{$nav.name}</a>
+            <!-- {if !$smarty.foreach.nav_top_list.last} --> <span>|</span><!-- {/if} -->
+    <!-- {/foreach} -->
+   <!-- {/if} -->
+				</dd>
+			</dl>

@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<title>{$page_title}</title>
+<link rel="stylesheet" type="text/css" href="themesmobile/68ecshopcom_mobile/css/ecsmart.css"/>
+<link rel="stylesheet" type="text/css" href="themesmobile/68ecshopcom_mobile/css/group.css"/>
+<link rel="alternate" type="application/rss+xml" title="RSS|{$page_title}" href="{$feed_url}" />
+<script type="text/javascript" src="themesmobile/68ecshopcom_mobile/js/jquery.js"></script>
+<script type="text/javascript" src="themesmobile/68ecshopcom_mobile/js/ecsmart.js"></script>
+<script >
+var Tday = new Array();
+var daysms = 24 * 60 * 60 * 1000
+var hoursms = 60 * 60 * 1000
+var Secondms = 60 * 1000
+var microsecond = 1000
+var DifferHour = -1
+var DifferMinute = -1
+var DifferSecond = -1
+function clock(key)
+{
+   var time = new Date()
+   var hour = time.getHours()
+   var minute = time.getMinutes()
+   var second = time.getSeconds()
+   var timevalue = ""+((hour > 12) ? hour-12:hour)
+   timevalue +=((minute < 10) ? ":0":":")+minute
+   timevalue +=((second < 10) ? ":0":":")+second
+   timevalue +=((hour >12 ) ? " PM":" AM")
+   var convertHour = DifferHour
+   var convertMinute = DifferMinute
+   var convertSecond = DifferSecond
+   var Diffms = Tday[key].getTime() - time.getTime()
+   DifferHour = Math.floor(Diffms / daysms)
+   Diffms -= DifferHour * daysms
+   DifferMinute = Math.floor(Diffms / hoursms)
+   Diffms -= DifferMinute * hoursms
+   DifferSecond = Math.floor(Diffms / Secondms)
+   Diffms -= DifferSecond * Secondms
+   var dSecs = Math.floor(Diffms / microsecond)
+  
+   if(convertHour != DifferHour) a=DifferHour+"<em>天</em>";
+   if(convertMinute != DifferMinute) b=DifferMinute+"<em>时</em>";
+   if(convertSecond != DifferSecond) c=DifferSecond+"<em>分</em>";
+     d=dSecs+"<em>秒</em>";
+	 
+
+     if (DifferHour>0) {a=a}
+     else {a=''}
+      document.getElementById("leftTime" + key ).innerHTML = a + b + c + d; 
+}
+function clock11(key)
+{
+   var time = new Date()
+   var hour = time.getHours()
+   var minute = time.getMinutes()
+   var second = time.getSeconds()
+   var timevalue = ""+((hour > 12) ? hour-12:hour)
+   timevalue +=((minute < 10) ? ":0":":")+minute
+   timevalue +=((second < 10) ? ":0":":")+second
+   timevalue +=((hour >12 ) ? " PM":" AM")
+   var convertHour = DifferHour
+   var convertMinute = DifferMinute
+   var convertSecond = DifferSecond
+   var Diffms = Tday[key].getTime() - time.getTime()
+   DifferHour = Math.floor(Diffms / daysms)
+   Diffms -= DifferHour * daysms
+   DifferMinute = Math.floor(Diffms / hoursms)
+   Diffms -= DifferMinute * hoursms
+   DifferSecond = Math.floor(Diffms / Secondms)
+   Diffms -= DifferSecond * Secondms
+   var dSecs = Math.floor(Diffms / microsecond)
+  
+	if(convertHour != DifferHour) e="<strong class=hour>"+DifferHour+"</strong><span>&nbsp;:&nbsp;</span>";
+   if(convertMinute != DifferMinute) f="<strong class=min>"+DifferMinute+"</strong><span>&nbsp;:&nbsp;</span>";
+   if(convertSecond != DifferSecond) g="<strong class=sec>"+DifferSecond+"</strong><span>&nbsp;:&nbsp;</span>";
+     h="<strong class=msec>"+dSecs+"</strong>";
+	 
+
+	 
+	 
+     if (DifferHour>0) {e=e}
+     else {e=''}
+	 
+	 
+      document.getElementById("jstimerBox").innerHTML = e + f + g + h; 
+}
+
+</script>
+</head>
+<body style="background:#FFFfff;">
+
+<div id="header" class="header">
+     <a href="#menu" class="top_bt fl"></a>
+     <h1>限时团购</h1>
+    <a href="user.php"> <div class='user_btn'></div></a>
+</div>
+<div class="tmall-h5-v2" id="content"> 
+   <!-- #BeginLibraryItem "/library/group_ad.lbi" --><!-- #EndLibraryItem -->
+   <div style="height:0px;line-height:0px;clear:both"></div>
+  
+  <!--{foreach from=$goods_list item=goods name=name key=key}-->
+    {if $goods.goods_id}
+    {if $smarty.foreach.name.first }
+    <div style="padding:0 5px;">
+    <h2 class="saleTit"><span class="hide">今日特卖</span></h2>
+  
+<section class="saleBox clearfix">
+    <div class="goodsPic"><a href="{$goods.url}"><img src="{$goods.goods_img}" alt="{$goods.name|escape:html}"></a>
+    </div>
+    <div class="dealDetail">
+      <p>剩余时间</p>
+      <p class="timerBox" id="jstimerBox">
+      </p>
+      <p class="proPrice"><del>
+            {$goods.promote_price}
+</del>　<span class="price">{$goods.shop_price}</span></p>
+      <a href="{$goods.url}" class="redBtn">立即抢购</a>
+    </div>
+</section>
+</div>
+<script>
+Tday[{$key}] = new Date("{$goods.gmt_end_time}");  
+window.setInterval(function()    
+{clock11({$key});}, 1000);  
+</script>
+     <div style="height:20px;line-height:20px;clear:both"></div>
+  {/if}
+{/if}
+     <!--{/foreach}-->
+
+  
+    <!--{foreach from=$goods_list item=goods name=name key=key}-->
+    {if $goods.goods_id}
+    {if $smarty.foreach.name.iteration >1 }
+  <div class="product">
+    <div class="pro-inner" <!--{if $smarty.foreach.name.last}-->style="padding:2%;"<!--{/if}-->>
+      <div class="proImg-wrap"> <a href="{$goods.url}"> <img src="{$goods.goods_img}" alt="{$goods.name|escape:html}"/> </a> </div>
+      <div class="proInfo-wrap">
+        <a href="{$goods.url}" class="deal_link" target="_blank">
+          <p class="title_box"><span class="pro_tit">今日特卖</span> <span class="pink">{$goods.goods_brief|truncate:46}</span> </p>
+          <div class="proTitle"><a href="{$goods.url}">{$goods.goods_name}</a> </div>
+          <div class="price_box">
+          	<span class="pnum">
+            <!--{if $goods.promote_price neq "" } -->
+            {$goods.promote_price}
+            <!--{else}-->
+            {$goods.shop_price}
+            <!--{/if}-->
+            </span> 
+            <span class="shop_price">{$goods.shop_price}</span>
+            <span>{$goods.zhekou}折</span>  
+            <span class="go"><a href="{$goods.url}" target="_blank">去看看</a></span>
+          </div>
+          <div style="height:0px;line-height:0px;clear:both"></div>
+          <div class="numtimer_box">
+            <div class="time_box"  id="leftTime{$key}"></div>
+            <div class="num_box"> <span class="buy_num">{$goods.count1}</span>人已经购买&nbsp; </div>
+          </div>
+          </a>
+      </div>
+    </div>
+  </div>
+  <script>
+
+Tday[{$key}] = new Date("{$goods.gmt_end_time}");  
+window.setInterval(function()    
+{clock({$key});}, 1000);  
+</script>
+{/if}
+{/if}
+     <!--{/foreach}-->
+ <!-- #BeginLibraryItem "/library/pro_pages.lbi" --><!-- #EndLibraryItem -->
+ <!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+<nav id="menu">
+<ul class="Selected">
+<li><a href="javascript:void(0)" class="mm-subclose1">商品分类</a></li>
+<!--{foreach from=$categories item=cat}-->
+<li>
+<a href="{$cat.url}" >{$cat.name|escape:html}</a>
+						<ul >
+                         <!--{foreach from=$cat.cat_id item=child}-->
+							<li>
+								<a href="{$child.url}">{$child.name|escape:html}</a>
+                                {if $child.cat_id}
+								<ul>
+                                 <!--{foreach from=$child.cat_id item=childer}-->
+								 <li><a href="{$childer.url}">{$childer.name|escape:html}</a></li>
+								 <!--{/foreach}--> 
+								</ul>
+                                {/if}
+							</li>
+                             <!--{/foreach}-->
+                            
+</ul>
+</li>
+<!--{/foreach}--> 
+</ul>
+</nav>
+<script type="text/javascript" src="themesmobile/68ecshopcom_mobile/js/jquery.mmenu.js"></script>
+<script type="text/javascript">
+			$(function() {
+				$('nav#menu').mmenu();
+			});
+</script>
+</div>
+
+<!-- #BeginLibraryItem "/library/footer_nav.lbi" --><!-- #EndLibraryItem -->
+
+<script type="text/javascript" src="themesmobile/68ecshopcom_mobile/js/jquery.mmenu.js"></script>
+<script type="text/javascript">
+			$(function() {
+				$('nav#menu').mmenu();
+			});
+</script>
+</body>
+</html>

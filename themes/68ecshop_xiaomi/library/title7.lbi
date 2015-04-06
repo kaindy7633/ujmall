@@ -1,0 +1,17 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ <div class="mod_floor_title fushi">
+        <div data-tpc="1">
+        <a class="bt" target="_blank" href="category.php?id=63">保健、药品、成人用品</a>
+        </div>
+        <div class="keyword" data-tpc="63">
+         <?php
+ $this->assign('thiscid1', get_parent_id_tree(11));//调用父级分类的下级分类
+ ?>
+  <!--{foreach from=$thiscid1 item=list name=name}-->
+   {if $smarty.foreach.name.iteration >6} 
+ <A href="{$list.url}" target=_blank >{$list.name}</A>|
+ {/if}
+  <!--{/foreach}-->
+      
+        </div>
+        </div>

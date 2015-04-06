@@ -1,0 +1,10 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<strong style='padding-top:40px;'>特价商品</strong>
+<!--{foreach from=$promotion_goods item=goods name=name}-->
+{if $smarty.foreach.name.iteration < 3} 
+<a class="spikelnk" href="{$goods.url}" target="_blank"> 
+<p>{$goods.short_name|escape:html}</p>
+<label class="price">特价{$goods.promote_price}</label>
+<img alt="{$goods.name|escape:html}" src="{$goods.thumb}"/></a> 
+{/if} 
+<!--{/foreach}--> 

@@ -1,0 +1,76 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.banner-bg1{ background-color:#6fd4ff;}
+.banner-bg2{ background-color:#991721;}
+.banner-bg3{ background-color:#990000;}
+.banner-bg4{ background-color:#ff9933;}
+.banner-bg5{ background-color:#c1d3e9;}
+.banner-bg6{ background-color:#c20627;}
+.banner-bg7{ background-color:#ffad41;}
+.banner-bg8{ background-color:#006DB5;}
+</style>
+<script>
+      $(function(){
+		  $('#promo_show').mouseover(function(){
+			  	$('.show_pre,.show_next').show();
+				clearInterval(bannerTime);
+		 }).mouseout(function(){
+			 $('.show_pre,.show_next').hide();	
+			 bannerTime=setInterval(bannerPlay,3000)
+		})
+		  var lis=$('#lunboNum li').length;
+		  var num=0;
+		  $('.show_next').click(function(){
+			  num++;
+			  if(num>lis){
+				num=0;  
+			  }
+			  $('#slider li').eq(num).hide().fadeIn().siblings().hide();
+			  $('#lunboNum li').eq(num).addClass('cur').siblings().removeClass();
+		  }) 
+		   $('.show_pre').click(function(){
+			  num--;
+			  if(num<0){
+				num=lis-1;  
+			  }
+			 
+			  $('#slider li').eq(num).fadeIn().siblings().hide();
+			  $('#lunboNum li').eq(num).addClass('cur').siblings().removeClass();
+		  }) 
+		  $('#lunboNum li').mouseover(function(){
+			   //alert($(this).index());
+			$(this).addClass('cur').siblings().removeClass();
+			$('#slider li').eq($(this).index()).hide().fadeIn().siblings().hide(); 
+		  })
+		  function bannerPlay(){
+			  num++;
+			  if(num>lis-1){
+				num=0;  
+			  }
+			  $('#slider li').eq(num).hide().fadeIn().siblings().hide();
+			  $('#lunboNum li').eq(num).addClass('cur').siblings().removeClass();	  
+		  }
+		  var bannerTime=setInterval(bannerPlay,3000)
+	  })
+</script>
+<div id="promo_show" class="mod_promo_show">
+<div class="promo_wrapper" id="index_menu_carousel">
+<ol id="slider" class="clearfix">
+	 <!--{foreach from=$flash name=myflash item=flash}-->
+<li style="position: absolute; z-index: 0; display: none;" class="banner-bg{$smarty.foreach.myflash.iteration}">
+<a  class="big_pic global_loading" >
+<img id="lunbo_{$smarty.foreach.myflash.iteration}" src="{$flash.src}">
+</a>
+</li>
+  <!--{/foreach}-->
+</ol>
+</div>
+<div class="mod_promonum_show">
+<ul class="clearfix" id="lunboNum">
+  <!--{foreach from=$flash name=myflash item=flash}-->
+    <li flag="{$smarty.foreach.myflash.index" <!-- {if $smarty.foreach.myflash.iteration==4} -->class="cur"<!--{/if}--> href="javascript:void(0);"></li><!--{/foreach}-->
+</ul>
+</div>
+<a style="display: none; outline: medium none;" href="javascript:void(0);" class="show_next"><s></s></a>
+<a style="display: none;" href="javascript:void(0);" class="show_pre"><s></s></a>
+</div>

@@ -1,0 +1,50 @@
+{if $booking}
+<!-- {foreach from=$booking item=book} -->
+<div class='spp5_box clearfix' style="box-shadow:none; background-color:#F3F4F6;" id="qh{$book.rec_id}">
+   <div class='spp5_box2b spp_5le clearfix'>
+       <div class='spp5_uboxa' style="width:30%;">
+      商品名：
+       </div>
+       <div class='spp5_uboxb'>
+       
+		<input type="text" readonly value="{$book.goods_name}" style="width:60%;">
+       </div>
+   </div>
+	   <div class='spp5_box2b spp_5le clearfix'>
+       <div class='spp5_uboxa' style="width:30%;">
+       数量：
+       </div>
+       <div class='spp5_uboxb'>
+       <input type="text" readonly value="{$book.goods_number}" style="width:60%;">
+       </div>
+   </div>
+   <div class='spp5_box2b spp_5le clearfix'>
+       <div class='spp5_uboxa' style="width:30%;">
+       时间：
+       </div>
+       <div class='spp5_uboxb'>
+       <input name="" readonly type="tel" value="{$book.booking_time}" style="width:60%;">
+       </div>
+   </div>
+   <div class='spp5_box2b spp_5le clearfix'>
+       <div class='spp5_uboxa' style="width:30%;">
+       备注：
+       </div>
+       <div class='spp5_uboxb'>
+       <input name="" readonly type="text" value="{$book.goods_desc}" style="width:60%;">
+       </div>
+   </div>    
+   <div class='spp5_box2b spp5_box2b2 clearfix'>
+       <div class='spp5_uboxa spp5_uboxa2'>
+      <input name="" type="button" value="删除" class="quehuo_button1" onclick="delquehuo({$book.rec_id})" >
+       </div>
+   </div> 
+<!-- {/foreach} -->
+</div>
+{else}
+{if $page==1}
+<div class='spp5_box clearfix' style="box-shadow:none; background-color:#F3F4F6;">
+您还没有登记记录哦！
+</div>
+{/if}
+{/if}

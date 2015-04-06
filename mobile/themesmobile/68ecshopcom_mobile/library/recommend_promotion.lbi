@@ -1,0 +1,45 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style>
+.scroll_promotion { text-align: center;margin:0px 8px; }
+.scroll_promotion .hd { height: 20px; overflow: hidden; font-size: 0; position:absolute; top:22px; right:0px; }
+.scroll_promotion .hd ul { display: inline-block; padding-top: 5px; }
+.scroll_promotion .hd li { display: inline-block; width: 6px; height: 6px; background: #ffffff; margin: 0 1px; vertical-align: top; overflow: hidden; -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px; }
+.scroll_promotion .hd .on { background: #FFD05C; }
+</style>
+
+{if $promotion_goods}
+<section class="index_floor">
+<div class="floor_body" >
+<h2> <span class="title_l"></span><span class="title_r"></span> 限时抢购 </h2>
+<div id="scroll_promotion" class="scroll_promotion">
+<div class="bd">
+<ul>
+  {foreach from=$promotion_goods item=goods name=promotion_goods}
+  <li> <a href="{$goods.url}" title="{$goods.name|escape:html}">
+    <div class="products_kuang"> <img src="{$option.static_path}{$goods.thumb}"> </div>
+    <div class="goods_name"> {$goods.name} </div>
+    <span class="price">{if $goods.promote_price}{$goods.promote_price}{else}{$goods.shop_price}{/if}</span> </a></li>
+  
+  <!--{if $smarty.foreach.promotion_goods.iteration%3 eq 0 && $smarty.foreach.promotion_goods.iteration neq $smarty.foreach.promotion_goods.total}-->
+</ul>
+<ul>
+<!--{/if}--> 
+{/foreach}
+</div>
+<div class="hd">
+  <ul>
+  </ul>
+</div>
+</div>
+</div>
+</section>
+{/if} 
+<script type="text/javascript">
+		TouchSlide({ 
+			slideCell:"#scroll_promotion",
+			titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+			effect:"leftLoop", 
+			autoPage:true, //自动分页
+			//switchLoad:"_src" //切换加载，真实图片路径为"_src" 
+		});
+	</script>

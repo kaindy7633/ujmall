@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+
+	<title>{$page_title}</title>
+	<meta name="Keywords" content="{$keywords}" />
+	<meta name="Description" content="{$description}" />
+<script type="text/javascript" src="themesmobile/68ecshopcom_mobile/js/jquery.js"></script>
+	<link rel="stylesheet" href="themesmobile/68ecshopcom_mobile/css/ecsmart.css">
+</head>
+<body>
+
+<header id="header" class='header'>
+<h1>系统提示</h1>
+<a href="javascript:history.back(-1)" class="back">返回</a>
+</header>
+
+
+<div id="tbh5v0">
+  <div class="screen-wrap fullscreen login">
+
+	<div class="content ptop0" style="margin-top:10px; margin-bottom:10px;">
+		
+		<div class="con-ct radius shadow fo-con">
+			<ul class="ct-list">
+            <li style="text-align:center">{$message.content}</li>
+			{if $message.url_info}
+			{foreach from=$message.url_info key=info item=url}
+			<li style="text-align:center"><a href="{$url}" class="link"><span>{$info}</span></a></li>
+			{/foreach}
+			{/if}
+			</ul>
+		</div>
+	</div>
+	<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+</div>
+</div>
+  <!-- #BeginLibraryItem "/library/footer_nav.lbi" --><!-- #EndLibraryItem -->
+
+
+
+</body>
+
+</html>

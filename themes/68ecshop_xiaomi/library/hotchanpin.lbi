@@ -1,0 +1,15 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $hot_goods} -->
+<div id="hotProducts" style="" class="mod_search_sidlist mb clearfix" data-tpa="SEARCH_LEFT_HOT_PRODUCTS"><h2 class="search_title">热卖推荐</h2>
+<div class="sidlist_box"><ul>
+     <!--{foreach from=$hot_goods item=goods name=hot_goods}-->
+<li id="ad_36003529" inshop="1"><a target="_blank" onclick="" href="{$goods.url}" class="pro_img_big"><img src="{$goods.thumb}" title="" height="160" width="160"></a><a class="tip" id="promotionLeft_36003529" target="_blank" title="" href="{$goods.url}"></a><p class="price"><span class="color_red"><!-- {if $goods.promote_price neq ""} -->
+            {$goods.promote_price}
+            <!-- {else}-->
+            {$goods.shop_price}
+            <!--{/if}--></span><del>{$goods.market_price}</del></p><p class="name"><a target="_blank" onclick="" href="" >{$goods.short_style_name} </a></p><p class="comment" style="height:auto; margin-top:2px;"> <i></i> <a id="cmt_30687239" cmct="362" onclick="" target="_blank" href="#goodsComment">{$goods.evaluation}</a></p></li>
+   <!--{/foreach}-->
+</ul></div></div>
+<!-- {/if} -->
+
+

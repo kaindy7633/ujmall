@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$page_title}</title>
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+<link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
+{* 包含脚本文件 *}
+{insert_scripts files='common.js'}
+<script type="text/javascript" src="themes/68ecshop_xiaomi/js/libs/jquery18.js" ></script>
+   {insert_scripts files='jquery.json.js,transport.js'}
+   <script type="text/javascript">
+/*<![CDATA[*/
+var needChioce = false;
+var default_word = "";
+/*]]>*/
+</script> 
+</head>
+<body>
+
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+<div class="help-box" style="width:1200px;">
+ <div style="line-height:35px"><!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem --></div>
+<form action="{$search_url}" name="search_form" method="post" class="article_search" style="text-align:right;">
+        <input name="keywords" type="text" id="requirement" value="{$search_value}" class="inputBg" />
+        <input name="id" type="hidden" value="{$cat_id}" />
+        <input name="cur_url" id="cur_url" type="hidden" value="" />
+        <input type="submit" value="{$lang.button_search}" class="bnt_blue_1" />
+      </form>
+      <div style="height:0px; line-height:0px; clear:both;"></div>
+  <!--left start-->
+  <div class="help-l" style="width:205px">
+   <!-- #BeginLibraryItem "/library/article_category_tree.lbi" --><!-- #EndLibraryItem -->
+
+    <!--AD end-->
+  </div>
+  <!--left end-->
+  <!--right start-->
+  <div class="proDescrip_con" style=" width:980px;">
+ 
+    <div >
+        
+<div class="art_cat_box" style="background:#FFF;">
+      <table width="100%" border="0" cellpadding="5" cellspacing="0" style="border:#CCC 1px solid; height:40px; line-height:40px;">
+      <tr style="height:40px; line-height:40px;">
+        <th style="background:#fafafa">{$lang.article_title}</th>
+          <th style="background:#fafafa">{$lang.article_author}</th>
+          <th style="background:#fafafa">{$lang.article_add_time}</th>
+        </tr>
+      <!-- {foreach from=$artciles_list item=article} -->
+      <tr>
+        <td><a style="text-decoration:none" href="{$article.url}" title="{$article.title|escape:html}" class="f6">{$article.short_title}</a></td>
+          <td align="center">{$article.author}</td>
+          <td align="center">{$article.add_time}</td>
+        </tr>
+      <!-- {/foreach} -->
+    </table>
+    </div>
+    </div>
+
+  <div class="blank5"></div>
+  <!-- #BeginLibraryItem "/library/pages.lbi" --><!-- #EndLibraryItem -->
+  </div>  
+  <!--right end-->
+  <div style="height:0px; line-height:0px; clear:both;"></div>
+</div>
+
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+<!--js start-->
+ <!--无页面级头部js时, 全局头部js下移-->
+  		<script type="text/javascript" src="themes/68ecshop_xiaomi/js/global_site_top.js" charset="utf-8"></script>
+<script type="text/javascript" src="themes/68ecshop_xiaomi/js/global_site_bottom.js" charset="utf-8"></script>
+<!--js end-->
+<script type="text/javascript">
+    
+        XIAOMI.GLOBAL_CONFIG = {
+        }
+XIAOMI.app.header.init();   
+   
+     
+     
+</script>
+</body>
+<script type="text/javascript">
+document.getElementById('cur_url').value = window.location.href;
+</script>
+</html>

@@ -1,0 +1,33 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<?php
+	$index=0;
+?>
+<!-- {if $top_goods} -->
+<div id="hotSale" class="mod_search_sidlist mb" style="">
+
+    <h2 class="search_title">销量排行榜</h2>
+    <div class="sidlist_box sidlist_slide">
+        <ul>
+         <!-- {foreach name=top_goods from=$top_goods item=goods}--> 
+         <?php
+			$index=$index+1;
+              $GLOBALS['smarty']->assign('index', $index);
+		?>
+            <li productid="9497" style="margin-left: 45px;">
+                <a class="pro_img_small"  href="{$goods.url}">
+                    <img width="90" height="90" src="{$goods.thumb}"></img>
+                    <sup class="nub{$index}" style="display: block;"></sup>
+                </a>
+                <p class="price">
+                    <span class="color_red">{$goods.shop_price}</span>
+                </p>
+                <p class="name"><a  href="{$goods.url}">{$goods.short_name}</a></p>
+                <u style="right: 52px;"></u>
+            </li>
+             <!--{/foreach}-->
+		</ul>
+	</div>
+ </div>
+<!-- {/if} -->
+
+

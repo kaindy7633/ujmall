@@ -1,0 +1,9 @@
+<div class="dian_bg padding1 ub-ac m_t0_8 ulev-4" >
+<div class="ulev-app2 dian_title ub" style="background:none; font-weight:lighter">配送说明</div>	
+	<div class="c-wh umar-at4 uinn-a1 t-666666">
+		<div class="ub ub-ac ps_h">
+		<label><font class="blue">快递运输：</font>{$total.shipping_desc}
+</label>
+		</div>
+</div>
+</div>

@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" /><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$page_title}</title>
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+<link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="themes/68ecshop_xiaomi/css/tuangou_detail.min.css" type="text/css" media="screen" charset="utf-8" />
+<script type="text/javascript" src="themes/68ecshop_xiaomi/js/script.js" ></script>
+<script type="text/javascript" src="themes/68ecshop_xiaomi/js/libs/jquery18.js" ></script>
+<script language="javascript"> 
+<!--
+/*屏蔽所有的js错误*/
+function killerrors() { 
+return true; 
+} 
+window.onerror = killerrors; 
+//-->
+</script>
+{* 包含脚本文件 *}
+{insert_scripts files='jquery.json.js,transport.js'}
+{insert_scripts files='common.js'}
+<script type="text/javascript" src="themes/68ecshop_xiaomi/js/libs/jquery18.js" ></script>
+</head>
+<body>
+<script type="text/javascript">(function(){var screenWidth=window.screen.width;if(screenWidth>=1280){document.body.className="root_body";window.LOAD=true;}else{window.LOAD=false;}})()</script>
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+<div class="tugouWrap w">
+	<div class="tg_pos" style="line-height:35px; padding-bottom:0px;"><!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem --></div>
+	<div class="tg_dtl_wrap w clearfix" style="width:1190px;">
+		
+		<div class="tg_dtl_Left Left" style="float:left">
+			<div class="tg_dtl_main">
+				<div class="dtl_main_top clearfix">
+					<h1 class="Left" style="float:left"><a href="goods.php?id={$goods.goods_id}" style="color: #333;font-size: 22px;line-height: 30px;font-weight: normal;font-family: "microsoft yahei";overflow: hidden;text-overflow: ellipsis;" title="{$goods.goods_name}" target="_blank">{$goods.goods_name}</a></h1><p class="Right" style="float:right">编号：{$goods.goods_sn}</p>
+				</div>
+                 <form action="javascript:addToCart({$goods.goods_id})" method="post" name="ECS_FORMBUY" id="ECS_FORMBUY" >
+				<div class="dtl_main_info clearfix">
+					<div class="main_infoL Left" style="float:left">
+                      <!-- {if $goods.goods_number eq 0} -->
+                      <a  class="infobnr end" onclick="javascript:void(0);" href="javascript:;">
+ <!-- {else} -->
+						<a  class="infobnr qianggou" onclick="javascript:addToCart({$goods.goods_id})" href="javascript:;">
+                        {/if}
+                        <!--{if $goods.is_promote and $goods.gmt_end_time } 促销-->
+{$goods.promote_price}
+<!--{/if}--></a>
+						<div class="numbox" ><span>我要买：</span>
+                        <script language="javascript" type="text/javascript">  function goods_cut(){  var num_val=document.getElementById('number');  var new_num=num_val.value;  var Num = parseInt(new_num);  if(Num>1)Num=Num-1;  num_val.value=Num;  }  function goods_add(){  var num_val=document.getElementById('number');  var new_num=num_val.value;  var Num = parseInt(new_num);  Num=Num+1;  num_val.value=Num;  } </script>
+                        <a onclick="goods_cut();changePrice();" class="jian" href="javascript:;"><b></b></a><input name="number" type="text" class="val" id="number" value="1" size="4" onblur="changePrice();"/><a class="jia" onclick="goods_add();changePrice();" href="javascript:;"><b></b></a></div>
+						<div class="infoprc">
+							<span>原价<br/><del style="font-family:Arial, Helvetica, sans-serif;">¥{$goods.shop_price}</del></span>
+							<span class="line">折扣<br/><b>{$zhekou}折</b></span>
+							<span class="line">节省<br/><b>{$jiesheng}</b></span>
+						</div>
+                        {if $$order_num neq 0}
+						<div class="buyed">已团购 <b>{$order_num}</b> <span>件</span><br/>仅剩<strong>{$shengyu}</strong>件宝贝，请尽快抢购！</div>
+                        {else}
+                        <div class="buyed">已团购 <b>{$order_num}</b> <span>件</span><br/>仅剩<strong>{$shengyu}</strong>件宝贝，再看看其它宝贝！</div>
+                        {/if}
+                        
+
+						<div class="timebox"><i></i>
+                        <span id="leftTime"  class="timer">{insert_scripts files='lefttime.js'}{$lang.please_waiting}</span>
+                         </div>
+	
+					</div>
+					<div class="main_infoR Right" style="float:right">
+						<p><a href="javascript:void(0);" target="_blank" title="" ><img src="{$goods.goods_img}"width="400" height="400" style="display:block; margin:0 auto;"/></a></p>
+						<div class="infoshare clearfix"	>
+							<div class="Right" style="float:right;">
+								<!-- Baidu Button BEGIN -->
+<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
+<a href="javascript:void(0)" style="width:50px; background:none;">分享到：</a>
+<a class="bds_qzone"></a>
+<a class="bds_tsina"></a>
+<a class="bds_tqq"></a>
+<a class="bds_renren"></a>
+<a class="bds_t163"></a>
+<span class="bds_more"></span>
+<a class="shareCount"></a>
+</div>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=603029" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->
+							</div>
+							
+						</div>
+					</div>
+				</div>
+                </form>
+			</div>
+			
+			<div class="tg_dtl_box">
+				<div class="title"><b class="f14">本单详情</b></div>
+				<div class="content infos">
+									
+				{$goods.goods_desc}	
+										
+				</div>
+			</div>
+			
+
+			
+			<div class="tg_dtl_box">
+				<div class="title"><b class="f14">宝贝评价</b></div>
+				<div  class="content pingjia" style="padding:10px;">
+						 <!-- #BeginLibraryItem "/library/comments.lbi" --> {insert_scripts files='transport.js,utils.js'}
+            <div id="ECS_COMMENT"> {* ECSHOP 提醒您：动态载入comments_list.lbi，显示评论列表和评论表单 *}{insert name='comments' type=$type id=$id}</div>
+            <!-- #EndLibraryItem --> 
+				</div>
+			</div>						
+		</div>
+		
+		
+		<div class="tg_dtl_Right Right" style="float:right;">
+			
+			<div class="tg_dtlR">
+				<h2 style="padding: 6px 0px 6px 16px;color: #333;font-size: 14px;line-height: 16px;">更多精彩团购</h2>
+				<ul class="list">
+                <!-- {if $promotion_goods} -->
+          <!--{foreach from=$promotion_goods key=key item=goods name="promotion_foreach"}-->
+								<li>
+							<p><a href="pro_goods.php?id={$goods.id}" title="{$goods.name|escape:html}" target="_blank"><img src="{$goods.thumb}" width="180" height="118" alt="{$goods.name|escape:html}"/></a></p>
+							<p class="name"><a href="/tuangou/info-28568.html" title="{$goods.name|escape:html}" target="_blank">{$goods.name}</a></p>
+							<p class="tprc">团购价:<span class="yen"> <!-- {if $goods.promote_price neq ""} -->
+                {$goods.promote_price}
+                <!-- {else}-->
+                {$goods.shop_price}
+                <!-- {/if} --></span></p>
+							<p class="prc clearfix"><span class="Left">原价:<del class="yen">{$goods.shop_price}</del></span><span class="Right" style="margin-left:10px;">已团购<b>{$goods.valid_goods}</b>件</span></p>
+						</li>
+                      <!--{/foreach}-->
+          <!-- {/if} -->    
+                        
+                        
+														</ul>
+			</div>
+			
+			
+			
+				
+		</div>
+		
+	</div>
+</div>
+
+      <div style="background:#fff"><!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem --> </div>
+      <!--js start-->
+ <!--无页面级头部js时, 全局头部js下移-->
+  	
+<script type="text/javascript" src="themes/68ecshop_xiaomi/js/global_site_bottom.js" charset="utf-8"></script>
+<!--js end-->
+</body>
+<script type="text/javascript">
+var goods_id = {$goods_id};
+var goodsattr_style = {$cfg.goodsattr_style|default:1};
+var gmt_end_time = {$promote_end_time|default:0};
+{foreach from=$lang.goods_js item=item key=key}
+var {$key} = "{$item}";
+{/foreach}
+var goodsId = {$goods_id};
+var now_time = {$now_time};
+
+<!-- {literal} -->
+onload = function(){
+  changePrice();
+  fixpng();
+  try { onload_leftTime(); }
+  catch (e) {}
+}
+
+/**
+ * 点选可选属性或改变数量时修改商品价格的函数
+ */
+function changePrice()
+{
+  var attr = getSelectedAttributes(document.forms['ECS_FORMBUY']);
+  var qty = document.forms['ECS_FORMBUY'].elements['number'].value;
+
+  Ajax.call('goods.php', 'act=price&id=' + goodsId + '&attr=' + attr + '&number=' + qty, changePriceResponse, 'GET', 'JSON');
+}
+
+/**
+ * 接收返回的信息
+ */
+function changePriceResponse(res)
+{
+  if (res.err_msg.length > 0)
+  {
+    alert(res.err_msg);
+  }
+  else
+  {
+    document.forms['ECS_FORMBUY'].elements['number'].value = res.qty;
+
+    if (document.getElementById('ECS_GOODS_AMOUNT'))
+      document.getElementById('ECS_GOODS_AMOUNT').innerHTML = res.result;
+  }
+}
+
+<!-- {/literal} -->
+
+
+</script>
+</html>

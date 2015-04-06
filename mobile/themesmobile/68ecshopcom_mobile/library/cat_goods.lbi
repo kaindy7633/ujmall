@@ -1,0 +1,60 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+{if $best_goods}
+<section class="index_floor">
+<div class="floor_body ">
+
+<h2>
+<span class="title_l"></span><span class="title_r"></span><a href="{$goods_cat.url}" class="more"></a>
+{$goods_cat.name|escape:html}
+</h2>
+
+<ul class="clearfix">
+	{foreach from=$cat_goods item=goods name=cat_goods}
+                   
+                    <li style="visibility: visible;">
+                        <a href="{$goods.url}" title="{$goods.name|escape:html}">
+                         <div class="products_kuang">
+                        <img src="{$option.static_path}{$goods.thumb}">
+                   
+                         </div>
+                       <div class="goods_name">
+                     {$goods.short_name}
+                        </div>
+                         <span class="price">{if $goods.promote_price}{$goods.promote_price}{else}{$goods.shop_price}{/if}</span> 
+                        </a>
+                        
+                    </li>
+               
+                    {/foreach}
+                    
+<li></li>
+<li></li>
+</ul>
+
+
+<div class="floor_key clearfix">
+                <a href="category.php?id=4">
+            综合通用        </a>
+                <a href="category.php?id=2">
+            家电数码        </a>
+                <a href="category.php?id=1">
+            服装鞋包        </a>
+                <a href="category.php?id=3">
+            英文外贸        </a>
+                <a href="category.php?id=10">
+            美容护肤        </a>
+                <a href="category.php?id=7">
+            食品保健        </a>
+                <a href="category.php?id=11">
+            珠宝饰品        </a>
+                <a href="category.php?id=12">
+            鲜花礼品        </a>
+                <a href="category.php?id=8">
+            团购模板        </a>
+                <a href="category.php?id=44">
+            系统软件        </a>
+                    </div>
+</div>
+</section>
+
+{/if}

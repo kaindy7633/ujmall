@@ -1,0 +1,29 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--翻页 start-->
+<form name="selectPageForm" action="{$smarty.server.PHP_SELF}" method="get">
+<!-- {if $pager.page_count neq 1} -->
+<div class="mod_turn_page clearfix mt20" style="display: block;">
+
+<div class="turn_page clearfix" id="turnPageBottom">
+<!--{foreach from=$pager.page_number key=key item=item}-->
+<!-- {if $pager.page eq $key} -->
+<span class="page_cur">{$key}</span>
+<!-- {else} -->
+<a href="{$item}">{$key}</a>
+<!-- {/if} -->
+<!--{/foreach}-->
+<a  href="{$pager.page_next}" class="page_next">{$lang.page_next}<i></i></a>
+</div>
+</div>
+<!-- {/if} -->
+</form>
+<script type="Text/Javascript" language="JavaScript">
+<!--
+{literal}
+function selectPage(sel)
+{
+  sel.form.submit();
+}
+{/literal}
+//-->
+</script> 

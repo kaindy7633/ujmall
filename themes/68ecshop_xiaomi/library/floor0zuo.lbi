@@ -1,0 +1,30 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <h3 class="clearfix">
+        <a target="_blank">名品特卖<i></i></a>
+        <a target="_blank">今日大牌<i></i></a>
+    </h3>
+    <div class="img_sort clearfix">
+        <a target="_blank" ><img src="../images/01.png"></img>
+            <p>服饰</p>
+        </a>
+         <a target="_blank" >
+            <img src="../images/02.png"></img>
+            <p>鞋包</p>
+        </a>
+        <a target="_blank" >
+            <img src="../images/03.png"></img>
+            <p>运动</p>
+        </a>
+        <a target="_blank" >
+            <img src="../images/04.png"></img>
+            <p>亲子</p>
+        </a>
+        <a target="_blank" >
+            <img src="../images/05.jpg"></img>
+            <p>轻奢</p>
+        </a>
+       <a target="_blank" >
+            <img src="../images/06.png"></img>
+            <p>美妆</p>
+        </a>
+    </div>

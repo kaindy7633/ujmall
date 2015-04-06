@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$page_title}</title>
+<!-- TemplateEndEditable --><!-- TemplateBeginEditable name="head" --><!-- TemplateEndEditable -->
+<!--js start-->
+<script type="text/javascript">
+var URLPrefix = {"cms_domain_yaowang":"http://www.111.com.cn","shop":"http://shop.1mall.com","busystock":"http://gps.yihaodian.com","yihaomall_groupon":"http://t.1mall.com","pms":"http://pms.yhd.com","my_statics":"http://image.yihaodianimg.com/statics","passportmall":"https://passport.1mall.com","b2b":"http://b2b.yhd.com","yaowang_product_detail_url":"http://www.111.com.cn","yihaodian":"http://www.yhd.com","mallImgDomain":".yihaodianimg.com","search":"http://list.yhd.com","sitedomain":".yhd.com","yiwang":"http://www.yiwang.cn","union":"http://union.yhd.com","search_1mall":"http://www.1mall.com/ctg","interfaceUrl":"http://interface.yhd.com","tracker":"tracker.yhd.com","productDetailHost":"http://www.yhd.com","central":"http://www.yhd.com","yihaodian_product_detail_url":"http://item.yhd.com","bbs":"http://bbs.yihaodian.com","footFriendLink":"http://www.yhd.com/friendlink/index.do","centralShop":"http://shop.yhd.com","yaowang":"http://www.111.com.cn","isCmsOpenLpDetail":"true","uploadPostUrl":"http://upload.yihaodian.com/upload/UploadAction","image":"http://image.yihaodian.com","yihaomall_product_detail_url":"http://item.1mall.com","yaowang_groupon":"http://t.111.com.cn","my":"http://my.yhd.com","search_keyword":"http://search.yhd.com","mymall":"http://my.1mall.com","cms_domain_yihaodian_home":"http://cms-home.yhd.com","selfroot":"http://www.yhd.com","cms_domain_yihaomall":"http://cms.1mall.com","yiwangauth":"http://mall.yiwang.cn","sitedomainmall":".1mall.com","centralImgDomain":".yihaodianimg.com","passport":"https://passport.yhd.com","yihaodian_groupon":"http://t.yhd.com","cms_domain_yihaodian":"http://cms.yhd.com","statics":"http://image.yihaodianimg.com/static-cms/front-cms","search_yhd":"http://list.yhd.com","mall":"http://www.1mall.com"};
+var headerType="base";
+var favorite="1号店，只为更好的生活";
+var hostUrl="www.yhd.com";
+var httpUrl="http://www.yhd.com";
+var no3wUrl="yhd.com";
+var simpleUrl="yhd";
+var chineseUrl="1号店";
+var imagePath="http://image.yihaodianimg.com/static-cms/front-cms/global/images";
+var currSiteId=1;
+var currBsSiteId=1;
+var currSiteType=1;
+var siteStyle=0;
+var siteFlag=1;
+var currDomain="http://www.yhd.com";
+var oppositeDomain="http://www.yhd.com";
+var busystock = "http://gps.yihaodian.com";
+var multiSearch="true";
+var globalShowMarketPrice="0";
+var isIndex = 0;
+var currVersionNum= 1188499;
+var projectVersionNum = "0";
+var currProvinceId=16;
+var lazyLoadImageObjArry = lazyLoadImageObjArry || [];
+var isFixTopNav = false
+var hotwordReadAdv = true;
+var _globalIsUseAdHotWords = true;
+
+var globalSearchSelectFlag = "1";
+var globalSearchHotkeywordsFlag = "1";
+var globalTopPrismFlag = "1";
+var _globalSpmDataModelJson = {};
+</script>
+<!--js end-->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+<link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
+{* 包含脚本文件 *}
+{insert_scripts files='common.js'}
+<script type="text/javascript" src="themes/68ecshop_xiaomi/js/libs/jquery18.js" ></script>
+   {insert_scripts files='jquery.json.js,transport.js'}
+   <script type="text/javascript">
+/*<![CDATA[*/
+var needChioce = false;
+var default_word = "";
+/*]]>*/
+</script> 
+</head>
+<body>
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+
+  <!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem -->
+
+<div class="block clearfix">
+  <!--left start-->
+  <div class="proDescrip_side">
+    <!-- TemplateBeginEditable name="左边区域" -->
+  
+    <!-- #BeginLibraryItem "/library/category_tree.lbi" --><!-- #EndLibraryItem -->
+    <!-- TemplateEndEditable -->
+    <div class="blank"></div>
+    <div id="ECS_PRICE_LIST">
+    <!-- #BeginLibraryItem "/Library/snatch_price.lbi" --><!-- #EndLibraryItem -->
+    </div>
+    
+    <div class="blank5"></div>
+    <!-- TemplateBeginEditable name="左边广告区域（宽200px）" -->
+    <!-- TemplateEndEditable -->
+    <!--AD end-->
+    <!-- #BeginLibraryItem "/library/history.lbi" --><!-- #EndLibraryItem -->
+  </div>
+  <!--left end-->
+  <!--right start-->
+  <div class="proDescrip_con">
+   <div class="box">
+   <div class="box_1">
+    <h3><span>{$lang.treasure_info}</span></h3>
+    <div class="boxCenterList">
+      <ul class="group clearfix">
+     <li class="f_l">
+      <a href="{$snatch_goods.url}"><img src="{$snatch_goods.goods_thumb}" alt="{$snatch_goods.goods_name|escape:html}" width="160" height="160" /></a>
+      </li>
+    <li class="f_r">
+       {insert_scripts files='lefttime.js'}
+     <a href="{$snatch_goods.url}"><strong>{$snatch_goods.goods_name|escape:html}</strong></a><br />
+     {$lang.shop_price} <font class="shop">{$snatch_goods.formated_shop_price}</font><br />
+     {$lang.market_price} <font class="market">{$snatch_goods.formated_market_price}</font> <br />
+     {$lang.residual_time} <font color="red"><span id="leftTime">{$lang.please_waiting}</span></font><br />
+     {$lang.activity_desc}：<br />{$snatch_goods.desc|escape:html|nl2br}
+      </li>
+      </ul>
+    </div>
+   </div>
+  </div>
+   <div class="blank5"></div>
+   <div class="box">
+   <div class="box_1">
+    <h3><span>{$lang.activity_intro}</span></h3>
+    <div class="boxCenterList">
+    {$snatch_goods.snatch_time}<br />
+    {$lang.price_extent}{$snatch_goods.formated_start_price} - {$snatch_goods.formated_end_price} <br />
+    {$lang.user_to_use_up}{$snatch_goods.cost_points} {$points_name}<br />
+    {$lang.snatch_victory_desc}<br />
+    <!--{if $snatch_goods.max_price neq 0}-->    {$lang.price_less_victory}{$snatch_goods.formated_max_price}，{$lang.price_than_victory}{$snatch_goods.formated_max_price}，{$lang.or_can}{$snatch_goods.formated_max_price}{$lang.shopping_product}。
+    <!--{else}-->
+    {$lang.victory_price_product}
+    <!--{/if}-->
+    </div>
+   </div>
+  </div>
+  <div class="blank5"></div>
+  <div id="ECS_SNATCH">
+    <!-- #BeginLibraryItem "/Library/snatch.lbi" --><!-- #EndLibraryItem -->
+    </div>
+  </div>
+  <!--right end-->
+</div>
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+<script type="text/javascript">
+var gmt_end_time = {$snatch_goods.gmt_end_time|default:0};
+var id = {$id};
+{foreach from=$lang.snatch_js item=item key=key}
+var {$key} = "{$item}";
+{/foreach}
+{foreach from=$lang.goods_js item=item key=key}
+var {$key} = "{$item}";
+{/foreach}
+<!-- {literal} -->
+
+onload = function()
+{
+  try
+  {
+    window.setInterval("newPrice(" + id + ")", 8000);
+    onload_leftTime();
+  }
+  catch (e)
+  {}
+}
+<!-- {/literal} -->
+</script>
+ <script type="text/javascript" src="themes/68ecshop_xiaomi/js/global_site_top.js" charset="utf-8"></script>
+<script type="text/javascript" src="themes/68ecshop_xiaomi/js/global_site_bottom.js" charset="utf-8"></script>
+<script type="text/javascript">
+    
+        XIAOMI.GLOBAL_CONFIG = {
+        }
+XIAOMI.app.header.init();   
+   
+     
+     
+</script>
+</html>

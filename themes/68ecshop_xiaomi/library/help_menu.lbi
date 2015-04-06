@@ -1,0 +1,35 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<style type="text/css">
+
+.help_menu {}
+.help_menu .help_con{ border:1px solid #FF6F3D}
+.help_menu .title { background:#FF6F3D; height:40px; text-indent:20px; font-size:14px; font-weight:bold; color:#FFF; text-align:left; line-height:40px; position:relative}
+
+.help_menu ul { padding:0;}
+.help_menu ul li.one { font-weight:bold; height:30px; line-height:30px; background:url(../images/helpnavbg.gif) repeat-x; color:#666; text-indent:10px; margin-bottom:8px;}
+.help_menu ul li.two { padding-left:30px;  height:30px; line-height:30px; background:url(../images/present.gif) no-repeat 30px center; }
+.help_menu ul li.two a:hover { color:#F90; text-decoration:underline;}
+</style>
+
+<!-- {if $helps} -->
+<div class="left_menu">
+            <ul class="column" id="help_list">
+                <li><h2>帮助中心</h2>
+                    <ul >
+                       <!-- {foreach from=$helps item=help_cat} -->
+                        <li><h3>{$help_cat.cat_name}</h3>
+                            <ul style="display:none">
+                            <!-- {foreach from=$help_cat.article item=item} -->
+                                <li><a href="help.php?id={$item.article_id}">{$item.short_title|truncate:13}</a></li>
+                                {/foreach}
+                            </ul>
+                        </li>
+                          <!-- {/foreach} -->
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+
+<!-- {/if} -->

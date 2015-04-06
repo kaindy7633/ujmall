@@ -1,0 +1,185 @@
+<?php
+/* 代码增加_start Byjdy */
+$is_category_index=$GLOBALS['db']->getOne("select category_index from ". $GLOBALS['ecs']->table('category') ." where cat_id=". $GLOBALS['smarty']->_var['category']);
+if ( $is_category_index == '1' and !$_REQUEST['price_min'] and !$_REQUEST['price_max'] and !$_REQUEST['brand'] and !$_REQUEST['filter_attr'])
+{
+	require_once ("themes/". $GLOBALS['_CFG']['template'] ."/lib_category_index.php" );	
+}
+/* 代码增加_end Byjdy */
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$page_title}</title>
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+<link href="themes/68ecshop_xiaomi/css/global_site_simplify.css" rel="stylesheet" type="text/css">
+<link href="themes/68ecshop_xiaomi/css/search_table2.css" rel="stylesheet" type="text/css">
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+<link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="themes/68ecshop_xiaomi/js/libs/jquery18.js" ></script>
+{insert_scripts files='common.js,utils.js'}
+{insert_scripts files='jquery.json.js,transport.js'}
+</head>
+<body>
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+<div class="searchwrap wrap">
+<!--s 面包屑导航-->
+<div class="mod_search_crumb" style="overflow:hidden">
+<div class="crumbSlide" style="margin:10px 0 0 0">
+<div class="crumbClip">
+<!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem -->
+</div>
+
+<!--s 搜索结果数-->
+<small class="result_count" style="top:0px;">共{$pager.record_count}条</small>
+<!--e 搜索结果数-->
+</div>
+<!--s 面包屑导航-->
+ </div>
+ </div>
+<div style="margin-bottom: 35px; width:1200px; margin:0 auto" class="mod_search_guide clearfix" >
+<div class="classWrap">
+<!-- 类目搜索-->
+<!--品牌-->
+   <!--{if $brands.1}-->
+
+	<div class="guide_box " id="pinpai" >
+        <div class="guide_title"> <span>品牌</span> </div>
+       	 	<div class="guide_main"> 
+                <ul class="guide_con clearfix" >
+                     <!--{foreach from=$brands item=brand}-->
+                           <li> <a href="{$brand.url}"> <span>{$brand.brand_name}</span> </a></li>        
+                    <!--{/foreach}-->
+                   </ul>
+            </div>
+            <div class="multiple_choice">
+            <a href="#" class="more more_open" hidefocus="true" onclick="pclick1()" id="zhankaidiv">更多<i></i></a>
+            <a href="#" class="more more_close"  style="display:none"  onclick="pclick2()" id="shousuodiv">收起<i></i></a>
+            </div>
+     </div>
+ <script>    
+	  var pp=document.getElementById('pinpai');     
+	   pp.style.height='34px' ;
+	        pp.style.overflow='hidden' ;      //点击显示全部
+	  
+	    function pclick1(){     var pp=document.getElementById('pinpai');     pp.style.height='auto';
+		document.getElementById('zhankaidiv').style.display="none";
+
+		document.getElementById('shousuodiv').style.display="block"
+		}
+		function pclick2(){     var pp=document.getElementById('pinpai');     pp.style.height='34px';
+		
+		document.getElementById('zhankaidiv').style.display="block";
+
+		document.getElementById('shousuodiv').style.display="none"
+		}
+		 </script>
+{/if}
+<div class="guide_box" id="leibie">
+<div class="guide_title"> <span>类别</span> </div>
+        <div class="guide_main">
+            <ul class="guide_con clearfix"  id="JS_brandList">
+                <li><a href="{$cat.url}"><span>全部</span> </a> </li>
+              <!--{foreach from=$categories item=cat}-->
+                {if $cat.parent_id neq 0}
+            
+            {if $current_cat_pr_id eq $cat.id or $current_cat_pr2_id eq $cat.id} 
+            <li class="current"><a href="{$cat.url}"><span>{$cat.name}</span></a></li>
+            {else}
+              <li><A href="{$cat.url}"><span>{$cat.name}</span></A> </li>
+            {/if}
+            {else}
+            
+            {if $current_cat_pr_id eq $cat.id}
+            <!--{foreach from=$cat.cat_id item=child}-->
+            {if $current_cat_pr2_id eq $child.id}
+            <li class="current"><a href="{$child.url}"><span>{$child.name|escape:html}</span></a></li>
+            
+            {else}
+              <LI><A href="{$child.url}"><span>{$child.name}</span></A> </LI>
+              {/if}
+              {/foreach}
+            {/if}
+            {/if}
+                     <!--{/foreach}-->
+            </ul>
+        </div>
+           <div class="multiple_choice">
+            <a href="#" class="more more_open" hidefocus="true" onclick="pclick3()" id="zhankaidiv1">更多<i></i></a>
+            <a href="#" class="more more_close"  style="display:none"  onclick="pclick4()" id="shousuodiv1">收起<i></i></a>
+            </div>
+</div>
+ <script>    
+	  var pp1=document.getElementById('leibie');     
+	   pp1.style.height='34px' ;
+	        pp1.style.overflow='hidden' ;      //点击显示全部
+	  
+	    function pclick3(){     var pp=document.getElementById('leibie');     pp1.style.height='auto';
+		document.getElementById('zhankaidiv1').style.display="none";
+
+		document.getElementById('shousuodiv1').style.display="block"
+		}
+		function pclick4(){     var pp=document.getElementById('leibie');     pp1.style.height='34px';
+		
+		document.getElementById('zhankaidiv1').style.display="block";
+
+		document.getElementById('shousuodiv1').style.display="none"
+		}
+		 </script>
+	<!--{if $price_grade.1}-->
+<div class="guide_box ">
+<div class="guide_title"> <span>{$lang.price}</span> </div>
+    <div class="guide_main">
+        <ul class="guide_con clearfix">
+         <!--{foreach from=$price_grade item=grade}-->
+             <li> <a href="{$grade.url}"> <span>{$grade.price_range}</span> </a> </li>
+                 <!--{/foreach}-->
+        </ul>
+    </div>
+</div>
+{/if}
+<!--{foreach from=$filter_attr_list item=filter_attr}-->
+<div class="guide_box ">
+<div class="guide_title"> <span>{$filter_attr.filter_attr_name|escape:html}：</span> </div>
+    <div class="guide_main">
+        <ul class="guide_con clearfix" id="xiangguan">
+        <!--{foreach from=$filter_attr.attr_list item=attr name=name}-->
+        <li> <a href="{$attr.url}"> <span>{$attr.attr_value}</span> </a> </li>
+         <!--{/foreach}-->
+        </ul>
+    </div>
+</div>
+ <!--{/foreach}-->
+ </div>
+</div>
+<div class="clearfix" style=" width:1200px; margin:0 auto">
+<div class="layout_search_sidebar" style="margin-top:9px;">
+ <!-- #BeginLibraryItem "/library/hotchanpin.lbi" --><!-- #EndLibraryItem --> 
+ <!-- #BeginLibraryItem "/library/top10.lbi" --><!-- #EndLibraryItem --> 
+</div>
+<div class="layout_search_main">
+ <!-- #BeginLibraryItem "/library/goods_list.lbi" --><!-- #EndLibraryItem --> 
+<!--s 分页-->
+ <!-- #BeginLibraryItem "/library/pages.lbi" --><!-- #EndLibraryItem --> 
+ <!-- #BeginLibraryItem "/library/best_nei.lbi" --> <!-- #EndLibraryItem -->
+</div>
+</div>
+</div>
+<div style="height:0px; clear:both"></div>
+<!--footer开始-->
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --> <!-- #EndLibraryItem -->
+ <!--无页面级头部js时, 全局头部js下移-->
+
+      <script type="text/javascript" src="themes/68ecshop_xiaomi/js/categoryTree.js"></script>
+     <script type="text/javascript" src="themes/68ecshop_xiaomi/js/base.min.js"></script>
+
+<!--js end-->
+</body></html>

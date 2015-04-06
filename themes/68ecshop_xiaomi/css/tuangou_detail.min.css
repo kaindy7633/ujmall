@@ -1,0 +1,478 @@
+BODY {
+	BACKGROUND: #f7eeef
+}
+.tugouWrap .tg_pos {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 3px; PADDING-BOTTOM: 12px; PADDING-TOP: 4px
+}
+.tugouWrap .tg_pos .pos_icon {
+	DISPLAY: inline-block; BACKGROUND: url(../images/images/paipai/tuangou_list_bg2.gif) no-repeat 0px 0px; VERTICAL-ALIGN: top; WIDTH: 15px; HEIGHT: 15px
+}
+.tugouWrap .tg_pos .pos_in {
+	DISPLAY: inline-block
+}
+.tg_dtl_wrap {
+	MARGIN-TOP: 6px
+}
+.root_body .tg_dtl_wrap {
+	POSITION: relative
+}
+.tg_dtl_wrap .tg_dtl_Left {
+	WIDTH: 980px
+}
+.tg_dtl_Left .tg_dtl_main {
+	BORDER-RIGHT: #eee 1px solid; PADDING-RIGHT: 14px; BORDER-TOP: #eee 1px solid; PADDING-LEFT: 0px; BACKGROUND: #fff; MARGIN-BOTTOM: 16px; PADDING-BOTTOM: 12px; BORDER-LEFT: #eee 1px solid; PADDING-TOP: 15px; BORDER-BOTTOM: #eee 1px solid
+}
+.tg_dtl_main .dtl_main_top H1 {
+	FONT-SIZE: 26px; TEXT-INDENT: 20px; FONT-FAMILY: "微软雅黑"
+}
+.dtl_main_top H1 A:hover {
+	TEXT-DECORATION: none
+}
+.dtl_main_top P {
+	FONT-SIZE: 14px; COLOR: #999; PADDING-TOP: 10px; FONT-FAMILY: "微软雅黑"
+}
+.tg_dtl_main .dtl_main_tishi {
+	FONT-SIZE: 16px; COLOR: #f60; TEXT-INDENT: 13px; FONT-FAMILY: "微软雅黑"
+}
+.tg_dtl_main .dtl_main_info {
+	MARGIN-TOP: 20px
+}
+.dtl_main_info .main_infoL {
+	BORDER-RIGHT: #f4e3cb 1px solid; FONT-SIZE: 16px; BACKGROUND: #fff9ef; PADDING-BOTTOM: 14px; WIDTH: 347px; BORDER-BOTTOM: #f4e3cb 1px solid; FONT-FAMILY: "微软雅黑"; POSITION: relative; height:386px;
+}
+.dtl_main_info .main_infoL A.infobnr {
+	DISPLAY: block; FONT-WEIGHT: bolder; FONT-SIZE: 35px; BACKGROUND: url(../images/images/paipai/qianggou.png) no-repeat; LEFT: 0px; WIDTH: 374px; COLOR: #fff; TEXT-INDENT: 30px; LINE-HEIGHT: 60px;  POSITION: absolute; TOP: -1px; HEIGHT: 79px; margin-left:-14px;font-family: Georgia;
+font-weight: 600;
+}
+.tg_dtl_Left .tg_dtl_brn A.infobnr {
+	DISPLAY: block; FONT-WEIGHT: bolder; FONT-SIZE: 35px; BACKGROUND: url(../images/images/paipai/tuan_detail.gif) no-repeat; LEFT: 0px; WIDTH: 349px; COLOR: #fff; TEXT-INDENT: 30px; LINE-HEIGHT: 79px; FONT-FAMILY: "微软雅黑"; POSITION: absolute; TOP: -1px; HEIGHT: 79px
+}
+.dtl_main_info .main_infoL A.infobnr:hover {
+	COLOR: #fff! important; TEXT-DECORATION: none
+}
+.tg_dtl_Left .tg_dtl_brn A.infobnr:hover {
+	COLOR: #fff! important; TEXT-DECORATION: none
+}
+.dtl_main_info .main_infoL A.qianggou {
+	BACKGROUND-POSITION: 0px 0px
+}
+.tg_dtl_Left .tg_dtl_brn A.qianggou {
+	BACKGROUND-POSITION: 0px 0px
+}
+.dtl_main_info .main_infoL A.nostart {
+	BACKGROUND-POSITION: 0px -79px
+}
+.tg_dtl_Left .tg_dtl_brn A.nostart {
+	BACKGROUND-POSITION: 0px -79px
+}
+.dtl_main_info .main_infoL A.soldout {
+	BACKGROUND-POSITION: 0px -237px
+}
+.tg_dtl_Left .tg_dtl_brn A.soldout {
+	BACKGROUND-POSITION: 0px -237px
+}
+.dtl_main_info .main_infoL A.end {
+	BACKGROUND-POSITION: 0px -158px
+}
+.tg_dtl_Left .tg_dtl_brn A.end {
+	BACKGROUND-POSITION: 0px -158px
+}
+.dtl_main_info .main_infoL A.infobnr B {
+	FONT-SIZE: 25px
+}
+.tg_dtl_Left .tg_dtl_brn A.infobnr B {
+	FONT-SIZE: 25px
+}
+.dtl_main_info .main_infoL .numbox {
+	PADDING-BOTTOM: 5px; MARGIN: 79px auto 0px; WIDTH: 308px; PADDING-TOP: 15px; BORDER-BOTTOM: #f4e3cb 1px solid; HEIGHT: 29px; TEXT-ALIGN: center
+}
+.dtl_main_info .main_infoL .numbox SPAN {
+	MARGIN-TOP: 3px; DISPLAY: inline-block; VERTICAL-ALIGN: top; COLOR: #787878
+}
+.dtl_main_info .main_infoL .numbox .jian {
+	BORDER-RIGHT: #ffdeab 1px solid; BORDER-TOP: #ffdeab 1px solid; MARGIN-TOP: 3px; DISPLAY: inline-block; BACKGROUND: #fff; VERTICAL-ALIGN: top; BORDER-LEFT: #ffdeab 1px solid; WIDTH: 16px; BORDER-BOTTOM: #ffdeab 1px solid; HEIGHT: 16px
+}
+.dtl_main_info .main_infoL .numbox .jia {
+	BORDER-RIGHT: #ffdeab 1px solid; BORDER-TOP: #ffdeab 1px solid; MARGIN-TOP: 3px; DISPLAY: inline-block; BACKGROUND: #fff; VERTICAL-ALIGN: top; BORDER-LEFT: #ffdeab 1px solid; WIDTH: 16px; BORDER-BOTTOM: #ffdeab 1px solid; HEIGHT: 16px
+}
+.dtl_main_info .main_infoL .numbox .jian B {
+	MARGIN-TOP: 6px; DISPLAY: inline-block; BACKGROUND: url(../images/images/paipai/tuangou_detail_bg2.gif) no-repeat -279px -189px; VERTICAL-ALIGN: top; WIDTH: 6px; HEIGHT: 5px
+}
+.dtl_main_info .main_infoL .numbox .jia B {
+	MARGIN-TOP: 6px; DISPLAY: inline-block; BACKGROUND: url(../images/images/paipai/tuangou_detail_bg2.gif) no-repeat -279px -189px; VERTICAL-ALIGN: top; WIDTH: 6px; HEIGHT: 5px
+}
+.dtl_main_info .main_infoL .numbox .jia B {
+	BACKGROUND: url(../images/images/paipai/tuangou_detail_bg2.gif) no-repeat -286px -189px
+}
+.dtl_main_info .main_infoL .numbox .val {
+	BORDER-RIGHT: #ffdeab 1px solid; BORDER-TOP: #ffdeab 1px solid; DISPLAY: inline-block; FONT-WEIGHT: bolder; BACKGROUND: #fff; MARGIN: 0px 7px; BORDER-LEFT: #ffdeab 1px solid; WIDTH: 43px; COLOR: #f60; BORDER-BOTTOM: #ffdeab 1px solid; HEIGHT: 18px; TEXT-ALIGN: center
+}
+.dtl_main_info .main_infoL .infoprc {
+	MARGIN-TOP: 8px; LINE-HEIGHT: 25px; TEXT-ALIGN: center
+}
+.dtl_main_info .main_infoL .infoprc SPAN {
+	DISPLAY: inline-block; VERTICAL-ALIGN: top; WIDTH: 85px; COLOR: #787878; LINE-HEIGHT: 25px; HEIGHT: 50px; TEXT-ALIGN: center
+}
+.dtl_main_info .main_infoL .infoprc SPAN.line {
+	BORDER-LEFT: #f4dec5 1px dashed
+}
+.dtl_main_info .main_infoL .infoprc SPAN DEL {
+	FONT-WEIGHT: bolder; COLOR: #666
+}
+.dtl_main_info .main_infoL .infoprc SPAN B {
+	COLOR: #f60
+}
+.dtl_main_info .main_infoL .buyed {
+	BORDER-TOP: #f4e3cb 1px solid; MARGIN: 10px auto 0px; WIDTH: 308px; COLOR: #787878; PADDING-TOP: 12px; BORDER-BOTTOM: #f4e3cb 1px solid; HEIGHT: 70px; TEXT-ALIGN: center
+}
+.dtl_main_info .main_infoL .buyed B {
+	FONT-SIZE: 28px; COLOR: #f45000; FONT-FAMILY: "微软雅黑"
+}
+.dtl_main_info .main_infoL .buyed SPAN {
+	FONT-SIZE: 14px
+}
+.dtl_main_info .main_infoL .buyed STRONG {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; PADDING-BOTTOM: 0px; COLOR: #c10000; PADDING-TOP: 0px
+}
+.dtl_main_info .main_infoL .timebox {
+	PADDING-TOP: 24px; HEIGHT: 44px; TEXT-ALIGN: center
+}
+.dtl_main_info .main_infoL .timebox I {
+	DISPLAY: inline-block; BACKGROUND: url(../images/images/paipai/tuangou_detail_bg2.gif) no-repeat -229px -189px; VERTICAL-ALIGN: middle; WIDTH: 18px; MARGIN-RIGHT: 6px; HEIGHT: 18px
+}
+.dtl_main_info .main_infoL .timebox .timer {
+	DISPLAY: inline-block; FONT-SIZE: 14px; VERTICAL-ALIGN: middle; COLOR: #454545
+}
+.dtl_main_info .main_infoL .timebox .timer B {
+	PADDING-RIGHT: 1px; PADDING-LEFT: 1px; FONT-SIZE: 16px; PADDING-BOTTOM: 0px; COLOR: #f45000; PADDING-TOP: 0px
+}
+.dtl_main_info .main_infoL .timebox .timer .statime {
+	FONT-SIZE: 12px; COLOR: #454545
+}
+.dtl_main_info .main_infoL .timebox .timer .statime SPAN {
+	COLOR: #f45000
+}
+.dtl_main_info .main_infoL .btnbox {
+	FONT-SIZE: 12px; PADDING-BOTTOM: 11px; TEXT-ALIGN: center
+}
+.dtl_main_info .main_infoL .btnbox A {
+	DISPLAY: inline-block
+}
+.dtl_main_info .main_infoL .btnbox A:hover {
+	COLOR: #333! important; TEXT-DECORATION: none
+}
+.dtl_main_info .main_infoL .btnbox A.send {
+	BACKGROUND: url(../images/images/paipai/tuangou_detail_bg2.gif) no-repeat 0px -189px; WIDTH: 141px; TEXT-INDENT: 14px; LINE-HEIGHT: 26px; MARGIN-RIGHT: 9px; HEIGHT: 26px
+}
+.dtl_main_info .main_infoL .btnbox A.link {
+	BACKGROUND: url(../images/images/paipai/tuangou_detail_bg2.gif) no-repeat -141px -189px; WIDTH: 88px; LINE-HEIGHT: 25px; HEIGHT: 25px
+}
+.dtl_main_info .main_infoR {
+	WIDTH: 600px
+}
+.dtl_main_info .main_infoR .infoshare {
+	MARGIN-TOP: 5px
+}
+.dtl_main_info .main_infoR .infoshare P {
+	COLOR: #787878; PADDING-TOP: 6px
+}
+.tg_dtl_Left .tg_dtl_box {
+	BORDER-RIGHT: #eee 1px solid; BORDER-TOP: #eee 1px solid; BACKGROUND: #fff; MARGIN-BOTTOM: 16px; BORDER-LEFT: #eee 1px solid;BORDER-BOTTOM: #eee 1px solid; overflow:hidden;WIDTH: 978px
+}
+.root_body .tg_dtl_Left .tg_dtl_box {
+	WIDTH: 978px
+}
+.tg_dtl_Left .tg_dtl_box .title {
+	BACKGROUND: #f3f3f3; BORDER-BOTTOM: #eee 1px solid; POSITION: relative; HEIGHT: 30px
+}
+.tg_dtl_Left .tg_dtl_box .title B {
+	BORDER-RIGHT: #d2d2d2 1px solid; BORDER-TOP: #c00 2px solid; DISPLAY: inline-block; BACKGROUND: #fff; WIDTH: 120px; LINE-HEIGHT: 30px; POSITION: absolute; TOP: -2px; HEIGHT: 31px; TEXT-ALIGN: center
+}
+.tg_dtl_Left .tg_dtl_box .content {
+	 PADDING-BOTTOM: 20px; PADDING-TOP: 20px
+}
+.tg_dtl_Left .tg_dtl_box .content DL {
+	PADDING-BOTTOM: 10px
+}
+.tg_dtl_Left .tg_dtl_box .content DL DT {
+	FONT-WEIGHT: bold; PADDING-BOTTOM: 5px; PADDING-TOP: 10px
+}
+.tg_dtl_Left .tg_dtl_box .content DL DD {
+	PADDING-LEFT: 5px; COLOR: #666; LINE-HEIGHT: 22px
+}
+.tg_dtl_Left .tg_dtl_box .infos {
+	FONT-SIZE: 14px
+}
+.tg_dtl_Left .tg_dtl_box .infos .text {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 5px; PADDING-BOTTOM: 18px; WIDTH: 710px; COLOR: #666; LINE-HEIGHT: 20px; PADDING-TOP: 12px
+}
+.tg_dtl_Left .tg_dtl_box .infos .imgs {
+	TEXT-ALIGN: center
+}
+.tg_dtl_Left .tg_dtl_box .pingjia {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+.pingjia .tab_body {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 30px; PADDING-BOTTOM: 20px; PADDING-TOP: 20px; BORDER-BOTTOM: #e4e4e4 1px solid
+}
+.pingjia .p5.tab_body {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px
+}
+.pingjia .no_pingjia {
+	LINE-HEIGHT: 2
+}
+.pingjia .pj_tb {
+	WIDTH: 722px
+}
+.pingjia .pj_tb TD {
+	BORDER-RIGHT: #e4e4e4 1px solid; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 10px; PADDING-TOP: 10px
+}
+.pingjia .pj_tb .t1 {
+	VERTICAL-ALIGN: middle; WIDTH: 135px; COLOR: #b10000; TEXT-ALIGN: center
+}
+.pingjia .pj_tb .t1 STRONG {
+	FONT-SIZE: 28px; FONT-FAMILY: Arial
+}
+.pingjia .pj_tb .t2 {
+	PADDING-LEFT: 45px; WIDTH: 290px
+}
+.pingjia .pj_tb .t2 .bar_box {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 5px; COLOR: #333; PADDING-TOP: 5px
+}
+.pingjia .pj_tb .t2 .bar_box .bar {
+	BORDER-RIGHT: #cdcdcd 1px solid; PADDING-RIGHT: 1px; BORDER-TOP: #cdcdcd 1px solid; DISPLAY: inline-block; PADDING-LEFT: 1px; PADDING-BOTTOM: 1px; VERTICAL-ALIGN: middle; OVERFLOW: hidden; BORDER-LEFT: #cdcdcd 1px solid; WIDTH: 168px; PADDING-TOP: 1px; BORDER-BOTTOM: #cdcdcd 1px solid; HEIGHT: 10px
+}
+.pingjia .pj_tb .t2 .bar_box .bar .in {
+	DISPLAY: inline-block; BACKGROUND: #c00000; OVERFLOW: hidden; HEIGHT: 10px
+}
+.pingjia .pj_tb .td4 {
+	LINE-HEIGHT: 1.8; TEXT-ALIGN: center; BORDER-RIGHT-WIDTH: 0px
+}
+.pingjia .in_title {
+	BACKGROUND: url(../images/images/paipai/tuangou_detail_bg2.gif) repeat-x 0px -385px; BORDER-BOTTOM: #e4e4e4 1px solid; HEIGHT: 30px
+}
+.pingjia .in_title SPAN {
+	PADDING-RIGHT: 20px; DISPLAY: inline-block; PADDING-LEFT: 20px; PADDING-BOTTOM: 0px; COLOR: #333; LINE-HEIGHT: 30px; PADDING-TOP: 0px; HEIGHT: 30px
+}
+.pingjia .in_title A {
+	PADDING-RIGHT: 20px; DISPLAY: inline-block; PADDING-LEFT: 20px; PADDING-BOTTOM: 0px; COLOR: #333; LINE-HEIGHT: 30px; PADDING-TOP: 0px; HEIGHT: 30px
+}
+.pingjia .in_title A {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+.pingjia .in_title A.allpingjia {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; WIDTH: 120px; PADDING-TOP: 0px; TEXT-ALIGN: center
+}
+.pingjia .in_title A.red {
+	COLOR: #c00
+}
+.pingjia .in_title A:hover {
+	TEXT-DECORATION: none
+}
+.root_body .pingjia .cm_list {
+	WIDTH: 980px
+}
+.pingjia .cm_list {
+	MARGIN: 0px auto; WIDTH: 752px; BORDER-COLLAPSE: separate; border-spacing: 15px
+}
+.pingjia .cm_list TD {
+	BORDER-RIGHT: #e4e4e4 1px solid; BORDER-TOP: #e4e4e4 1px solid; BACKGROUND: #fcfcfc; MARGIN: 10px; BORDER-LEFT: #e4e4e4 1px solid; BORDER-BOTTOM: #e4e4e4 1px solid
+}
+.pingjia .cm_list .td1 {
+	PADDING-RIGHT: 7px; PADDING-LEFT: 7px; PADDING-BOTTOM: 7px; WIDTH: 104px; PADDING-TOP: 7px
+}
+.pingjia .cm_list .td1 .img {
+	BORDER-RIGHT: #e4e4e4 1px solid; PADDING-RIGHT: 3px; BORDER-TOP: #e4e4e4 1px solid; PADDING-LEFT: 3px; BACKGROUND: #fff; PADDING-BOTTOM: 3px; BORDER-LEFT: #e4e4e4 1px solid; PADDING-TOP: 3px; BORDER-BOTTOM: #e4e4e4 1px solid; border-radius: 3px
+}
+.pingjia .cm_list .td1 .info {
+	LINE-HEIGHT: 1.8; PADDING-TOP: 5px
+}
+.pingjia .cm_list .td2 {
+	PADDING-RIGHT: 15px; PADDING-LEFT: 15px; PADDING-BOTTOM: 15px; VERTICAL-ALIGN: top; PADDING-TOP: 0px
+}
+.pingjia .cm_list .td2 .arrow {
+	MARGIN-TOP: 20px; BACKGROUND: url(../images/images/paipai/tuangou_detail_bg2.gif) no-repeat 0px -349px; MARGIN-LEFT: -24px; WIDTH: 10px; POSITION: absolute; HEIGHT: 17px
+}
+.pingjia .cm_list .td2 .in_t {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: bold; PADDING-BOTTOM: 10px; LINE-HEIGHT: 19px; PADDING-TOP: 10px; BORDER-BOTTOM: #eee 1px solid
+}
+.pingjia .cm_list .td2 SPAN {
+	DISPLAY: inline-block; VERTICAL-ALIGN: top; HEIGHT: 19px
+}
+.pingjia .cm_list .td2 .cm_star {
+	BACKGROUND: url(../images/images/paipai/tuangou_detail_bg2.gif) no-repeat 0px -366px; WIDTH: 110px
+}
+.pingjia .cm_list .td2 .cm_star_0 {
+	WIDTH: 22px
+}
+.pingjia .cm_list .td2 .cm_star_1 {
+	WIDTH: 22px
+}
+.pingjia .cm_list .td2 .cm_star_2 {
+	WIDTH: 44px
+}
+.pingjia .cm_list .td2 .cm_star_3 {
+	WIDTH: 66px
+}
+.pingjia .cm_list .td2 .cm_star_4 {
+	WIDTH: 88px
+}
+.pingjia .cm_list .td2 .content {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 10px; COLOR: #666; LINE-HEIGHT: 1.8; PADDING-TOP: 10px;
+}
+.pingjia .cm_list .td2 .re_content {
+	BORDER-RIGHT: #e4e4e4 1px solid; PADDING-RIGHT: 10px; BORDER-TOP: #e4e4e4 1px solid; PADDING-LEFT: 10px; BACKGROUND: #fff; PADDING-BOTTOM: 10px; BORDER-LEFT: #e4e4e4 1px solid; COLOR: #999; LINE-HEIGHT: 1.8; PADDING-TOP: 10px; BORDER-BOTTOM: #e4e4e4 1px solid; border-radius: 5px
+}
+.pingjia .cm_list .td2 .btns {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 5px; PADDING-TOP: 15px
+}
+.pingjia .cm_list .td2 .btns SPAN {
+	DISPLAY: inline-block; VERTICAL-ALIGN: top; LINE-HEIGHT: 23px
+}
+.pingjia .cm_list .td2 .btns A {
+	DISPLAY: inline-block; VERTICAL-ALIGN: top; LINE-HEIGHT: 23px
+}
+.pingjia .cm_list .td2 .btns A {
+	BORDER-RIGHT: #d8d8d8 1px solid; PADDING-RIGHT: 15px; BORDER-TOP: #d8d8d8 1px solid; PADDING-LEFT: 15px; BACKGROUND: url(../images/images/paipai/tuangou_goods_bg.png) 0px -306px; PADDING-BOTTOM: 0px; BORDER-LEFT: #d8d8d8 1px solid; COLOR: #306199; PADDING-TOP: 0px; BORDER-BOTTOM: #d8d8d8 1px solid; border-radius: 3px
+}
+.pingjia .p5.tab_body .page {
+	PADDING-RIGHT: 15px
+}
+.pingjia .hide_pingjia_sort {
+	BORDER-RIGHT: #ddd 1px solid; BORDER-TOP: #ddd 0px solid; DISPLAY: none; Z-INDEX: 1; BACKGROUND: #fff; MARGIN-LEFT: 120px; BORDER-LEFT: #ddd 1px solid; WIDTH: 106px; BORDER-BOTTOM: #ddd 1px solid; POSITION: absolute
+}
+.pingjia .hide_pingjia_sort A {
+	DISPLAY: block; LINE-HEIGHT: 30px; TEXT-ALIGN: center
+}
+.pingjia .hide_pingjia_sort A:hover {
+	BACKGROUND: #eee; COLOR: #c00! important; TEXT-DECORATION: none
+}
+.pingjia .allpingjia {
+	PADDING-RIGHT: 0px! important; PADDING-LEFT: 0px! important; PADDING-BOTTOM: 0px! important; WIDTH: 120px; PADDING-TOP: 0px! important; TEXT-ALIGN: center
+}
+.pingjia .allpingjia2 {
+	WIDTH: 88px
+}
+.g2_btn1 {
+	BORDER-RIGHT: #760000 0px solid; PADDING-RIGHT: 8px; DISPLAY: inline-block; PADDING-LEFT: 22px; BACKGROUND: url(../images/images/paipai/tuangou_detail_bg2.gif) no-repeat 0px -444px; PADDING-BOTTOM: 0px; COLOR: #fff; LINE-HEIGHT: 32px; PADDING-TOP: 0px; BORDER-BOTTOM: #760000 0px solid; HEIGHT: 32px
+}
+.g2_btn2 {
+	BORDER-RIGHT: #760000 0px solid; PADDING-RIGHT: 8px; DISPLAY: inline-block; PADDING-LEFT: 22px; BACKGROUND: url(../images/images/paipai/tuangou_detail_bg2.gif) no-repeat 0px -444px; PADDING-BOTTOM: 0px; COLOR: #fff; LINE-HEIGHT: 32px; PADDING-TOP: 0px; BORDER-BOTTOM: #760000 0px solid; HEIGHT: 32px
+}
+.g2_btn1:hover {
+	BORDER-LEFT-COLOR: #c20101; BORDER-BOTTOM-COLOR: #c20101; COLOR: #fff! important; BORDER-TOP-COLOR: #c20101; BORDER-RIGHT-COLOR: #c20101
+}
+.g2_btn2:hover {
+	BORDER-LEFT-COLOR: #c20101; BORDER-BOTTOM-COLOR: #c20101; COLOR: #fff! important; BORDER-TOP-COLOR: #c20101; BORDER-RIGHT-COLOR: #c20101
+}
+.g2_btn3:hover {
+	BORDER-LEFT-COLOR: #c20101; BORDER-BOTTOM-COLOR: #c20101; COLOR: #fff! important; BORDER-TOP-COLOR: #c20101; BORDER-RIGHT-COLOR: #c20101
+}
+.g2_btn2 {
+	PADDING-RIGHT: 15px; BACKGROUND-POSITION: -53px -322px; PADDING-LEFT: 15px; FONT-WEIGHT: bold; FONT-SIZE: 14px; PADDING-BOTTOM: 0px; LINE-HEIGHT: 26px; PADDING-TOP: 0px; HEIGHT: 26px
+}
+.cmtpage {
+	_margin-top: 20px
+}
+.page {
+	COLOR: #444
+}
+.page A {
+	BORDER-RIGHT: #999 1px solid; PADDING-RIGHT: 9px; BORDER-TOP: #999 1px solid; DISPLAY: inline-block; PADDING-LEFT: 9px; BACKGROUND: #fff; PADDING-BOTTOM: 6px; MARGIN: 0px 3px; VERTICAL-ALIGN: middle; BORDER-LEFT: #999 1px solid; COLOR: #444; LINE-HEIGHT: 14px; PADDING-TOP: 6px; BORDER-BOTTOM: #999 1px solid; FONT-STYLE: normal
+}
+.page STRONG {
+	BORDER-RIGHT: #999 1px solid; PADDING-RIGHT: 9px; BORDER-TOP: #999 1px solid; DISPLAY: inline-block; PADDING-LEFT: 9px; BACKGROUND: #fff; PADDING-BOTTOM: 6px; MARGIN: 0px 3px; VERTICAL-ALIGN: middle; BORDER-LEFT: #999 1px solid; COLOR: #444; LINE-HEIGHT: 14px; PADDING-TOP: 6px; BORDER-BOTTOM: #999 1px solid; FONT-STYLE: normal
+}
+.page .to_page {
+	BORDER-RIGHT: #999 1px solid; PADDING-RIGHT: 9px; BORDER-TOP: #999 1px solid; DISPLAY: inline-block; PADDING-LEFT: 9px; BACKGROUND: #fff; PADDING-BOTTOM: 6px; MARGIN: 0px 3px; VERTICAL-ALIGN: middle; BORDER-LEFT: #999 1px solid; COLOR: #444; LINE-HEIGHT: 14px; PADDING-TOP: 6px; BORDER-BOTTOM: #999 1px solid; FONT-STYLE: normal
+}
+.page EM {
+	BORDER-RIGHT: #999 1px solid; PADDING-RIGHT: 9px; BORDER-TOP: #999 1px solid; DISPLAY: inline-block; PADDING-LEFT: 9px; BACKGROUND: #fff; PADDING-BOTTOM: 6px; MARGIN: 0px 3px; VERTICAL-ALIGN: middle; BORDER-LEFT: #999 1px solid; COLOR: #444; LINE-HEIGHT: 14px; PADDING-TOP: 6px; BORDER-BOTTOM: #999 1px solid; FONT-STYLE: normal
+}
+.page EM {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px
+}
+.page STRONG {
+	BORDER-RIGHT: #b20000 1px solid; BORDER-TOP: #b20000 1px solid; BACKGROUND: #b20000; BORDER-LEFT: #b20000 1px solid; COLOR: #fff! important; BORDER-BOTTOM: #b20000 1px solid; TEXT-DECORATION: none
+}
+.page A:hover {
+	BORDER-RIGHT: #b20000 1px solid; BORDER-TOP: #b20000 1px solid; BACKGROUND: #b20000; BORDER-LEFT: #b20000 1px solid; COLOR: #fff! important; BORDER-BOTTOM: #b20000 1px solid; TEXT-DECORATION: none
+}
+.page .current {
+	BORDER-RIGHT: #b20000 1px solid; BORDER-TOP: #b20000 1px solid; BACKGROUND: #b20000; BORDER-LEFT: #b20000 1px solid; COLOR: #fff! important; BORDER-BOTTOM: #b20000 1px solid; TEXT-DECORATION: none
+}
+.page A:hover .arrow SPAN {
+	COLOR: #fff! important
+}
+.page .arrow {
+	DISPLAY: inline-block; MARGIN: 0px 3px; VERTICAL-ALIGN: top; OVERFLOW: hidden; WIDTH: 6px
+}
+.page .arrow SPAN {
+	COLOR: #444
+}
+.page .arrow .aright {
+	MARGIN-LEFT: -5px; TEXT-ALIGN: right
+}
+.page .to_page {
+	PADDING-RIGHT: 8px; PADDING-LEFT: 8px; PADDING-BOTTOM: 5px; MARGIN: 0px; WIDTH: 2em; PADDING-TOP: 5px; TEXT-ALIGN: center
+}
+.tg_dtl_Left .tg_dtl_brn {
+	BORDER-RIGHT: #dfb574 1px solid; BORDER-TOP: #dfb574 1px solid; BACKGROUND: url(../images/images/paipai/tuangou_detail_bg2.gif) repeat-x 0px -215px; MARGIN-BOTTOM: 16px; OVERFLOW: hidden; BORDER-LEFT: #dfb574 1px solid; WIDTH: 978px; BORDER-BOTTOM: #dfb574 1px solid; POSITION: relative; HEIGHT: 61px
+}
+.root_body .tg_dtl_Left .tg_dtl_brn {
+	WIDTH: 978px
+}
+.tg_dtl_Left .tg_dtl_brn .infobnr {
+	MARGIN-TOP: -7px; MARGIN-LEFT: -10px
+}
+.tg_dtl_Left .tg_dtl_brn P.infobnr {
+	TOP: -1px
+}
+.tg_dtl_Left .tg_dtl_brn P.jiesheng {
+	FONT-SIZE: 21px; TEXT-INDENT: 345px; LINE-HEIGHT: 63px; FONT-FAMILY: "微软雅黑"
+}
+.tg_dtl_Left .tg_dtl_brn P.jiesheng B {
+	COLOR: #c00
+}
+.tg_dtl_wrap .tg_dtl_Right {
+	WIDTH: 211px
+}
+.tg_dtl_wrap .tg_dtl_Right {
+	Z-INDEX: 2; WIDTH: 201px; 
+}
+.root_body .tg_dtl_wrap .tg_dtl_Right {
+	Z-INDEX: 2; WIDTH: 201px; display:block;
+}
+.root_body .tg_dtlR UL.list LI {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 14px; PADDING-TOP: 0px
+}
+.tg_dtl_Right .tg_dtlR {
+	BORDER-RIGHT: #eee 1px solid; border-top: #eee 1px solid; BACKGROUND: #fff; MARGIN-BOTTOM: 16px; BORDER-LEFT: #eee 1px solid; BORDER-BOTTOM: #eee 1px solid
+}
+.tg_dtlR H2 {
+	TEXT-INDENT: 10px; LINE-HEIGHT: 30px; BORDER-BOTTOM: #e8e8e8 1px solid
+}
+.tg_dtlR UL.list {
+	MARGIN-TOP: 15px
+}
+.tg_dtlR UL.list LI {
+	PADDING-RIGHT: 14px; PADDING-LEFT: 14px; PADDING-BOTTOM: 14px; PADDING-TOP: 0px
+}
+.tg_dtlR UL.list LI P.name {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 8px; PADDING-TOP: 8px
+}
+.tg_dtlR UL.list LI P.tprc {
+	FONT-WEIGHT: bolder; PADDING-BOTTOM: 8px; COLOR: #555
+}
+.tg_dtlR UL.list LI P.tprc SPAN {
+	COLOR: #c00
+}
+.tg_dtlR UL.list LI P.prc {
+	COLOR: #787878
+}
+.tg_dtlR UL.list LI P.prc SPAN {
+	DISPLAY: inline-block; VERTICAL-ALIGN: top
+}
+.tg_dtlR UL.list LI P.prc B {
+	FONT-WEIGHT: normal; COLOR: #f66f04
+}

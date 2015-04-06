@@ -1,0 +1,35 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<?
+$GLOBALS['smarty']->assign('article_categories',   article_categories_tree(0)); //文章分类树
+?>
+<style type="text/css">
+
+.help_menu {}
+.help_menu .help_con{border:1px solid #d4d4d4;}
+.help_menu .title { position:relative; height:30px; border:1px solid #d4d4d4;}
+.help_menu .title h2{background:url(../images/menu_tit.png) repeat-x; height:30px; line-height:31px; font-size:14px; padding-left:18px; color:#333; cursor:pointer;}
+.help_menu .title img { position:absolute; right:0; top:0;}
+.help_menu ul { padding:0;}
+.help_menu ul li.one {background:url(../images/menu_sub_tit.jpg) no-repeat; height:29px; line-height:29px;font-size:12px; padding-left:19px; color:#333; font-weight:normal; border-top:1px solid #d4d4d4; cursor:pointer;}
+.help_menu ul li.two { padding-left:30px; height:30px; line-height:30px; background:url(../images/present.gif) no-repeat 30px center;}
+.help_menu ul li.two a:hover { color:#F90; text-decoration:underline;}
+</style>
+
+<!-- {if $article_categories} -->
+<div class="help_menu">
+    <div class="title"><h2>{$lang.article_cat}</h2></div>
+    <div class="help_con">
+  	<ul>
+     <!--{foreach from=$article_categories item=cat}-->
+	  <li class="one"><span><a href="{$cat.url}">{$cat.name|escape:html}</a></span></li>
+      <!--{foreach from=$cat.children item=child}-->
+          <li class="two" > <a href="{$child.url}" style="background-image:none;">{$child.name|escape:html}</a></li>
+          <!-- {/foreach} -->
+      <!-- {/foreach} -->
+  </ul>
+  </div> 
+  
+</div>
+<!-- {/if} -->
+
+

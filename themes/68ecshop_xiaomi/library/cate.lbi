@@ -1,0 +1,84 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<?php
+$adimg_list=array();
+$sql="SELECT ap.ad_width,ap.ad_height, ad.ad_id, ad.ad_name,ad.ad_code, ad.ad_link , abs(substring(position_name,10)) as pnid ".
+	" from ".$GLOBALS['ecs']->table('ad_position').
+		" as ap left join ".$GLOBALS['ecs']->table('ad')." as ad on ad.position_id = ap.position_id ".
+		" where ap.position_name like '首页幻灯片-大图%' and ad.media_type=0 ".
+		" and UNIX_TIMESTAMP()>ad.start_time and UNIX_TIMESTAMP()<ad.end_time and ad.enabled=1 ".
+	       " ORDER BY pnid ASC limit 0,10 ";
+$res_adimg = $GLOBALS['db']->query($sql);
+$num=1;
+while ( $row_adimg = $GLOBALS['db']->fetchRow($res_adimg) )
+{
+	$row_adimg['num']=$num;
+	$row_adimg['href'] = "affiche.php?ad_id=" . $row_adimg[ad_id] . "&amp;uri=" . urlencode($row_adimg['ad_link']);
+	$row_adimg['src'] = "data/afficheimg/". $row_adimg['ad_code'];
+
+	//三个小图
+	$sql="SELECT ap.ad_width,ap.ad_height, ad.ad_id, ad.ad_name,ad.ad_code, ad.ad_link  ".
+	" from ".$GLOBALS['ecs']->table('ad_position').
+		" as ap left join ".$GLOBALS['ecs']->table('ad')." as ad on ad.position_id = ap.position_id ".
+		" where ap.position_name = '首页幻灯片-小图-". $row_adimg['pnid'] ."' and ad.media_type=0 ".
+		" and UNIX_TIMESTAMP()>ad.start_time and UNIX_TIMESTAMP()<ad.end_time and ad.enabled=1 ".
+	       " ORDER BY ad_id ASC limit 0,3 ";
+	$res_smallimg = $GLOBALS['db']->query($sql);
+	$smallimg_list=array();
+        while ($row_smallimg = $GLOBALS['db']->fetchRow($res_smallimg) )
+	{
+			$row_smallimg['href'] = "affiche.php?ad_id=" . $row_smallimg[ad_id] . "&amp;uri=" . urlencode($row_smallimg['ad_link']);
+			$row_smallimg['src'] = "data/afficheimg/". $row_smallimg['ad_code'];
+			$smallimg_list[] = $row_smallimg;
+	}		
+	if(!$smallimg_list)
+	{
+		$smallimg_list[0]=array("href"=>"#",'src'=>"data/smallimg_blank.gif","ad_width"=>'222',"ad_height"=>'160');
+		$smallimg_list[1]=array("href"=>"#",'src'=>"data/smallimg_blank.gif","ad_width"=>'222',"ad_height"=>'160');
+		$smallimg_list[2]=array("href"=>"#",'src'=>"data/smallimg_blank.gif","ad_width"=>'222',"ad_height"=>'160');
+	}
+	$row_adimg['smallimg_list']  = $smallimg_list;
+
+	$adimg_list[] = $row_adimg;
+	$num++;
+}
+$bannercount=$num-2;
+print_r($adimg_lis);
+$GLOBALS['smarty']->assign('adimg_list', $adimg_list);
+$GLOBALS['smarty']->assign('bannercount', $bannercount);
+?>
+
+
+<div class="mod_promo_show" id="promo_show" data-tpa="YHD_HOME_BAMBOO_SLIDER">
+<div class="promo_wrapper" id="index_menu_carousel" data-TrackType="custom" >
+<ol class="clearfix">
+
+	
+
+    
+    	{foreach from=$adimg_list name="adimg_list" item=slide }
+<li>
+<a  href="{$slide.href}" class="big_pic global_loading">
+<img src="{$slide.src}" />
+</a>
+<div class="mini_promo clearfix">
+{foreach from= $slide.smallimg_list name="smallimg_list" item=small}
+<a class="global_loading" href="{$small.href}">
+<img src="{$small.src}"/>
+<u></u>
+</a>
+	{/foreach}
+</div>
+</li>
+	{/foreach}
+</ol>
+</div>
+<div class="promo_show_progress">
+<ul id="lunboNum" class="clearfix none">
+          {foreach from=$adimg_list name="adimg_list" item=adimg}
+<li ><div><span>•</span></div></li>
+ {/foreach}
+</ul>
+</div>
+<a href="javascript:void(0);" class="show_next"><s></s></a>
+<a href="javascript:void(0);" class="show_pre"><s></s></a>
+</div>

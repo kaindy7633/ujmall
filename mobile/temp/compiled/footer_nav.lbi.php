@@ -1,0 +1,81 @@
+<link href="themesmobile/68ecshopcom_mobile/css/bottom_nav.css" type="text/css" rel="stylesheet">
+
+<div class="global-nav">
+    <div class="global-nav__nav-wrap">
+        <div class="global-nav__nav-item">
+            <a href="./" class="global-nav__nav-link">
+                <i class="global-nav__iconfont global-nav__icon-index"><img src="themesmobile/68ecshopcom_mobile/img/cutp_02.png"></i>
+                <span class="global-nav__nav-tit">首页</span>
+            </a>
+        </div>
+        <div class="global-nav__nav-item">
+            <a href="catalog.php" class="global-nav__nav-link">
+                <i class="global-nav__iconfont global-nav__icon-category"><img src="themesmobile/68ecshopcom_mobile/img/cutp_04.png"></i>
+                <span class="global-nav__nav-tit">分类</span>
+            </a>
+        </div>
+        <div class="global-nav__nav-item">
+            <a href="tel:4000785268" class="global-nav__nav-link">
+                <i class="global-nav__iconfont global-nav__icon-search"><img src="themesmobile/68ecshopcom_mobile/img/cutp_06.png"></i>
+                <span class="global-nav__nav-tit">联系我们</span>
+            </a>
+        </div>
+        <div class="global-nav__nav-item">
+            <a href="flow.php" class="global-nav__nav-link">
+                <i class="global-nav__iconfont global-nav__icon-shop-cart"><img src="themesmobile/68ecshopcom_mobile/img/cutp_08.png"></i>
+                <span class="global-nav__nav-tit">购物车</span>
+                <span class="global-nav__nav-shop-cart-num" id="ECS_CARTINFO"><?php 
+$k = array (
+  'name' => 'cart_info',
+);
+echo $this->_echash . $k['name'] . '|' . serialize($k) . $this->_echash;
+?></span>
+            </a>
+        </div>
+        <div class="global-nav__nav-item">
+            <a href="user.php" class="global-nav__nav-link">
+                <i class="global-nav__iconfont global-nav__icon-my-yhd"><img src="themesmobile/68ecshopcom_mobile/img/cutp_10.png"></i>
+                <span class="global-nav__nav-tit">用户中心</span>
+            </a>
+        </div>
+    </div>
+    <div class="global-nav__operate-wrap">
+        <span class="global-nav__yhd-logo"></span>
+        <span class="global-nav__operate-cart-num" id="ECS_CARTINFO1"><?php 
+$k = array (
+  'name' => 'cart_info',
+);
+echo $this->_echash . $k['name'] . '|' . serialize($k) . $this->_echash;
+?></span>
+    </div>
+</div>
+
+<script type="text/javascript" src="themes/68ecshopcom_mobile/js/zepto.min.js"></script>
+<script type="text/javascript">
+ (function(){
+   var $nav = $('.global-nav'),
+     $btnLogo = $('.global-nav__operate-wrap');
+   //点击箭头，显示隐藏导航
+   $btnLogo.on('click',function(){
+     if($btnLogo.parent().hasClass('global-nav--current')){
+       navHide();
+     }else{
+       navShow();
+     }
+   });
+
+   var navShow = function(){
+     $nav.addClass('global-nav--current');
+   }
+
+   var navHide = function(){
+     $nav.removeClass('global-nav--current');
+   }
+   
+   $(window).on("scroll", function() {
+		if($nav.hasClass('global-nav--current')){
+			navHide();
+		}
+	});
+ })();
+</script>

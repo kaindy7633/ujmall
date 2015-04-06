@@ -1,0 +1,14 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $bought_goods} -->
+<div id="detail_viewAndBuyRecomm" style="" class="mod_box mod_product_box">
+<div class="box_hd"><strong>购买过本商品的用户还购买过</strong></div>
+<div class="box_list"><ul>
+   <!--{foreach from=$bought_goods item=bought_goods_data name=name}-->
+<li><a class="pro_img" href="{$bought_goods_data.url}" onclick=""><img src="{$bought_goods_data.goods_thumb}" height="115" width="115"></a><p class="pro_tit"><a href="{$bought_goods_data.url}" onclick="">{$bought_goods_data.short_name}</a></p><p class="pro_price"><span class="color_red"> <!-- {if $bought_goods_data.promote_price neq 0} -->
+        {$bought_goods_data.formated_promote_price}
+        <!-- {else} -->
+        {$bought_goods_data.shop_price}
+        <!-- {/if} --></span><del>{$bought_goods_data.market_price}</del><a class="commandbtn" onclick="" href="">查看详情</a></p></li>
+      <!--{/foreach}-->
+</ul></div></div>
+<!-- {/if} -->

@@ -1,0 +1,25 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $best_goods} -->
+<div class="mod_hot_offers mt20 clearfix">
+ <h2 class="search_title">精品推荐</h2>
+    <div class="clearfix">
+        <ul>
+            <!--{foreach from=$best_goods item=goods name=best_goods}-->
+            <li>
+              <a class="pro_img_big" href="{$goods.url}" target="_blank"><img width="160" height="160"  src="{$goods.thumb}"></img></a>
+				<a class="tip" href="" title="" onclick="" target="_blank"></a>
+			<p class="price"><span class="color_red">  <!-- {if $goods.promote_price neq ""} -->
+            {$goods.promote_price}
+            <!-- {else}-->
+            {$goods.shop_price}
+            <!--{/if}--><i></i></span><del> {$goods.market_price}</del></p>
+<p class="name"><a  href="{$goods.url}" target="_blank">{$goods.name}</a></p>
+<p class="comment" style="margin-top:3px;"><i></i>
+    <a  href="" target="_blank" >{$goods.evaluation}</a></p>
+            </li>
+            <!--{/foreach}-->
+        </ul>
+    </div>
+
+</div>
+{/if}

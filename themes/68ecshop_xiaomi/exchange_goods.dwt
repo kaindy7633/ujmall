@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$page_title}</title>
+<!-- TemplateEndEditable --><!-- TemplateBeginEditable name="head" --><!-- TemplateEndEditable -->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+
+{* 包含脚本文件 *}
+<link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="themes/68ecshop_xiaomi/js/libs/jquery18.js" ></script>
+{insert_scripts files='common.js,utils.js'}
+{insert_scripts files='jquery.json.js,transport.js'}
+<script type="text/javascript">
+/*<![CDATA[*/
+var needChioce = false;
+var default_word = "";
+/*]]>*/
+</script> 
+</head>
+<body>
+
+
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+  <link rel="stylesheet" type="text/css" href="themes/68ecshop_xiaomi/css/goodsDetail.min.css" />
+  <link type="text/css" rel="stylesheet" href="themes/68ecshop_xiaomi/css/product_detail_b_page.css" />
+  
+  
+  <div class="container">
+ <!-- #BeginLibraryItem "/library/ur_here.lbi" -->
+ <!-- #EndLibraryItem -->
+
+<!-- E 面包屑 -->
+<div class="goods-detail container">
+    <div class="goods-detail-info clearfix">
+        <div class="goods-pic-box">
+      <div class="goods-big-pic" >
+    
+     <img src="{$goods.goods_img}"  id="goodsBigPic">
+    
+     </div>
+     <!-- #BeginLibraryItem "/library/goods_gallery1.lbi" --><!-- #EndLibraryItem -->
+      </div>
+    <div class="textInfo">
+      <form action="exchange.php?act=buy" method="post" name="ECS_FORMBUY" id="ECS_FORMBUY" >
+              <div class="clearfix">
+        <p >{$goods.goods_style_name}</p>
+       
+                </div>
+
+        <ul>
+          <!-- {if $cfg.show_goodssn} 显示商品货号-->
+          <li class="clearfix">
+            <dd>
+              <strong>{$lang.goods_sn}</strong>{$goods.goods_sn}
+            </dd>
+          </li>
+          <!-- {/if} -->
+          <!-- {if $goods.goods_brand neq "" and $cfg.show_brand} 显示商品品牌-->
+          <li class="clearfix">
+            <dd>
+              <strong>{$lang.goods_brand}</strong><a href="{$goods.goods_brand_url}" >{$goods.goods_brand}</a>
+            </dd>
+          </li>
+          <!--{/if}-->
+          <!-- {if $cfg.show_goodsweight} 商品重量-->
+          <li class="clearfix">
+            <dd>
+            <strong>{$lang.goods_weight}</strong>{$goods.goods_weight}
+            </dd>
+          </li>
+          <!-- {/if} -->
+          <li class="clearfix">
+            <dd>
+            <strong>{$lang.exchange_integral}</strong><font class="shop">{$goods.exchange_integral}</font><br />
+            </dd>
+          </li>
+          <!-- {* 开始循环所有可选属性 *} -->
+          <!-- {foreach from=$specification item=spec key=spec_key} 循环规格开始 -->
+          <li class="padd loop">
+            <strong>{$spec.name}:</strong><br />
+            <!-- {if $cfg.goodsattr_style eq 1} 规格显示方式：单选按钮 -->
+              <!-- {foreach from=$spec.values item=value key=key} -->
+                <label for="spec_value_{$value.id}">
+                <input type="radio" name="spec_{$spec_key}" value="{$value.id}" id="spec_value_{$value.id}" {if $key eq 0}checked{/if} />
+                {$value.label} </label>
+              <!-- {/foreach} -->
+            <!-- {else} 规格显示方式：下拉列表 -->
+              <select name="spec_{$spec_key}" style="border:1px solid #ccc;">
+              <!-- {foreach from=$spec.values item=value key=key} -->
+                <option label="{$value.label}" value="{$value.id}">{$value.label} </option>
+              <!-- {/foreach} -->
+              </select>
+            <!-- {/if} 规格显示方式 -->
+          </li>
+          <!-- {/foreach} 循环规格结束 -->
+          <!-- {* 结束循环可选属性 *} -->
+          <li class="padd">
+            <input type="hidden" name="goods_id" value="{$goods.goods_id}" />
+            <input type="submit" value="{$lang.exchange_goods}" class="bnt_blue_1"/>
+          </li>
+        </ul>
+        
+        <div class="goods-sub-bar" id="goodsSubBar">
+    <div class="container">
+        <div class="row">
+            <div class="span3" >
+                <dl class="goods-sub-bar-info clearfix">
+                    <dt><img src="{$goods.goods_img}"></dt>
+                    <dd>
+                        <strong>{$goods.goods_style_name}</strong>
+                     
+                    </dd>
+                </dl>
+            </div>
+            <div class="span12">
+                                <div class="fr">
+                    <input type="submit" class="btn btn-primary goods-add-cart-btn" id="goodsSubBarAddCartBtn"  value="立即兑换"><i class="icon-goods-add"></i></a>
+                </div>
+                                <div class="godds-desc-menu" id="goodsSubMenu">
+                    <ul class="clearfix">
+                        <li><a href="#">产品详情</a></li>
+                        <li><a href="#goodsPar">规格参数</a></li>
+                        <li><a href="#goodsComment">用户评价</a></li>
+                        <li><a href="#goodsFaq">常见问题</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+      </form>
+      </div>
+	
+    </div>
+    <div class="row goods-detail-desc">
+        <!--S left side-->
+        <div class="span3" style=" background:#fff; padding-top:10px;">
+    <!-- 你可能还喜欢 -->
+    <!-- #BeginLibraryItem "/library/goods_related.lbi" --><!-- #EndLibraryItem -->
+  
+    <!-- 你可能还喜欢 End -->
+   <!-- #BeginLibraryItem "/library/top101.lbi" --><!-- #EndLibraryItem -->
+   <!-- #BeginLibraryItem "/library/bought_goods.lbi" --><!-- #EndLibraryItem -->
+   <!-- #BeginLibraryItem "/library/goods_attrlinked.lbi" --><!-- #EndLibraryItem -->
+    <!-- 广告位 -->
+    <!-- TemplateBeginEditable name="详情页左侧广告" --><!-- TemplateEndEditable -->
+    <!-- 广告位 END-->
+</div>  <!--E left side-->
+        <div class="span12">
+            <!-- 商品描述 -->
+            <div class="xm-box  goods-detail-box " id="goodsDetail">
+                <div class="hd godds-desc-menu " id="goddsDescMenu">
+                    <ul class="clearfix">
+                        <li class="current"><a href="#goodsDesc">产品详情</a></li>
+                        <li><a href="#goodsPar">规格参数</a></li>
+                        <li><a href="#goodsComment">用户评价</a></li>
+                        <li><a href="#goodsFaq">常见问题</a></li>
+                    </ul>
+                </div>
+                <div class="bd">
+                    <div class="goods-desc-con" id="goodsDesc">
+                     {$goods.goods_desc}
+                      </div>
+                </div>
+            </div>
+            <!-- 商品描述 END-->
+            <!--S 规格-->
+            <div class="xm-box" id="goodsPar">
+                <div class="hd">
+                    <h3 class="title">规格参数</h3>
+                </div>
+                <div class="bd">
+                    <div class="godds-desc-par" >
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th colspan="4">商品编号：{$goods.goods_sn}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+          <!-- {foreach from=$properties item=property_group key=key} -->
+         <!-- {foreach from=$property_group item=property name=name} -->
+<tr {if $smarty.foreach.name.iteration % 2 eq 0}class="even"{/if}><th scope="row">{$property.name|escape:html}</th><td>{$property.value}</td></tr>
+         <!-- {/foreach}-->
+        <!-- {/foreach}-->
+       </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!--E 规格-->
+           
+            <!--S 商品评论 -->
+             <!-- #BeginLibraryItem "/library/comments.lbi" --><!-- #EndLibraryItem -->   
+
+
+            
+            <!-- FAQ  -->
+            <!-- #BeginLibraryItem "/library/changjian.lbi" --><!-- #EndLibraryItem -->   
+
+            
+             <!-- FAQ END -->
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+
+
+
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+
+<script type="text/javascript" src="themes/68ecshop_xiaomi/js/categoryTree.js"></script>
+<script type="text/javascript" src="themes/68ecshop_xiaomi/js/base.min.js"></script>
+<script type="text/javascript">
+    
+        XIAOMI.GLOBAL_CONFIG = {
+        }
+XIAOMI.app.header.init();   
+   
+     
+     
+</script>
+<script type="text/javascript" src="themes/68ecshop_xiaomi/js/goodsDetail.min.js"></script>
+</html>

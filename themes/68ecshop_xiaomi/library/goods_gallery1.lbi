@@ -1,0 +1,10 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="goods-small-pic clearfix">
+  <ul id="goodsPicList">
+    <!-- {foreach from=$pictures item=picture name=no}-->
+    <li><img alt="" src="{$picture.img_url}" data-src="{$picture.img_url}"></li>
+    <!--{/foreach}-->
+   </ul>
+</div>
+<span class="icon-slides icon-slides-prev" title="上一张" id="goodsPicPrev">上一张</span>
+<span class="icon-slides icon-slides-next" title="下一张" id="goodsPicNext">下一张</span> 

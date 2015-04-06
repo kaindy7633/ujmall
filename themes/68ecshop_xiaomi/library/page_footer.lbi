@@ -1,0 +1,99 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div id="footerServiceLinkId"><div class="ft_service_link clearfix" data-tpa="YHD_GLOBAl_FOOTER_HELP">
+<div id="bottomHelpLinkId" class="ft_help_list clearfix">
+ <!-- {foreach from=$helps item=help_cat name=helps} -->
+<dl>
+<dt>{$help_cat.cat_name}</dt>
+<!-- {foreach from=$help_cat.article item=item} -->
+<dd>
+<a href="help.php?id={$item.article_id}">{$item.short_title|truncate:9}</a>
+</dd><!-- {/foreach} -->
+</dl>
+ <!-- {/foreach} -->
+</div>
+</div>
+</div>
+<!--footer 二维码 begin -->
+<div class="ft_code_wrap clearfix" data-tpa="YHD_GLOBAl_HEADER_MOBILE">
+<div class="ft_mobile_code clearfix">
+<img src="../images/kehutu.png">
+<dl>
+<dt>U+易购手机客户端</dt>
+<dd>随时随地，随便购！</dd>
+<dd>
+<a href="#" class="ft_iphone"><i></i>iPhone</a>
+<a href="#" class="ft_ipad" ><i></i>iPad</a>
+<a href="#" class="ft_android" ><i></i>Android</a>
+</dd>
+</dl>
+</div>
+<div class="ft_mobile_code clearfix">
+<img src="../images/lm_weixin.jpg" width="100">
+<dl>
+<dt>粮贸超市官方微信</dt>
+<dd>万千优惠资讯抢先收到，互动、查物流一步搞定！</dd>
+</dl>
+</div>
+</div>
+<!--footer 二维码 end-->
+<div id="footer" data-tpa="YHD_GLOBAl_FOOTER">
+<div class="ft_footer_service">
+<a href="javascript:void()"><span class="s1"></span>满额包邮</a>
+<a href="javascript:void()"><span class="s2"></span>正品保障</a>
+<a href="javascript:void()"><span class="s3"></span>售后无忧</a>
+<a href="javascript:void()"><span class="s4"></span>准时送达</a>
+</div>
+<p class="ft_footer_link">
+ <!--{if $txt_links }-->
+ <!--开始文字类型的友情链接{foreach from=$txt_links item=link name=name}--> 
+<a href="{$link.url}" target="_blank">{$link.name}</a>
+ <!-- {if !$smarty.foreach.nav_bottom_list.last} --> 
+    | 
+    <!-- {/if} --> 
+ <!-- {/foreach} -->
+ 		 <!-- {/if} -->
+</p>
+<p class="ft_footer_link">
+ <!-- {if $navigator_list.bottom} -->
+   				<!-- {foreach name=nav_bottom_list from=$navigator_list.bottom item=nav} -->
+<a href="{$nav.url}" target="_blank">{$nav.name}</a>
+
+<!-- {if !$smarty.foreach.nav_bottom_list.last} --> 
+    | 
+    <!-- {/if} --> 
+ <!-- {/foreach} -->
+ 		 <!-- {/if} -->
+</p>
+<p class="ft_footer_link">{$copyright}</p>
+<small class="ft_pic_link">
+<a href=""><img src="../images/bottom1.gif"></a>|
+<a href=""><img src="../images/bottom2.jpg"></a>|
+<a href=""><img src="../images/bottom3.jpg"></a>|
+<a href=""><img src="../images/bottom4.gif"></a>|
+<a href=""><img src="../images/bottom5.png"></a>|
+<a href=""><img src="../images/bottom6.png"></a>|
+<a href=""><img src="../images/bottom7.gif"></a>|
+<a href=""><img src="../images/bottom8.jpg"></a>|
+<a href=""><img src="../images/bottom9.png"></a>|
+</small>
+</div>
+<!-- cache enable -->
+ <script type="text/javascript" src="themes/68ecshop_xiaomi/js/script.js"></script>
+<style type="text/css">
+/*main css*/
+.izl-rmenu{position:fixed;right:0px;bottom:10px; width:74px;background:url(../images/r_b.png) 0px bottom no-repeat;z-index:999;}
+.izl-rmenu .btn{width:72px;height:73px;margin-bottom:1px;cursor:pointer;position:relative;}
+.izl-rmenu .btn-qq{background:url(../images/r_qq.png) 0px 0px no-repeat;background-color:#6da9de;}
+.izl-rmenu .btn-qq:hover{background-color:#488bc7;}
+.izl-rmenu a.btn-qq,.izl-rmenu a.btn-qq:visited{background:url(../images/r_qq.png) 0px 0px no-repeat;background-color:#6da9de;text-decoration:none;display:block;}
+.izl-rmenu .btn-wx{background:url(../images/r_wx.png) 0px 0px no-repeat;background-color:#78c340;}
+.izl-rmenu .btn-wx:hover{background-color:#58a81c;}
+.izl-rmenu .btn-wx .pic{position:absolute;right:72px;top:-7px;display:none;width:90px;height:90px;}
+.izl-rmenu .btn-phone{background:url(../images/r_phone.png) 0px 0px no-repeat;background-color:#fbb01f;}
+.izl-rmenu .btn-phone:hover{background-color:#ff811b;}
+.izl-rmenu .btn-phone .phone{background-color:#ff811b;position:absolute;width:160px;left:-160px;top:0px;line-height:73px;color:#FFF;font-size:18px;text-align:center;display:none;}
+.izl-rmenu .btn-top{background:url(../images/r_top.png) 0px 0px no-repeat;background-color:#666666;display:none;}
+.izl-rmenu .btn-top:hover{background-color:#444;}
+</style>
+<div id="top"></div>
+<div>

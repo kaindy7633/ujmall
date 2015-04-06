@@ -1,0 +1,51 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="last_crazy">
+<p>最后疯抢</p>
+<div class="clearfix brand_logo_wrap">
+  {foreach from=$brand_list name=brand_list item=brand}
+    {if $smarty.foreach.brand_list.iteration < 9}
+<div class="logo_wrap">
+<a style="transform: rotate(45deg);" href="#" class="brand_logo_white"></a>
+<a href="{$brand.url}" target="_blank" class="logo_link" data-ref="14582_13592173_1"><img src="data/brandlogo/{$brand.brand_logo}" width="45" height="45"></a>
+<a style="display: none;" href="{$brand.url}" target="_blank" class="discount">
+<i style="margin-top:35px; font-size:16px">{$brand.brand_name}</i>
+</a>
+</div>
+ {/if}
+    {/foreach}
+  {foreach from=$brand_list name=brand_list item=brand}
+    {if $smarty.foreach.brand_list.iteration ==9}
+<div data-tc="ad.0.0.14583-13592206.1" class="logo_wrap gray_logo1">
+<a style="transform: rotate(45deg);" href="#" class="brand_logo_gray"></a>
+<a href="{$brand.url}"  class="logo_link" ><img src="data/brandlogo/{$brand.brand_logo}" width="45" height="45"></a>
+<a style="display: none;" href="{$brand.url}" target="_blank" class="discount">
+<i style="margin-top:35px; font-size:16px">{$brand.brand_name}</i>
+</a>
+</div>
+ {/if}
+    {/foreach}
+    {foreach from=$brand_list name=brand_list item=brand}
+    {if $smarty.foreach.brand_list.iteration ==10}
+<div class="logo_wrap gray_logo2">
+<a style="transform: rotate(45deg);" href="#" class="brand_logo_gray"></a>
+<a href="{$brand.url}" target="_blank" class="logo_link" ><img src="data/brandlogo/{$brand.brand_logo}" width="45" height="45"></a>
+<a style="display: none;" href="{$brand.url}" target="_blank" class="discount">
+<i style="margin-top:35px; font-size:16px">{$brand.brand_name}</i>
+</a>
+</div>
+ {/if}
+    {/foreach}
+    {foreach from=$brand_list name=brand_list item=brand}
+    {if $smarty.foreach.brand_list.iteration ==11}
+<div data-tc="ad.0.0.14583-13592215.3" class="logo_wrap gray_logo3">
+<a style="transform: rotate(45deg);" href="#" class="brand_logo_gray"></a>
+<a href="{$brand.url}" target="_blank" class="logo_link" ><img src="data/brandlogo/{$brand.brand_logo}" width="45" height="45"></a>
+<a style="display: none;" href="{$brand.url}" target="_blank" class="discount">
+<i style="margin-top:35px; font-size:16px">{$brand.brand_name}</i>
+</a>
+</div>
+ {/if}
+    {/foreach}
+</div>
+</div>
+</div>

@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" /><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$page_title}</title>
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+
+<link rel="stylesheet" href="themes/68ecshop_xiaomi/css/tuangou.min.css" type="text/css" media="screen" charset="utf-8" />
+<link href="themes/68ecshop_xiaomi/css/search_table2.css" rel="stylesheet" type="text/css">
+<script language="javascript"> 
+<!--
+/*屏蔽所有的js错误*/
+function killerrors() { 
+return true; 
+} 
+window.onerror = killerrors; 
+//-->
+</script>
+{* 包含脚本文件 *}
+{insert_scripts files='utils.js,common.js'}
+{insert_scripts files='jquery-1.6.2.min.js'}
+{insert_scripts files='jquery.json.js,transport.js'}
+<script type="text/javascript" src="themes/68ecshop_xiaomi/js/libs/jquery18.js" ></script>
+</head>
+<body style="background:none">
+<script type="text/javascript">(function(){var screenWidth=window.screen.width;if(screenWidth>=1280){document.body.className="root_body";window.LOAD=true;}else{window.LOAD=false;}})()</script>
+<script >
+var Tday = new Array();
+var daysms = 24 * 60 * 60 * 1000
+var hoursms = 60 * 60 * 1000
+var Secondms = 60 * 1000
+var microsecond = 1000
+var DifferHour = -1
+var DifferMinute = -1
+var DifferSecond = -1
+function clock(key)
+{
+   var time = new Date()
+   var hour = time.getHours()
+   var minute = time.getMinutes()
+   var second = time.getSeconds()
+   var timevalue = ""+((hour > 12) ? hour-12:hour)
+   timevalue +=((minute < 10) ? ":0":":")+minute
+   timevalue +=((second < 10) ? ":0":":")+second
+   timevalue +=((hour >12 ) ? " PM":" AM")
+   var convertHour = DifferHour
+   var convertMinute = DifferMinute
+   var convertSecond = DifferSecond
+   var Diffms = Tday[key].getTime() - time.getTime()
+   DifferHour = Math.floor(Diffms / daysms)
+   Diffms -= DifferHour * daysms
+   DifferMinute = Math.floor(Diffms / hoursms)
+   Diffms -= DifferMinute * hoursms
+   DifferSecond = Math.floor(Diffms / Secondms)
+   Diffms -= DifferSecond * Secondms
+   var dSecs = Math.floor(Diffms / microsecond)
+  
+   if(convertHour != DifferHour) a=DifferHour+"</font>天";
+   if(convertMinute != DifferMinute) b=DifferMinute+"</font>时";
+   if(convertSecond != DifferSecond) c=DifferSecond+"</font>分"
+     d=dSecs+"</font>秒"
+     if (DifferHour>0) {a=a}
+     else {a=''}
+   document.getElementById("leftTime"+key).innerHTML = a + b + c + d; //显示倒计时信息
+
+
+}
+</script>
+
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+	<div class="tugouWrap w" style="width:1190px; margin:0 auto;">
+	<div class="tg_pos"><span class="pos_icon"></span> <!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem --> </div>
+<DIV class="tuan_list_container clearfix" id=tuan_list >
+ <!--{foreach from=$goods_list item=goods name=name key=key}-->
+        <!--{if $goods.goods_name neq ''}-->
+    <DIV class="tg_list" >
+<DIV class=tg_goods onmouseover="this.className='tg_goods active';" 
+onmouseout="this.className='tg_goods';">
+<P class=name><A title="{$goods.goods_name|escape:html}" 
+href="pro_goods.php?id={$goods.goods_id}" target=_blank>{$goods.goods_name|truncate:15}</A> </P>
+<P class=tg_pic><A title="{$goods.goods_name|escape:html}" 
+href="pro_goods.php?id={$goods.goods_id}" target=_blank><IMG 
+height=176 alt="{$goods.goods_name|escape:html}" width=176 
+src="{$goods.goods_img}"></A> 
+<SPAN class=tg_info><SPAN class=Left  id="leftTime{$key}">{$lang.please_waiting}</SPAN>
+<SPAN 
+class=Right>已团购：<B>{$goods.count1}</B>件</SPAN></SPAN> </P><A 
+class="delstl gogo {if $goods.goods_number eq 0}over{/if}" title="{$goods.goods_name|escape:html}" 
+href="pro_goods.php?id={$goods.goods_id}" target=_blank><STRONG 
+class=yen>{$goods.promote_price}</STRONG><SPAN style=" color:#fff;"><em style="background:url(../images/discount.png) no-repeat; width:51px; height:17px; line-height:17px;display: block;padding-left: 10px;"><B>{$goods.zhekou}</B>折</em> <BR><I style="color:#999; padding-top:5px;">{$goods.shop_price}</I></SPAN></A> 
+</DIV>
+   {if $goods.is_shipping}
+  <P class="icon bwl"></P>
+   {/if}
+</DIV>
+<script>
+Tday[{$key}] = new Date("{$goods.gmt_end_time}");  
+window.setInterval(function()    
+{clock({$key});}, 1000);    
+</script>
+
+{/if}
+{/foreach}
+
+<div style="height:0px; line-height:0px; clear:both"></div>
+<div style="float:right; margin-right:24px;">	
+<!-- #BeginLibraryItem "/library/pages.lbi" --><!-- #EndLibraryItem -->
+</div></div>
+
+</div>
+
+
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+    <!--js start-->
+
+<!--js end-->
+</body>
+</html>

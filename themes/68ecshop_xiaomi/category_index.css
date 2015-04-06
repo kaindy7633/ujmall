@@ -1,0 +1,72 @@
+.marg-top-5{margin-top:5px;}
+.marg-top-8{margin-top:8px;}
+.marg-top-10{margin-top:10px;}
+.blank15{clear:both;  font-size:0; overflow:hidden; height:15px;}
+.blank10{clear:both;  font-size:0; overflow:hidden; height:10px;}
+.blank{clear:both;  font-size:0; overflow:hidden; height:5px; background:#FFF;}
+
+.cin-box{
+  width:960px; height:auto;
+}
+.cin-topname{border-bottom:2px solid #990000;height:35px;}
+.cin-topname .left{float:left;font-family:"微软雅黑";font-size:17px;font-weight:bold;line-height:35px;}
+.cin-topname .right{float:right;font-weight:normal;font-size:12px;padding-top:15px;}
+
+.cin-tree{float:left;width:660px;height:160px;border:1px solid #d1d1d1;overflow:hidden;}
+.cin-tree .tree-tit{background:url(images/cin_bg_category.gif) repeat-x 0 0;height:31px; line-height:31px;text-indent:10px;font-size:15px;font-weight:bold;}
+.cin-tree dl{float:left;width:645px;padding:5px 8px 5px 8px;border-bottom:1px dotted #d1d1d1;}
+.cin-tree dl dt{float:left;width:80px;height:22px;line-height:22px;background:url(images/cin_bg_category_tree.gif) no-repeat 0 center;text-align:center;}
+.cin-tree dl dd{float:left;width:550px;padding-left:15px;}
+.cin-tree dl dd a{white-space:nowrap;}
+.cin-rightad{float:right;width:280px;height:160px;border:1px solid #d1d1d1;}
+.cin-rightad img{width:280px;height:160px;}
+
+.childcat_title{width:960px;border-bottom:2px solid #903;overflow:hidden;height:auto;}
+.childcat_title .left{float:left;width:650px;font-size:17px;font-weight:bold;}
+.childcat_title .right{float:right;width:283px;text-align:right;font-size:14px;}
+.childcat_box{width:960px;padding-bottom:12px;background:url(images/cin_bg_line.gif) repeat-x 0 bottom;overflow:hidden;}
+.childcat_box ul{float:left;width:960px;}
+.childcat_box ul li{float:left;width:180px;padding-top:10px;height:auto;padding-right:15px;text-align:center;}
+.childcat_box ul li img{border:1px solid #ddd;width:170px;height:170px;}
+.childcat_title a,.childcat_box a{color:#000;text-decoration:none;}
+.shop_price{color:#ff3300;font-weight:bold;}
+.market_price{text-decoration:line-through;}
+.childcat_box_none{display:none;}
+.cctit_cur{color:#ff3300;font-weight:bold;background:#ddd;padding:3px;}
+
+.cin-adimg1{float:left;width:470px;padding:5px 0;}
+.cin-adimg2{float:left;width:470px;padding:5px 0 5px 13px;}
+.cin-adimg1 img, .cin-adimg2 img{width:470px;height:230px;border:1px solid #ddd;}
+
+/* 幻灯_start */
+ul,li,ol{ list-style:none;}
+img,a img{ border:none;}
+table{ border-collapse:collapse; border-spacing:0;}
+em,i,u{ font-style:normal;}
+a{ text-decoration:none;color:#434343;}
+a:hover{ text-decoration:underline; color:#ff4000;}
+body{font-size:12px; font-family:"宋体";color:#434343;}
+.clear{clear:both;  font-size:0; overflow:hidden; height:0;}
+
+h1,h2,h3{ font-family:"微软雅黑";color:#00659b;}
+h1,h2,h3,h4,h5,h6{ font-weight:bold;}
+.mb15 {margin-bottom: 0px;}
+.sub_box{width:960px; height:310px;  position:relative; overflow:hidden;  background:url() center center no-repeat; *background:url() 220px 120px no-repeat;}
+.sub_box img{border:none; width:960px; height:310px;}
+#bd1lfimg{position:relative; width:960px; height:310px; overflow:hidden;}
+#bd1lfimg div{width:100000px; margin-left:-4px;}
+#bd1lfimg dl{width:960px; height:310px; position:relative; overflow:hidden; float:left;}
+#bd1lfimg dt{width:960px; height:310px; position:absolute; left:0px; top:0px;}
+#bd1lfimg dd{width:933px; height:60px; background:#000000; filter:alpha(Opacity=40); Opacity:0.4; position:absolute; left:0px; bottom:0px; padding:0 20px;}
+#bd1lfimg dd h2{height:25px; padding:8px 0 4px 0; line-height:25px; overflow:hidden;}
+#bd1lfimg dd h2 a{font-size:21px; font-weight:bold; color:#ffffff;}
+#bd1lfimg dd a{color:#ffffff; text-decoration:none;font-weight:bold; }
+#bd1lfimg dd a:hover{text-decoration:none; color:#cccccc;}
+#bd1lfimg dd tt{color:#dddddd; line-height:1.2em;}
+#bd1lfimg dd tt a:hover{text-decoration:underline;}
+.sub_nav{width:960px; height:25px; bottom:2px;right:5px; position:absolute; color:#999999; z-index:200;}
+.sub_no{height:25px; float:right;}
+.sub_no li{display:block; width:25px; height:25px; float:left; overflow:hidden; line-height:25px; vertical-align:middle; text-align:center; background:#ff3300; filter:alpha(Opacity=90); Opacity:0.9; font-family:Arial; font-size:17px;font-weight:bold; color:#fff; cursor:pointer;margin-right:3px;}
+.sub_no li.show{background:#eee; color:#000000;margin-right:3px;}
+
+/* 幻灯_end */

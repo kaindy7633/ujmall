@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+
+	<title>{$page_title}</title>
+	<script type="text/javascript" src="themesmobile/68ecshopcom_mobile/js/jquery.js"></script>
+   <script type="application/javascript" src="themesmobile/68ecshopcom_mobile/js/jquery.more.js"></script>
+	<script src="themesmobile/68ecshopcom_mobile/js/modernizr.js"></script>
+
+	
+	<link rel="stylesheet" href="themesmobile/68ecshopcom_mobile/css/ecsmart.css">
+
+	<link rel="alternate" type="application/rss+xml" title="RSS|{$page_title}" href="{$feed_url}" />	
+     {insert_scripts files='common.js'}       
+	</head>
+<body>
+<div style="margin-left: 0px; margin-right: 0px;" class="page-shadow" id="page">
+  <div class="searchbox">
+    <div class="sb-header"> <a class="sb-back" href="javascript:history.back(-1)">返回</a>
+      <div class="sb-search">
+         <form id="searchForm" name="searchForm" method="get" action="search.php" onSubmit="return checkSearchForm()" class="searchform">          
+              <input  name="keywords" id="keyword" value="请输入搜索文字" onFocus="if(this.value=='请输入搜索文字'){this.value=''}" onBlur="if(this.value==''){this.value='请输入搜索文字'}" type="text"/>
+          <input type="submit"/>
+        </form>
+      </div>
+     
+    </div>
+    <div class="sb-category"></div>
+  </div>
+  <div class="minisite-wrapper" id="J_MinisiteWrap"></div>
+  <div class="searchbox-placeholder" style="height: 45px; display: none;"></div>
+ <script type="text/javascript">
+var url = 'brand.php?act=ajax&brand={$smarty.request.id}&cat={$smarty.request.cat}&page=1&sort={$smarty.request.sort}&order={$smarty.request.order}';
+$(function(){
+	$('#J_ItemList').more({'address': url});
+});
+$(window).scroll(function () {
+		if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+			$('.get_more').click();
+		}
+	});
+</script>
+<div class="filter" id="J_Filter">
+  <ul class="filter-inner">
+ 	<li {if $pager.sort eq 'goods_id'} class="filter-cur"{/if}><a href="{$script_name}.php?category={$category}&display={$pager.display}&id={$brand_id}&brand={$brand_id}&price_min={$price_min}&price_max={$price_max}&filter_attr={$filter_attr}&page={$pager.page}&sort=goods_id&order=<!-- {if $pager.sort == 'goods_id' && $pager.order == 'DESC'} -->ASC<!-- {else} -->DESC<!-- {/if} -->#goods_list" >上架<i class="<!-- {if $pager.sort == 'goods_id' && $pager.order == 'DESC'} -->f-ico-arrow-u<!-- {else} -->f-ico-arrow-d<!-- {/if} -->"></i></a></li>
+    <li {if $pager.sort eq 'last_update'} class="filter-cur"{/if}><a href="{$script_name}.php?category={$category}&display={$pager.display}&id={$brand_id}&brand={$brand_id}&price_min={$price_min}&price_max={$price_max}&filter_attr={$filter_attr}&page={$pager.page}&sort=last_update&order=<!-- {if $pager.sort == 'last_update' && $pager.order == 'DESC'} -->ASC<!-- {else} -->DESC<!-- {/if} -->#goods_list" >更新<i class="<!-- {if $pager.sort == 'last_update' && $pager.order == 'DESC'} -->f-ico-arrow-u<!-- {else} -->f-ico-arrow-d<!-- {/if} -->"></i></a></li>
+    <li {if $pager.sort eq 'salenum'} class="filter-cur"{/if}><a href="{$script_name}.php?category={$category}&display={$pager.display}&id={$brand_id}&brand={$brand_id}&price_min={$price_min}&price_max={$price_max}&filter_attr={$filter_attr}&page={$pager.page}&sort=salenum&order=<!-- {if $pager.sort == 'salenum' && $pager.order == 'DESC'} -->ASC<!-- {else} -->DESC<!-- {/if} -->#goods_list" >销量<i class="<!-- {if $pager.sort == 'salenum' && $pager.order == 'DESC'} -->f-ico-arrow-u<!-- {else} -->f-ico-arrow-d<!-- {/if} -->"></i></a></li>
+    <li {if $pager.sort eq 'shop_price'} class="filter-cur"{/if}><a href="{$script_name}.php?category={$category}&display={$pager.display}&id={$brand_id}&brand={$brand_id}&price_min={$price_min}&price_max={$price_max}&filter_attr={$filter_attr}&page={$pager.page}&sort=shop_price&order=<!-- {if $pager.sort == 'shop_price' && $pager.order == 'ASC'} -->DESC<!-- {else} -->ASC<!-- {/if} -->#goods_list">价格<i class="<!-- {if $pager.sort == 'shop_price' && $pager.order == 'ASC'} -->f-ico-arrow-d<!-- {else} -->f-ico-arrow-u<!-- {/if} -->"></i></a></li>
+    
+  </ul>
+</div>
+<div class="filter-placeholder" style="height: 39px; display: none;"></div>
+{if $goods_list}
+<div id="J_ItemList" style="opacity: 1;" class="srp m-animation album">
+<div class="product single_item info"> 		
+</div>
+<a href="javascript:;" class="get_more"><img src='static/img/loader.gif'></a>
+</div>
+ {else}
+<ul class="new-mu_l2w">
+<div class="new-cp-prom2">
+<strong class="new-span-block">抱歉暂时没有相关结果，换个筛选条件试试吧</strong>
+</div>
+</ul>
+{/if}
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+</div>
+  <!-- #BeginLibraryItem "/library/footer_nav.lbi" --><!-- #EndLibraryItem -->
+</body>
+
+</html>

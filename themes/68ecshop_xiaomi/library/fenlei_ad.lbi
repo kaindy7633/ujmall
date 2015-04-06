@@ -1,0 +1,66 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<?php
+/* 
+根据广告名称获取图片列表
+广告名称格式为fenleiid_开头后面跟的是分类ID数字
+*/
+function get_fenlei1($cat_id)
+{
+     $fenlei_list=array();
+     $sql = "select ap.ad_width,ap.ad_height, ad.ad_id, ad.ad_name,ad.ad_code,ad.ad_link from ".$GLOBALS['ecs']->table('ad_position').
+		" as ap left join ".$GLOBALS['ecs']->table('ad')." as ad on ad.position_id = ap.position_id ".
+		" where ap.position_name='分类_" . $cat_id . "_左' and ad.media_type=0 ".
+		" and UNIX_TIMESTAMP()>ad.start_time and UNIX_TIMESTAMP()<ad.end_time and ad.enabled=1";
+     $res = $GLOBALS['db']->query($sql);
+     $fenlei_num=1;
+     while ( $row = $GLOBALS['db']->fetchRow($res) )
+     {
+	$row['fenlei_num']=$fenlei_num;
+	$row['href'] = "affiche.php?ad_id=" . $row[ad_id] . "&amp;uri=" . urlencode($row['ad_link']);
+	$row['src'] = "data/afficheimg/". $row['ad_code'];
+	$fenlei_list[] = $row;
+	$fenlei_num++;
+     }
+     return $fenlei_list;
+}
+function get_fenlei2($cat_id)
+{
+     $fenlei_list=array();
+     $sql = "select ap.ad_width,ap.ad_height, ad.ad_id, ad.ad_name,ad.ad_code,ad.ad_link from ".$GLOBALS['ecs']->table('ad_position').
+		" as ap left join ".$GLOBALS['ecs']->table('ad')." as ad on ad.position_id = ap.position_id ".
+		" where ap.position_name='分类_" . $cat_id . "_右' and ad.media_type=0 ".
+		" and UNIX_TIMESTAMP()>ad.start_time and UNIX_TIMESTAMP()<ad.end_time and ad.enabled=1";
+     $res = $GLOBALS['db']->query($sql);
+     $fenlei_num=1;
+     while ( $row = $GLOBALS['db']->fetchRow($res) )
+     {
+	$row['fenlei_num']=$fenlei_num;
+	$row['href'] = "affiche.php?ad_id=" . $row[ad_id] . "&amp;uri=" . urlencode($row['ad_link']);
+	$row['src'] = "data/afficheimg/". $row['ad_code'];
+	$fenlei_list[] = $row;
+	$fenlei_num++;
+     }
+     return $fenlei_list;
+}
+
+
+$GLOBALS['smarty']->assign('fenlei1' , get_fenlei1($GLOBALS['smarty']->_var['category']));
+$GLOBALS['smarty']->assign('fenlei2' , get_fenlei2($GLOBALS['smarty']->_var['category']));
+?>
+
+{if $fenlei1 or $fenlei2}
+ <!-- 商品列表页头 Banner -->
+         <div class="category-bn-box clearfix">
+            <div class="category-bn9">
+            {foreach from=$fenlei1 item=fenleiitem name="fenlei"}
+            <a href="{$fenleiitem.href}" target="_blank"><img src="{$fenleiitem.src}" alt="" /></a>
+            {/foreach}
+            </div>
+            <div class="category-bn3">
+            {foreach from=$fenlei2 item=fenleiitem name="fenlei"}
+            <a href="{$fenleiitem.href}" target="_blank"><img src="{$fenleiitem.src}" alt="" /></a>
+            {/foreach}
+            </div>
+        </div>
+<!-- 商品列表页头 Banner End -->
+{/if}

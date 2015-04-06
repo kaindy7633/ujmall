@@ -1,0 +1,42 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<div id="category_tree">
+  <h2><span>商品分类</span><em>Categories</em></h2>
+	
+ <!--{foreach from=get_categories_tree() item=cat}-->
+	<div class="toggleblock">
+     <div class="clearfix title" onClick="shows('{$cat.id}')">
+		<span class="<!--{if $current_cat_pr_id eq $cat.id}-->open<!--{else}-->close<!--{/if}-->" id="sp_{$cat.id}"></span> <a href="{$cat.url}" class="f_l" >{$cat.name|escape:html}</a></div>
+        
+          <!--{if $current_cat_pr_id eq $cat.id}-->
+	     <div id="Tree_{$cat.id}" class="shows">
+		  <!--{if $cat.cat_id}-->
+            <!--{foreach from=$cat.cat_id item=child}-->
+             <a href="{$child.url}" title="{$child.name|escape:html}">{$child.name|escape:html}</a>
+            <!--{/foreach}-->
+		 <!--{/if}-->
+		 </div>
+         <!--{else}-->
+         <div id="Tree_{$cat.id}" class="hides">
+		 <!--{if $cat.cat_id}-->
+     <!--{foreach from=$cat.cat_id item=child}-->
+     <a href="{$child.url}" title="{$child.name|escape:html}">{$child.name|escape:html}</a>
+     <!--{/foreach}-->
+		 <!--{/if}-->
+		 </div>
+         
+         <!--{/if}-->
+	</div>	 
+  <!--{/foreach}-->
+  </div>
+
+     
+     
+  
+<script language="javascript">
+function shows(ids){var ids=ids;var tree_1,tree_2;tree_1=document.getElementById("sp_"+ids);tree_2=document.getElementById("Tree_"+ids);
+
+tree_1.className=(tree_1.className=="open")?"close":"open";
+
+tree_2.className=(tree_2.className=="shows")?"hides":"shows";}
+</script>

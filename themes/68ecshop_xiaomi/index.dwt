@@ -1,0 +1,993 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$page_title}</title>
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+
+<style type="text/css">
+.mod_iframe1{ width:240px; height:220px;}
+.mod_iframe1 .tabs {
+    height: 32px;
+}
+.mod_iframe1 .tabs a {
+    float: left;
+    height: 31px;
+    cursor: pointer;
+    background: none repeat scroll 0% 0% #F7F7F7;
+    line-height: 31px;
+    border-right: 1px solid #EEE;
+	border-left: 1px solid #EEE;
+	border-bottom: 1px solid #EEE;
+    border-width: 0px 1px 1px;
+    border-style: none solid solid;
+    border-color: -moz-use-text-color #EEE #EEE;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;
+    margin-left: -1px;
+    text-align: center;
+    width: 119px;
+}
+.mod_iframe1 .tabs .hover{ background:#Fff; border-top:1px solid #eee; border-bottom:0px;}
+.content{ width:240px; height:178px;}
+.content ul li{ width: 220px;height: 20px;line-height: 20px;margin-left: 20px;margin-top: 10px;}
+<!--土特产模块CSS start-->
+#floorNative{ width:1200px; margin:0 auto;}
+#floorNative h2{ color:#FF3300; font-family: "微软雅黑", "Courier New", Courier, monospace; padding:5px 0;}
+#nativeContent{ border-top:#FF3300 solid 2px;}
+#nativeContent ul{ width:100%; margin-top:5px;}
+#nativeContent ul li.group_li_area{
+	float:left;
+	width:230px; 
+	height:300px; 
+	border:1px solid #efefef;
+	margin-right:8px;
+}
+<!--土特产模块CSS end-->
+<!--广元土特产标题CSS start-->
+.title_gyttc a{ color:#C00; font-weight:bold;}
+<!--广元土特产标题CSS end-->
+</style>
+ {* 包含脚本文件 *}
+ {insert_scripts files='jquery-1.6.2.min.js'}
+{insert_scripts files='common.js,index.js'}
+{insert_scripts files='jquery.json.js,transport.js'}
+<link type="text/css" rel="stylesheet" href="themes/68ecshop_xiaomi/css/global_site_index_new.css" />
+<!--自定义二次开发CSS文件引入 start-->
+<link type="text/css" rel="stylesheet" href="themes/68ecshop_xiaomi/css/seconde_time_development.css" />
+<!--自定义二次开发CSS文件引入 end-->
+
+</head>
+<body  class="w1200" >
+ <!-- #BeginLibraryItem "/library/page_header-index.lbi" --><!-- #EndLibraryItem -->
+ <div style="clear:both; height:0px; line-height:0px"></div>
+<div class="layout_main">
+<!-- banner start-->
+<div class="laybox banner_slider clearfix" id="firstScreen">
+ <!-- #BeginLibraryItem "/library/index_ad3.lbi" --><!-- #EndLibraryItem -->
+<div class="layout_col_b">
+<div class="mod_exclusivity" data-tpa="YHD_HOME_BAMBOO_RIGHT_YHZX">
+<h3>U+易购专享</h3>
+<ol>
+<li><a href="javascript:void()"><img src="../images/shiyong.png">0元试用</a></li>
+<li><a href="javascript:void()" ><img src="../images/vip.jpg">会员俱乐部</a></li>
+<li><a href="javascript:void()"><img src="../images/lipin.jpg">礼品卡</a></li>
+</ol>
+</div>
+<script type="text/javascript">
+function setContentTab(name, curr, n) {
+    for (i = 1; i <= n; i++) {
+        var menu = document.getElementById(name + i);
+        var cont = document.getElementById("con_" + name + "_" + i);
+        menu.className = i == curr ? "hover" : "";
+        if (i == curr) {
+            cont.style.display = "block";
+        } else {
+            cont.style.display = "none";
+        }
+    }
+}
+</script>
+<div class="mod_iframe1">
+<p class="tabs">
+    <a id="two1" onmouseover="setContentTab('two',1,2)" class="hover">公告</a>
+ 	<a id="two2" onmouseover="setContentTab('two',2,2)">新闻</a>
+
+</p>
+				<div id="con_two_1" class="content" style="display: block;">
+					 <ul class="news_list">
+    			<!-- TemplateBeginEditable name="首页公告" -->
+<!-- #BeginLibraryItem "/library/cat_articles.lbi" -->
+
+
+  <!--{foreach from=$articles item=article_item name=name}-->
+  <li> <a href="{$article_item.url}" target="_blank">{$article_item.short_title}</a> </li>
+  <!--{/foreach}-->
+
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+					</ul>
+				</div>
+                <div id="con_two_2" class="content" style="display:none;">
+					 <ul class="news_list">
+    				<!-- TemplateBeginEditable name="首页新闻" -->
+<!-- #BeginLibraryItem "/library/cat_articles.lbi" -->
+
+
+  <!--{foreach from=$articles item=article_item name=name}-->
+  <li> <a href="{$article_item.url}" target="_blank">{$article_item.short_title}</a> </li>
+  <!--{/foreach}-->
+
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+					</ul>
+				</div>
+</div>
+</div>
+</div>
+<!--banner end-->
+ <!-- #BeginLibraryItem "/library/bannerxia.lbi" --><!-- #EndLibraryItem -->
+        <!--蓝月亮广告start -->
+        <div class="index_column_ad">
+  <!-- TemplateBeginEditable name="蓝月亮广告" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+
+        </div>
+        <!--蓝月亮广告end -->
+        <!--通用楼层start -->
+        <script>
+         function adPlay(id){
+		  $(id+' .trig_box li a').mouseover(function(){
+		   $(this).addClass('cur').siblings().removeClass();
+		   $(this).siblings().find('span').css('width',0)
+		   $(this).find('span').css('width',30);
+		   $(id+' .img_box').animate({left:-$(this).index()*330},500);
+		  })
+		  var num=0;
+		  function autoplay(){
+			num++;
+			if(num>2){
+			 num=0
+			}
+			$(id+' .trig_box li a span').css('width',0).hide();
+			$(id+' .trig_box li a').eq(num).addClass('cur').siblings().removeClass();
+			$(id+' .trig_box li a').eq(num).find('span').show().animate({width:30},2500);
+			$(id+' .img_box').animate({left:-num*330},500);
+		   }
+		   $(id).hover(function(){
+			clearInterval(mytime);
+		   },function(){
+			mytime=setInterval(autoplay,2500);
+		   })
+		   var mytime=setInterval(autoplay,2500);
+		  }
+		 adPlay('.slider_index_ad1');
+		 adPlay('.slider_index_ad2');
+		adPlay('.slider_index_ad3');
+		 adPlay('.slider_index_ad4');
+		 adPlay('.slider_index_ad5');
+		 adPlay('.slider_index_ad6');
+		 adPlay('.slider_index_ad7');
+        </script>
+        <!--楼层一start-->
+            <div class="wrap mod_index_floor clearfix" id="floorSx" data-tpa="YHD_NHOME_SXHG">
+         	<!-- #BeginLibraryItem "/library/title1.lbi" --><!-- #EndLibraryItem -->
+            <div class="a_con">
+     		<!-- #BeginLibraryItem "/library/title_1.lbi" --><!-- #EndLibraryItem -->
+            <a>
+            <!-- TemplateBeginEditable name="楼层1广告1" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+            </a>
+            </div>
+            <div class="b_con">
+            <div class="slider_index_ad1 slider_index_ad" id="sxSliderIndexAd">
+            <ul class="img_box clearfix" data-tpc="5">
+            <!-- TemplateBeginEditable name="楼层1广告切换1" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+             <!-- TemplateBeginEditable name="楼层1广告切换2" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+            <!-- TemplateBeginEditable name="楼层1广告切换3" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+            </ul>
+            <ul class="trig_box">
+            <li class="clearfix">
+            <a class="cur"><span></span></a>
+            <a><span></span></a>
+            <a><span></span></a>
+            </li>
+            </ul>
+            </div>
+            </div>
+            <div class="c_con" data-tpc="6">
+            <a> <!-- TemplateBeginEditable name="楼层1广告3" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --></a>
+            <a> <!-- TemplateBeginEditable name="楼层1广告4" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --></a>
+            </div>
+            <div class="d_con" data-tpc="7">
+            <a> <!-- TemplateBeginEditable name="楼层1广告5" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --></a>
+            </div>
+            <div class="e_con" data-tpc="8">
+            <a> <!-- TemplateBeginEditable name="楼层1广告6" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --></a>
+            <a> <!-- TemplateBeginEditable name="楼层1广告7" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --></a>
+            </div>
+            </div>
+            <!-- 楼层一 end -->
+             <!--楼层二start-->
+                <div class="wrap mod_index_floor clearfix" id="floorSx" data-tpa="YHD_NHOME_SXHG">
+                <!-- #BeginLibraryItem "/library/title2.lbi" --><!-- #EndLibraryItem -->
+                <div class="a_con">
+                <!-- #BeginLibraryItem "/library/title_2.lbi" --><!-- #EndLibraryItem -->
+                <a>
+                <!-- TemplateBeginEditable name="楼层2广告1" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+                </a>
+                </div>
+                <div class="b_con">
+                <div class="slider_index_ad slider_index_ad2" id="customSliderIndexAd_INDEX2_FLOOR7" >
+                <ul class="img_box clearfix" data-tpc="5">
+                <!-- TemplateBeginEditable name="楼层2广告切换1" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+                 <!-- TemplateBeginEditable name="楼层2广告切换2" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+                <!-- TemplateBeginEditable name="楼层2广告切换3" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+                </ul>
+                <ul class="trig_box">
+                <li class="clearfix">
+                <a class="cur"><span></span></a>
+                <a><span></span></a>
+                <a><span></span></a>
+                </li>
+                </ul>
+                </div>
+                </div>
+                <div class="c_con" data-tpc="6">
+                <a> <!-- TemplateBeginEditable name="楼层2广告3" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --></a>
+                <a> <!-- TemplateBeginEditable name="楼层2广告4" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --></a>
+                </div>
+                <div class="d_con" data-tpc="7">
+                <a> <!-- TemplateBeginEditable name="楼层2广告5" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --></a>
+                </div>
+                <div class="e_con" data-tpc="8">
+                <a> <!-- TemplateBeginEditable name="楼层2广告6" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --></a>
+                <a> <!-- TemplateBeginEditable name="楼层2广告7" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --></a>
+                </div>
+                </div>
+            <!-- 楼层二end -->
+             <!--楼层三start-->
+            <div class="wrap mod_index_floor clearfix" id="floorSx" data-tpa="YHD_NHOME_SXHG">
+         	<!-- #BeginLibraryItem "/library/title3.lbi" --><!-- #EndLibraryItem -->
+            <div class="a_con">
+     		<!-- #BeginLibraryItem "/library/title_3.lbi" --><!-- #EndLibraryItem -->
+            <a>
+					<!-- TemplateBeginEditable name="楼层3广告1" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+                    </a>
+            </div>
+            <div class="b_con">
+            <div class="slider_index_ad slider_index_ad3" id="foodSliderIndexAd">
+            <ul class="img_box clearfix" data-tpc="5">
+						<!-- TemplateBeginEditable name="楼层3广告切换1" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+                         <!-- TemplateBeginEditable name="楼层3广告切换2" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+					<!-- TemplateBeginEditable name="楼层3广告切换3" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+            </ul>
+            <ul class="trig_box">
+            <li class="clearfix">
+            <a class="cur"><span></span></a>
+            <a><span></span></a>
+            <a><span></span></a>
+            </li>
+            </ul>
+            </div>
+            </div>
+            <div class="c_con" data-tpc="6">
+                    <a> <!-- TemplateBeginEditable name="楼层3广告3" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --></a>
+                    <a> <!-- TemplateBeginEditable name="楼层3广告4" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --></a>
+            </div>
+            <div class="d_con" data-tpc="7">
+                    <a> <!-- TemplateBeginEditable name="楼层3广告5" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --></a>
+            </div>
+            <div class="e_con" data-tpc="8">
+                    <a> <!-- TemplateBeginEditable name="楼层3广告6" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --></a>
+                    <a> <!-- TemplateBeginEditable name="楼层3广告7" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --></a>
+            </div>
+            </div>
+            <!-- 楼层三 end -->
+        <!--楼层四start-->
+        <div class="wrap mod_index_floor clearfix">
+    	<!-- #BeginLibraryItem "/library/title4.lbi" --><!-- #EndLibraryItem -->
+        <div class="a_con">
+       <!-- #BeginLibraryItem "/library/title_4.lbi" --><!-- #EndLibraryItem -->
+       <a class="pic">
+       <!-- TemplateBeginEditable name="楼层4广告1" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+</a>
+        </div>
+        <div class="b_con">
+        <div class="slider_index_ad slider_index_ad4" id="xhSliderIndexAd">
+        <ul style="left: -660px;" class="img_box clearfix" data-tpc="5">
+        <!-- TemplateBeginEditable name="楼层4广告切换1" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+       <!-- TemplateBeginEditable name="楼层4广告切换2" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+        <!-- TemplateBeginEditable name="楼层4广告切换3" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+        </ul>
+        <ul class="trig_box">
+        <li class="clearfix">
+        <a class=""><span style="width: 0px; overflow: hidden;"></span></a>
+        <a class=""><span style="width: 0px; overflow: hidden;"></span></a>
+        <a class="cur"><span style="width: 37.9686%; overflow: hidden;"></span></a>
+        </li>
+        </ul>
+        </div>
+        </div>
+        <div class="c_con" data-tpc="6">
+       <!-- TemplateBeginEditable name="楼层4广告3" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --></a>
+      <!-- TemplateBeginEditable name="楼层4广告4" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+        </div>
+        <div class="d_con" data-tpc="7">
+         <!-- TemplateBeginEditable name="楼层4广告5" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+        </div>
+        <div class="e_con" data-tpc="8">
+        <a>
+        <!-- TemplateBeginEditable name="楼层4广告6" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --></a>
+        </div>
+        <div class="f_con clearfix" data-tpc="9">
+        <div class="f1">
+       <!-- TemplateBeginEditable name="楼层4广告7" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+        </div>
+        <div class="f2">
+        <!-- TemplateBeginEditable name="楼层4广告8" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+        </div>
+        <div class="f3">
+       <!-- TemplateBeginEditable name="楼层4广告9" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+        </div>
+        <div class="f4">
+        <!-- TemplateBeginEditable name="楼层4广告10" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+        </div>
+        <div class="f5">
+       <!-- TemplateBeginEditable name="楼层4广告11" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+        </div>
+        </div>
+        </div>
+        <!--楼层4end-->
+                     <!--楼层五start-->
+            <div class="wrap mod_index_floor clearfix" id="floorSx" data-tpa="YHD_NHOME_SXHG">
+         	<!-- #BeginLibraryItem "/library/title5.lbi" --><!-- #EndLibraryItem -->
+            <div class="a_con">
+     		<!-- #BeginLibraryItem "/library/title_5.lbi" --><!-- #EndLibraryItem -->
+            <a>
+					<!-- TemplateBeginEditable name="楼层5广告1" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+                    </a>
+            </div>
+            <div class="b_con">
+            <div class="slider_index_ad slider_index_ad5" id="customSliderIndexAd_INDEX2_FLOOR8">
+            <ul class="img_box clearfix" data-tpc="5">
+						<!-- TemplateBeginEditable name="楼层5广告切换1" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+                         <!-- TemplateBeginEditable name="楼层5广告切换2" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+					<!-- TemplateBeginEditable name="楼层5广告切换3" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+            </ul>
+            <ul class="trig_box">
+            <li class="clearfix">
+            <a class="cur"><span></span></a>
+            <a><span></span></a>
+            <a><span></span></a>
+            </li>
+            </ul>
+            </div>
+            </div>
+            <div class="c_con" data-tpc="6">
+                    <a> <!-- TemplateBeginEditable name="楼层5广告3" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --></a>
+                    <a> <!-- TemplateBeginEditable name="楼层5广告4" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --></a>
+            </div>
+            <div class="d_con" data-tpc="7">
+                    <a> <!-- TemplateBeginEditable name="楼层5广告5" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --></a>
+            </div>
+            <div class="e_con" data-tpc="8">
+                    <a> <!-- TemplateBeginEditable name="楼层5广告6" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --></a>
+                    <a> <!-- TemplateBeginEditable name="楼层5广告7" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --></a>
+            </div>
+            </div>
+            <!-- 楼层五 end -->
+            <!--楼层六 start-->
+            <div class="wrap mod_index_floor clearfix" id="floor3c">
+     	<!-- #BeginLibraryItem "/library/title6.lbi" --><!-- #EndLibraryItem -->
+            <div class="a_con">
+     		<!-- #BeginLibraryItem "/library/title_6.lbi" --><!-- #EndLibraryItem -->
+            <a>
+					<!-- TemplateBeginEditable name="楼层6广告1" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+                    </a>
+            </div>
+            <div class="b_con">
+            <div class="slider_index_ad slider_index_ad6" id="customSliderIndexAd_INDEX2_FLOOR8">
+            <ul class="img_box clearfix" data-tpc="5">
+						<!-- TemplateBeginEditable name="楼层6广告切换1" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+                         <!-- TemplateBeginEditable name="楼层6广告切换2" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+
+					<!-- TemplateBeginEditable name="楼层6广告切换3" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+            </ul>
+            <ul class="trig_box">
+            <li class="clearfix">
+            <a class="cur"><span></span></a>
+            <a><span></span></a>
+            <a><span></span></a>
+            </li>
+            </ul>
+            </div>
+            </div>
+           <div class="c_con" data-tpc="6">
+                    <a> <!-- TemplateBeginEditable name="楼层6广告3" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --></a>
+                    <a> <!-- TemplateBeginEditable name="楼层6广告4" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --></a>
+            </div>
+            <div class="d_con" data-tpc="7">
+                    <a> <!-- TemplateBeginEditable name="楼层6广告5" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --></a>
+            </div>
+            <div class="e_con" data-tpc="8">
+                    <a> <!-- TemplateBeginEditable name="楼层6广告6" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --></a>
+                    <a> <!-- TemplateBeginEditable name="楼层6广告7" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --></a>
+            </div>
+            </div>
+            <!--楼层六 end-->
+            <!--楼层7 start-->
+            <div class="wrap mod_index_floor clearfix" id="floorLbsg" data-tpa="YHD_NHOME_LBSG">
+               <!-- #BeginLibraryItem "/library/title7.lbi" --><!-- #EndLibraryItem -->
+                <div class="a_con">
+                <ul class="tag clearfix" data-tpc="3">
+              <!-- #BeginLibraryItem "/library/title_7.lbi" --><!-- #EndLibraryItem -->
+                </ul>
+                <!--品牌切换的js-->
+                <script>
+                	$(function(){
+					 var lis=$('#lbBrands ul li').length;
+					 var num=0;
+					 $('#lbBrands ul').append($('#lbBrands ul').html());
+					 $('#lbBrands .btn_next').click(function(){
+					  num++;
+					  if(num>lis){
+					   num=1;
+					   $('#lbBrands ul').css('left',0)
+					  }
+					  $('#lbBrands ul').stop().animate({left:-num*100},500);
+					 })
+					 $('#lbBrands .btn_prev').click(function(e) {
+					  num--
+					  if(num<0){
+					   num=lis-1;
+					   $('#lbBrands ul').css('left',-lis*100)
+					  }
+					  $('#lbBrands ul').stop().animate({left:-num*100},500)
+					  //alert(num)
+					 
+					 });
+					})
+                </script>
+                <div class="brands" id="lbBrands">
+                <div class="img_box">
+                <ul style="left: -100px;" data-tpc="4">
+                <li>
+                  {foreach from=$brand_list name=brand_list item=brand}
+                     <!-- {if $smarty.foreach.brand_list.iteration < 5}-->
+                <a href="{$brand.url}"><img  src="data/brandlogo/{$brand.brand_logo}" width="100" height="40"></a>
+                <!-- {/if}-->
+				{/foreach}
+                </li>
+                <li>
+                                  {foreach from=$brand_list name=brand_list item=brand}
+                     <!-- {if $smarty.foreach.brand_list.iteration < 9&& $smarty.foreach.brand_list.iteration>4}-->
+
+                <a href="{$brand.url}"><img  src="data/brandlogo/{$brand.brand_logo}" width="100" height="40"></a>
+                               <!-- {/if}-->
+				{/foreach}
+                </li>
+                <li>
+                                  {foreach from=$brand_list name=brand_list item=brand}
+                       <!-- {if $smarty.foreach.brand_list.iteration < 13&& $smarty.foreach.brand_list.iteration>8}-->
+
+                 <a href="{$brand.url}"><img  src="data/brandlogo/{$brand.brand_logo}" width="100" height="40"></a>
+                              <!-- {/if}-->
+				{/foreach}
+                </li>
+                </ul>
+                </div>
+                <a class="btn btn_prev" href="javascript:;"></a>
+                <a class="btn btn_next" href="javascript:;"></a>
+                </div>
+                </div>
+                <div class="b_con">
+                <div class="slider_index_ad slider_index_ad7" id="lbSliderIndexAd">
+                <ul class="img_box clearfix" style="left: -660px;" data-tpc="5">
+                <!-- TemplateBeginEditable name="楼层7广告切换1" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+             <!-- TemplateBeginEditable name="楼层7广告切换2" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+                 <!-- TemplateBeginEditable name="楼层7广告切换3" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+                </ul>
+                <ul class="trig_box">
+                <li class="clearfix">
+                <a class=""><span style="width: 0px; overflow: hidden;"></span></a>
+                <a class=""><span style="width: 0px; overflow: hidden;"></span></a>
+                <a class="cur"><span style="width: 99.567%; overflow: hidden;"></span></a>
+                </li>
+                </ul>
+                </div>
+                </div>
+                <div class="g_con" data-tpc="6">
+                <a> <!-- TemplateBeginEditable name="楼层7广告2" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --></a>
+                </div>
+                <div class="d_con" data-tpc="7">
+                <a> <!-- TemplateBeginEditable name="楼层7广告3" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --></a>
+                </div>
+                <div class="e_con" data-tpc="8">
+                <a> <!-- TemplateBeginEditable name="楼层7广告4"-->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --></a>
+                </div>
+                <div class="f_con clearfix" data-tpc="9">
+                <div class="f1">
+               <a> <!-- TemplateBeginEditable name="楼层7广告5" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --></a>
+                </div>
+                <div class="f2">
+                <a> <!-- TemplateBeginEditable name="楼层7广告6" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --></a>
+                </div>
+                <div class="f3">
+               <a> <!-- TemplateBeginEditable name="楼层7广告7" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --></a>
+                </div>
+                <div class="f4">
+                <a> <!-- TemplateBeginEditable name="楼层7广告8" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --></a>
+                </div>
+                <div class="f5">
+                 <a> <!-- TemplateBeginEditable name="楼层7广告9" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --></a>
+                </div>
+                </div>
+                </div>
+            <!--楼层7 end-->
+            
+<!--楼层8广元土特产模块 start-->
+           <div class="wrap mod_index_floor clearfix" id="floor3c" data-tpa="YHD_NHOME_LBSG">
+     	<!-- #BeginLibraryItem "/library/title8.lbi" --><!-- #EndLibraryItem -->
+            <div class="a_con">
+     		<!-- #BeginLibraryItem "/library/title_8.lbi" --><!-- #EndLibraryItem -->
+            <a>
+					<!-- TemplateBeginEditable name="楼层8广告1" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+                    </a>
+            </div>
+            <div class="b_con">
+            <div class="slider_index_ad slider_index_ad6" id="customSliderIndexAd_INDEX2_FLOOR8">
+            <ul class="img_box clearfix" data-tpc="5">
+						<!-- TemplateBeginEditable name="楼层8广告切换1" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+                         <!-- TemplateBeginEditable name="楼层8广告切换2" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+
+					<!-- TemplateBeginEditable name="楼层8广告切换3" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+            </ul>
+            <ul class="trig_box">
+            <li class="clearfix">
+            <a class="cur"><span></span></a>
+            <a><span></span></a>
+            <a><span></span></a>
+            </li>
+            </ul>
+            </div>
+            </div>
+           <div class="c_con" data-tpc="6">
+                    <a> <!-- TemplateBeginEditable name="楼层8广告3" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --></a>
+                    <a> <!-- TemplateBeginEditable name="楼层8广告4" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --></a>
+            </div>
+            <div class="d_con" data-tpc="7">
+                    <a> <!-- TemplateBeginEditable name="楼层8广告5" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --></a>
+            </div>
+            <div class="e_con" data-tpc="8">
+                    <a> <!-- TemplateBeginEditable name="楼层8广告6" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --></a>
+                    <a> <!-- TemplateBeginEditable name="楼层8广告7" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --></a>
+            </div>
+            </div>
+<!--楼层8 end-->
+            
+            
+<!--楼层9 start-->
+<!--楼层9 end-->
+<!--通用楼层 end -->
+</div>
+<!--index团购模块 start-->
+<div class="wrap mod_index_floor clearfix" id="floorNative">
+	<h2>U+团团</h2>
+    <div id="nativeContent">
+        <ul>
+            <li class="group_li_area"><a href="#"><img src="images/group_img_1.jpg" /></a></li>
+            <li class="group_li_area"><a href="#"><img src="images/group_img_2.jpg" /></a></li>
+            <li class="group_li_area"><a href="#"><img src="images/group_img_3.jpg" /></a></li>
+            <li class="group_li_area"><a href="#"><img src="images/group_img_4.jpg" /></a></li>
+            <li class="group_li_area"><a href="#"><img src="images/group_img_5.jpg" /></a></li>
+        </ul>
+    </div>
+</div>
+<!--index团购模块 end-->
+<div id="scence_guide" style="clear:both; background-color:#F9F9F9;"></div>
+<!--footer开始-->
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --> <!-- #EndLibraryItem -->
+</body></html>

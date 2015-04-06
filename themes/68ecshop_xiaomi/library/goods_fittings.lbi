@@ -1,0 +1,36 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<!-- {if $fittings} -->
+
+<div class="GD_w1000 GD_pt_body" style="border:none; ">
+  <div class="height15"></div>
+  
+  <div class="GD_pt_lists" style="height:260px;  overflow-x:scroll;"> 
+  
+  <table>
+  <tr>
+  
+    <!--{foreach from=$fittings item=goods}-->
+  <td>  
+    <div class="GD_pt_good" style="height:225px;">
+      <div class="GD_pt_good_img"><a href="{$goods.url}" target="_blank"><img class="GD_pt_good_pic"  src="{$goods.goods_thumb}" height="141" width="141" /></a></div>
+      <div class="height10"></div>
+      <div class="GD_pt_info" style="line-height:20px;">
+        <div style="text-align:left"> <a href="{$goods.url}">
+          <label class="GD_pt_name pointer">{$goods.short_name|escape:html}</label>
+          </a> {$lang.fittings_price}<font class="shop_s">{$goods.fittings_price}</font><br>
+           </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+    </td>
+    <!--{/foreach}-->
+    </tr>
+    </table>
+    <div class="clear"></div>
+  </div>
+
+</div>
+
+<!-- {/if} --> 
+

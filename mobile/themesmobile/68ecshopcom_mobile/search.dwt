@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh_cn" class="no-js"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<title>{$page_title}</title>
+<link rel="stylesheet" type="text/css" href="themesmobile/68ecshopcom_mobile/css/ecsmart.css"/>
+<script type="text/javascript" src="themesmobile/68ecshopcom_mobile/js/jquery.js"></script>
+{insert_scripts files='common.js'}
+</head>
+<body>
+
+<div style="margin-left: 0px; margin-right: 0px;" class="page-shadow" id="page">
+  <div class="searchbox">
+    <div class="sb-header"> <a class="sb-back" href="javascript:history.back(-1)">返回</a>
+      <div class="sb-search">
+         <form id="searchForm" name="searchForm" method="get" action="search.php" onSubmit="return checkSearchForm()" class="searchform">
+          <div class="s-combobox">
+            <input  name="keywords" id="keyword" value="请输入搜索文字" onFocus="if(this.value=='请输入搜索文字'){this.value=''}" onBlur="if(this.value==''){this.value='请输入搜索文字'}" class="s-combobox-input"  type="text"/>
+           </div>
+          <input type="submit"/>
+        
+         
+        </form>
+      </div>
+     <form action="search.php" method="post"  class="sb-switchBtn" name="listform" id="form">     
+      <!-- {if $pager.display == 'list'} -->
+      	<a style="opacity: 1;" href="javascript:;" onClick="javascript:display_mode('grid')" class="sb-switchBtn-grid">切换</a>
+        <!-- {elseif $pager.display == 'grid'} -->
+     	<a style="opacity: 1;" href="javascript:;" onClick="javascript:display_mode('text')" class="sb-switchBtn-album">切换</a>
+        <!-- {elseif $pager.display == 'text'} -->
+        <a style="opacity: 1;" href="javascript:;" onClick="javascript:display_mode('list')" class="sb-switchBtn-list">切换</a>
+        <!--{/if}-->
+              <input type="hidden" name="page" value="{$pager.page}" />
+              <input type="hidden" name="display" value="{$pager.display}" id="display" />
+  </form>
+      
+    </div>
+    <div class="sb-category"></div>
+  </div>
+  
+
+  <div class="minisite-wrapper" id="J_MinisiteWrap"></div>
+
+ <!-- #BeginLibraryItem "/library/search_goods_list.lbi" --><!-- #EndLibraryItem -->
+
+
+
+
+  <!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+</div>
+<!-- #BeginLibraryItem "/library/footer_nav.lbi" --><!-- #EndLibraryItem -->
+</body>
+
+</html>

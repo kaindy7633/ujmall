@@ -1,0 +1,71 @@
+<div id="append_parent"></div>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+{if $user_info} 
+<label style="font-family:'Courier New', Courier, monospace; font-size:12px" onmouseover="showSubNav('subNav_7');" onmouseout="hideSubNav('subNav_7');">
+    <span class="hd_hi">Hi,</span>
+    <a  href="user.php"  target="_blank" class="blue_link" >{if $user_info.alias eq ''}{$user_info.username}{else}{$user_info.alias}{/if}</a>&nbsp;欢迎光临
+</label>
+<!------------------------------------------------------------------------------------------------------------>
+<div class="hd_user_center">
+    <div class="clearfix" style="font-family:'微软雅黑','Courier New', Courier, monospace;"  >
+        <div class="fl" style="float:left;">
+        	<a href="javascript:void()" target="_blank" style="display: block; width: 61px; height: 61px; overflow: hidden;
+border: 1px solid #d9d9d9; border-radius: 3px; -moz-box-shadow: 0 0 3px #F2F2F2; -webkit-box-shadow: 0 0 3px #F2F2F2; box-shadow: 0 0 3px #F2F2F2; ">
+			{if $user_info.user_face eq ''}
+				<img src="themes/68ecshop_xiaomi/images/user_default_face.gif" />
+            {else}
+            	<img src="{$user_info.user_face}" />
+            {/if}
+            </a>
+		</div>
+        <div style="font-family:宋体; float:left; width:70%;">
+        	<ul>
+            	<li style=" height:20px; line-height:20px;">
+                	<span style="float:left; margin-left:5px; font-size:14px; font-weight:bold; color:#1f1f1f">{if $user_info.alias eq ''}{$user_info.username}{else}{$user_info.alias}{/if}</span>
+                    <span style="float:right;"><a href="user.php?act=logout" class="blue_link">{$lang.user_logout}</a></span>
+                </li>
+                <li style="clear:both; padding:15px 0;">
+                	{if $user_info.rank eq 0}
+                    	<span style="display:block; width:55px; height:23px; float:left; background: url(themes/68ecshop_xiaomi/images/indexhead_user_class_icon.gif) no-repeat 0 0;"></span><span style="display:block; float:left; line-height:25px; font-size:12px; color:#666; margin-left:10px">当前成长值:{$user_info.rank_points}点</span>	
+                    {elseif $user_info.rank eq 1}
+                    	<span style="display:block; width:55px; height:23px; float:left; background: url(themes/68ecshop_xiaomi/images/indexhead_user_class_icon.gif) no-repeat -52px 0;"></span><span style="display:block; float:left; line-height:25px; font-size:12px; color:#666; margin-left:10px">当前成长值:{$user_info.rank_points}点</span>
+                    {elseif $user_info.rank eq 2}
+                    	<span style="display:block; width:55px; height:23px; float:left; background: url(themes/68ecshop_xiaomi/images/indexhead_user_class_icon.gif) no-repeat -104px 0;"></span><span style="display:block; float:left; line-height:25px; font-size:12px; color:#666; margin-left:10px">当前成长值:{$user_info.rank_points}点</span>
+                     {elseif $user_info.rank eq 3}
+                     	<span style="display:block; width:55px; height:23px; float:left; background: url(themes/68ecshop_xiaomi/images/indexhead_user_class_icon.gif) no-repeat -156px 0;"></span><span style="display:block; float:left; line-height:25px; font-size:12px; color:#666; margin-left:10px">当前成长值:{$user_info.rank_points}点</span>
+                	{/if}
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="hd_message" style="font-family:宋体;">
+        <a href="user.php?act=account_log" target="_blank">资金：{$user_info.user_money}</a>
+        <a href="user.php?act=bonus" target="_blank">红包:{$user_info.user_bonus}个</a>
+        <a href="user.php?act=bonus" target="_blank">购物券：1张</a>
+    </div>
+</div>
+<!------------------------------------------------------------------------------------------------------------>
+{else} 
+<label style="font-family:'Courier New', Courier, monospace; font-size:12px">
+    <span class="hd_hi">Hi,</span>
+    <a href="user.php?act=login" class="blue_link">登录</a> / 
+    <a href="user.php?act=register"  class="blue_link" target="_blank">注册</a>
+</label>
+<div class="hd_user_center">
+<div class="clearfix" style="font-family:宋体;"  >
+<div class="fl">
+<a href="javascript:void()" target="_blank" style="display: block; width: 61px; height: 61px; overflow: hidden;
+border: 1px solid #d9d9d9; border-radius: 3px; -moz-box-shadow: 0 0 3px #F2F2F2; -webkit-box-shadow: 0 0 3px #F2F2F2; box-shadow: 0 0 3px #F2F2F2; "><img src="themes/68ecshop_xiaomi/images/user_default_face.gif" /></a>
+</div>
+<div class="hd_growth_box" style="font-family:宋体;">
+<a class="hd_vip_earn" href="user.php?act=login" target="_blank" data-ref="YHD_TOP_vip_nonlogin">会员专享，欢迎登录</a>
+<p class="hd_my_yhd"><a href="index.php" target="_blank" data-ref="YHD_TOP_myyihaodian_nonlogin" style="font-family:'Courier New', Courier, monospace">欢迎进入我的U+</a></p>
+</div>
+</div>
+<div class="hd_message" style="font-family:宋体;">
+        <a href="user.php?act=account_log" target="_blank">资金</a>
+        <a href="user.php?act=bonus" target="_blank">红包</a>
+        <a href="user.php?act=bonus" target="_blank">购物券</a>
+</div>
+</div>
+{/if}

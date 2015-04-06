@@ -1,0 +1,83 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $vote} -->
+{insert_scripts files='transport.js'}
+  <DIV id=ECS_VOTE>
+  <FORM id=formvote name=ECS_VOTEFORM action=javascript:submit_vote() method=post>
+  <DT class=boxtop>
+     <!-- {foreach from=$vote item=title} -->
+     <DD><P>{$title.vote_name}</P></DD>
+          <!-- {foreach from=$title.options item=item} -->
+            <!-- {if $title.can_multi eq 0} -->
+            <DD class=vote_item><input type="checkbox" name="option_id" value="{$item.option_id}" />{$item.option_name} ({$item.percent}%)</DD>
+            <!-- {else} -->
+            <DD class=vote_item><input type="radio" name="option_id" value="{$item.option_id}" />{$item.option_name} ({$item.percent}%)</DD>
+            <!-- {/if} -->
+            <!-- {/foreach} -->
+            <input type="hidden" name="type" value="{$title.can_multi}" />
+     <!-- {/foreach} -->
+	 <input type="hidden" name="id" value="{$vote_id}" />
+  <DD><INPUT class=vote_btn type=submit name="" value=" "> </DD>
+  </DT>
+  </FORM>
+
+  </DIV>
+<script type="text/javascript">
+{literal}
+/**
+ * 处理用户的投票
+ */
+function submit_vote()
+{
+  var frm     = document.forms['ECS_VOTEFORM'];
+  var type    = frm.elements['type'].value;
+  var vote_id = frm.elements['id'].value;
+  var option_id = 0;
+
+  if (frm.elements['option_id'].checked)
+  {
+    option_id = frm.elements['option_id'].value;
+  }
+  else
+  {
+    for (i=0; i<frm.elements['option_id'].length; i++ )
+    {
+      if (frm.elements['option_id'][i].checked)
+      {
+        option_id = (type == 0) ? option_id + "," + frm.elements['option_id'][i].value : frm.elements['option_id'][i].value;
+      }
+    }
+  }
+
+  if (option_id == 0)
+  {
+    alert('请选择投票项目后再提交');
+	return;
+  }
+  else
+  {
+    Ajax.call('vote.php', 'vote=' + vote_id + '&options=' + option_id + "&type=" + type, voteResponse, 'POST', 'JSON');
+  }
+}
+
+/**
+ * 处理投票的反馈信息
+ */
+function voteResponse(result)
+{
+  if (result.message.length > 0)
+  {
+    alert(result.message);
+  }
+  if (result.error == 0)
+  {
+    var layer = document.getElementById('ECS_VOTE');
+
+    if (layer)
+    {
+      //layer.innerHTML = result.content;
+    }
+  }
+}
+{/literal}
+</script>
+<!-- {/if} -->

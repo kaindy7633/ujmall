@@ -1,0 +1,45 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<!-- 多图滚动 -->
+    <style>
+    	/* 多图滚动 */
+	.scroll_new{text-align:center;  }
+	.scroll_new .hd{ height:20px; overflow:hidden; font-size:0; }
+	.scroll_new .hd ul{ display:inline-block; padding-top:5px; }	
+	.scroll_new .hd li{ display:inline-block; width:8px; height:8px; background:#D0D0D0; margin:0 5px; vertical-align:top; overflow:hidden; 
+	-webkit-border-radius:8px; -moz-border-radius:8px; border-radius:8px; 
+	}
+	.scroll_new .hd .on{ background:#BA2636;  }
+    </style>
+{if $new_goods}
+<section class="index_floor">
+  <div class="floor_body" >
+    <h2> <span class="title_l"></span><span class="title_r"></span><a href="search.php?intro=new" class="more"></a> 新品上市 </h2>
+    <div id="scroll_new" class="scroll_new">
+    <div class="bd">
+<ul>
+     {foreach from=$new_goods item=goods name=new_goods}
+      <li> <a href="{$goods.url}" title="{$goods.name|escape:html}">
+        <div class="products_kuang"> <img src="{$option.static_path}{$goods.thumb}"> </div>
+        <div class="goods_name"> {$goods.name} </div>
+        <span class="price">{if $goods.promote_price}{$goods.promote_price}{else}{$goods.shop_price}{/if}</span> </a></li>     
+     
+      <!--{if $smarty.foreach.new_goods.iteration%3 eq 0 && $smarty.foreach.new_goods.iteration neq $smarty.foreach.new_goods.total}--></ul><ul><!--{/if}-->
+{/foreach}
+
+ </div>
+    <div class="hd">
+	<ul></ul>
+	</div> 
+    </div>
+    </div>
+</section>
+{/if}
+<script type="text/javascript">
+		TouchSlide({ 
+			slideCell:"#scroll_new",
+			titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+			effect:"leftLoop", 
+			autoPage:true, //自动分页
+			//switchLoad:"_src" //切换加载，真实图片路径为"_src" 
+		});
+	</script>

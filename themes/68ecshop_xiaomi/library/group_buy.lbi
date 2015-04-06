@@ -1,0 +1,18 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $group_buy_goods} -->
+<div class="group_box">
+<div class="title"></div>
+ <div class="group_con">
+      <!--{foreach from=$group_buy_goods item=goods}-->
+      <ul class="clearfix">
+      <li><a href="{$goods.url}" title="{$goods.goods_name|escape:html}" class="group_name">{$goods.short_style_name|escape:html}</a></li>
+           <li><a href="{$goods.url}"><img src="{$goods.thumb}" alt="{$goods.goods_name|escape:html}" class="group_img" width="230" height="230"/></a></li>
+		   <li>团购价：<font class="group_price">{$goods.last_price}</font>    已有 <font class="group_num">{$goods.valid_goods}</font> 人参团</li>
+           <li><a href="{$goods.url}" target="_blank" class="btn"><img alt="" src="images/goto_groupbuy.gif" /></a></li>
+        </ul>
+      <!--{/foreach}-->
+    </div>
+    
+</div>
+<div class="blank"></div>
+<!-- {/if} -->
